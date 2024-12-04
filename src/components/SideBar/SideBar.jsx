@@ -6,6 +6,7 @@ import Image from '../UI/Image';
 import { BiSolidDashboard } from "react-icons/bi";
 import { SlSettings } from "react-icons/sl";
 import { RiAdminLine,RiDashboardHorizontalLine } from "react-icons/ri";
+import '../../assets/scss/layout/sidebar.scss'
 
 const SideBar = () => {
     const [isSidebarOpen, setSidebarOpen] = useState(true);
@@ -40,7 +41,7 @@ const SideBar = () => {
                             </NavLink>
                         </li>
                         <li className="mn-item">
-                            <NavLink to="/admin-management" className="mn-link" activeClassName="mn-active">
+                            <NavLink to="/admin-management" className="mn-link">
                                 <span className="icons">
                                 <RiAdminLine />
                                 </span>
@@ -48,7 +49,7 @@ const SideBar = () => {
                             </NavLink>
                         </li>
                         <li className="mn-item">
-                            <NavLink to="/settings" className="mn-link" activeClassName="mn-active">
+                            <NavLink to="/settings" className="mn-link">
                                 <span className="icons">
                                     <SlSettings />
                                 </span>

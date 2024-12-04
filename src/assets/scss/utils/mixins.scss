@@ -1,0 +1,62 @@
+@use './variables.scss' as *;
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == 'infinite-two' {
+        @media only screen and (min-width: $breakpoint-infinite-two) {
+            @content;
+        }
+    }
+    @if $breakpoint == 'infinite' {
+        @media only screen and (min-width: $breakpoint-infinite) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == 'four-xxl' {
+        @media only screen and (min-width: $breakpoint-four-xxl) and (max-width: $breakpoint-infinite) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 'two-xxl' {
+        @media only screen and (min-width: $breakpoint-two-xxl) and (max-width: 1599px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 'xxl' {
+        @media only screen and (min-width: $breakpoint-xxl) and (max-width: 1444px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 'xl' {
+        @media only screen and (min-width: $breakpoint-xl) and (max-width: 1399px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 'lg' {
+        @media only screen and (min-width: $breakpoint-lg) and (max-width: 1199px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 'md' {
+        @media only screen and (min-width: $breakpoint-md) and (max-width: 991px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 'sm' {
+        @media only screen and (min-width: $breakpoint-sm) and (max-width: 767px) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint == 'tiny' {
+        @media only screen and (min-width: $breakpoint-tiny) and (max-width: 575px) {
+            @content;
+        }
+    }
+}

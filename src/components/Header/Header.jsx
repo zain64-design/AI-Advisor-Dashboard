@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import '../../assets/scss/layout/header.scss'
 
 const Header = () => {
     const [isNavCollapsed, setNavCollapsed] = useState(true);
