@@ -23,11 +23,11 @@
         .side-top {
             .side-logo {
                 .thumb-xl {
-                    opacity: 0;
+                    height: 90px;
                 }
-                .thumb-sm {
-                    opacity: 1;
-                }
+                // .thumb-sm {
+                //     opacity: 1;
+                // }
             }
         }
         .menu-area {
@@ -35,7 +35,7 @@
             .main-ul {
                 .mn-item {
                     .mn-link {
-                        padding: 16px 5px;
+                        padding: 10px 5px;
                         justify-content: center;
                         .link-txt {
                             opacity: 0;
@@ -63,18 +63,18 @@
         border: none;
         border-radius: 0;
         transition: all 0.2s ease-in-out;
+        z-index: 1000;
         .arrow-ct {
             transform: rotate(180deg);
             transition: all 0.2s ease-in-out;
         }
     }
     .side-top {
-        padding: 34px 10px;
-        margin: 0 0 77px 0;
+        padding: 42px 10px 51px;
         .side-logo {
             position: relative;
             .thumb-xl {
-                height: 90px;
+                height: 172px;
                 object-fit: contain;
                 object-position: center;
                 margin: 0 auto;
@@ -82,20 +82,20 @@
                 opacity: 1;
                 transition: all 0.3s ease-in-out;
             }
-            .thumb-sm {
-                height: 90px;
-                object-fit: contain;
-                object-position: center;
-                margin: 0 auto;
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                opacity: 0;
-                transition: all 0.3s ease-in-out;
-            }
+            // .thumb-sm {
+            //     height: 90px;
+            //     object-fit: contain;
+            //     object-position: center;
+            //     margin: 0 auto;
+            //     display: block;
+            //     position: absolute;
+            //     top: 0;
+            //     left: 0;
+            //     right: 0;
+            //     bottom: 0;
+            //     opacity: 0;
+            //     transition: all 0.3s ease-in-out;
+            // }
         }
     }
     .menu-main {
@@ -139,7 +139,34 @@
                     border-radius: 10px;
                     overflow: hidden;
                     background: transparent;
-                    transition: all .5s ease-in-out;
+                    transition: all 0.1s ease-in-out;
+                    .icons {
+                        &>svg {
+                            g {
+                                path {
+                                    transition: all 0.2s ease-in-out;
+                                }
+                            }
+                            path {
+                                transition: all 0.2s ease-in-out;
+                            }
+                        }
+                    }
+                    &:hover{
+                        color: $white-clr;
+                        .icons {
+                            &>svg {
+                                g {
+                                    path {
+                                        fill: $white-clr;
+                                    }
+                                }
+                                path {
+                                    fill: $white-clr;
+                                }
+                            }
+                        }
+                    }
                     &::before {
                         content: '';
                         position: absolute;
@@ -150,20 +177,13 @@
                         height: 100%;
                         width:  100%;
                         background: $gradient-bg;
-                        background-size: 130%;
+                        background-size: 100%;
                         z-index: -1;
                         opacity: 0;
                         transition: all .5s ease-in-out;
                     }
                     &:hover::before {
                         opacity: 1;
-                    }
-                    :hover{
-                        .icons {
-                            &>img {
-                                filter: brightness(0) invert(1);
-                            }
-                        }
                     }
                     &.active {
                         font-weight: 600;
@@ -176,8 +196,10 @@
                             background-position: center;
                         }
                         .icons {
-                            &>img {
-                                filter: brightness(0) invert(1);
+                            &>svg {
+                                path {
+                                    fill: $white-clr;
+                                }
                             }
                         }
                     }
@@ -205,6 +227,14 @@
 
 @include respond-to('tiny') {
     .side-bar {
+        min-width: 100%;
+        max-width: 100%;
+        &.open {
+            .side-bar-toggle {
+                right: 0;
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 85%);
+            }
+        }
         .side-bar-toggle {
             display: flex;
         }

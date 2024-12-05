@@ -1,106 +1,85 @@
 import React, { useState } from 'react';
+import { Card, Col, Row } from 'react-bootstrap';
+import DonutChart from '../components/Charts/DonutChart';
+import '../assets/scss/component/home/home.scss';
+import Text from '../components/UI/Text'
+import { FaPlus } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
+import InvestBox from '../components/Home/InvestBox';
+import InvestRecommendBox from '../components/Home/InvestRecommendBox';
 
 const Home = () => {
 
-    const [currentPage, setCurrentPage] = useState(1);
-
-    const statsData = [
-      { icon: 'st-icon-1.png', title: 'Total Properties', count: 2156 },
-      { icon: 'st-icon-2.png', title: 'Ongoing Properties', count: 900 },
-      { icon: 'st-icon-3.png', title: 'Completed Properties', count: 1256 },
-    ];
-  
-    const ongoingProperties = [
-      { property: 'BloomHill Apartments Suite 043', street: '333 Xavier Street', city: 'Stoltenbergton', zipCode: '11506', startDate: '09/16/2024', completionDate: '09/16/2024' },
-    ];
-  
-    const handlePagination = (pageNumber) => {
-      setCurrentPage(pageNumber);
-    };
-
+  const series = [50, 50, 50, 50, 50];
   return (
     <>
-    <div className="home-area">
-      <div className="container-ct">
-        <div className="row">
-
-          {statsData.map((stat, index) => (
-            <div key={index} className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4">
-              <div className="card multi-card stats-card">
-                <div className="top-area">
-                  <div className="detail">
-                    <img src={`assets/images/${stat.icon}`} className="img-fluid" alt={stat.title} />
-                    <h6>{stat.title}</h6>
-                  </div>
-                  <div className="action">
-                    <i className="fa-light fa-ellipsis-stroke-vertical"></i>
-                  </div>
+      <div className="home-area">
+        <div className="container-ct">
+          <Row>
+            <Col xs={12} sm={12} md={12} lg={7} xl={7} xxl={7}>
+              <Card className='stats-box'>
+                <div className="chart-main">
+                  <DonutChart series={series} />
                 </div>
-                <div className="desc">
-                  <h5>{stat.count}</h5>
-                </div>
-              </div>
-            </div>
-          ))}
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={12} lg={5} xl={5} xxl={5}>
+              <Card className='stats-box'>
 
-          <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-            <div className="card multi-card table-card">
-              <div className="top-area">
-                <h4>Ongoing Properties</h4>
-              </div>
-              <div className="table-area table-responsive">
-                <table className="table table-borderless">
-                  <thead>
-                    <tr>
-                      <th>Property</th>
-                      <th>Street</th>
-                      <th>City</th>
-                      <th>Zip Code</th>
-                      <th>Start Date</th>
-                      <th>Completion Date</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {ongoingProperties.map((property, index) => (
-                      <tr key={index}>
-                        <td>{property.property}</td>
-                        <td>{property.street}</td>
-                        <td>{property.city}</td>
-                        <td>{property.zipCode}</td>
-                        <td>{property.startDate}</td>
-                        <td>{property.completionDate}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-
-                {/* Pagination */}
-                <div className="pagination">
-                  <span>Page</span>
-                  <ul>
-                    {[1, 2, 3, 4, 5, 6].map(page => (
-                      <li key={page}>
-                        <button
-                          onClick={() => handlePagination(page)}
-                          className={`page-number ${currentPage === page ? 'page-active' : ''}`}
-                        >
-                          {page}
-                        </button>
-                      </li>
-                    ))}
-                    <li>
-                      <button>
-                        <i className="fa-solid fa-chevron-right"></i>
-                      </button>
-                    </li>
-                  </ul>
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={12} lg={7} xl={7} xxl={7}>
+              <Card className='stats-box invest-box-area'>
+                <div className="head-area">
+                  <Text as='h5'>Recent Investments</Text>
+                  <Link to='/news' className='btn add-btn'>
+                    <span className='icon'>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                        <g clipPath="url(#clip0_715_2693)">
+                          <path d="M16.9003 7.84617H11.0494V1.99527C11.0494 1.11929 10.3393 0.40918 9.46332 0.40918C8.58734 0.40918 7.87723 1.11929 7.87723 1.99527V7.84617H2.02633C1.15035 7.84617 0.440239 8.55628 0.440239 9.43226C0.440239 10.3082 1.15035 11.0183 2.02633 11.0183H7.87723V16.8692C7.87723 17.7452 8.58734 18.4553 9.46332 18.4553C10.3393 18.4553 11.0494 17.7452 11.0494 16.8692V11.0183H16.9003C17.7763 11.0183 18.4864 10.3082 18.4864 9.43226C18.4864 8.55628 17.7763 7.84617 16.9003 7.84617Z" fill="url(#paint0_linear_715_2693)" />
+                        </g>
+                        <defs>
+                          <linearGradient id="paint0_linear_715_2693" x1="0.440239" y1="9.43226" x2="20.2995" y2="9.70636" gradientUnits="userSpaceOnUse">
+                            <stop stopColor="#01C5DB" />
+                            <stop offset="1" stopColor="#1B5682" />
+                          </linearGradient>
+                          <clipPath id="clip0_715_2693">
+                            <rect width="18.0462" height="18.0462" fill="white" transform="translate(0.440239 0.40918)" />
+                          </clipPath>
+                        </defs>
+                      </svg>
+                    </span>
+                    Add Investment
+                  </Link>
                 </div>
-              </div>
-            </div>
-          </div>
+                <div className="invest-details">
+                  <InvestBox/>
+                  <InvestBox/>
+                  <InvestBox/>
+                  <InvestBox/>
+                  <InvestBox/>
+                </div>
+              </Card>
+            </Col>
+            <Col xs={12} sm={12} md={12} lg={5} xl={5} xxl={5}>
+              <Card className='stats-box recommend-box-area'>
+                <div className="head-area">
+                  <Text as='h5'>Investment Recommended for you</Text>
+                </div>
+                <div className="invest-recommend-details">
+                  <InvestRecommendBox/>
+                  <InvestRecommendBox/>
+                  <InvestRecommendBox/>
+                  <InvestRecommendBox/>
+                  <InvestRecommendBox/>
+                  <InvestRecommendBox/>
+                  <InvestRecommendBox/>
+                </div>
+              </Card>
+            </Col>
+          </Row>
         </div>
       </div>
-    </div>
     </>
   )
 }

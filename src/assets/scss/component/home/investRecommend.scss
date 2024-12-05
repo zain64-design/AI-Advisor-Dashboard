@@ -1,0 +1,38 @@
+@use '../../utils' as *;
+
+.invest-recommend-details {
+    .invest-box {
+        padding: 11px 20px 0 12px;
+        border-radius: 0;
+        border: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 21px;
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        figure {
+            margin: 0;
+        }
+        .desc {
+            h6 {
+                @include boxHead(700,$black-clr-6,uppercase);
+            }
+            span {
+                @include boxSpan($grey-clr-4,14px);
+            }
+        }
+        .stats-info {
+            margin: 0 0 0 auto;
+            h6 {
+                @include boxHead(600,$black-clr-6,unset);
+            }
+            span {
+                text-align: right;
+                display: block;
+                @include boxSpan($pr-green-clr,16px);
+            }  
+        }
+    }
+}

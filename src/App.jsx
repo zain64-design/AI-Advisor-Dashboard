@@ -1,26 +1,28 @@
-import React,{Suspense,lazy} from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router";
 import Layout from './components/Layout/Layout';
-const Home = lazy(() => import('./pages/Home'));
 import RouterLoader from './components/Loader/RouterLoader';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout/>,
-    children: [
-      { path: '', element: <Home/> }
-    ]
-  }
-])
+import Home from './pages/Home'
+import News from './pages/News';
+import Investment from './pages/Investment';
+import Recommend from './pages/Recommend';
+import Settings from './pages/Settings';
 
 function App() {
 
   return (
     <>
-    <Suspense fallback={<RouterLoader/>}>
-      <RouterProvider router={router}/>
-    </Suspense>
+    <BrowserRouter>
+    <Layout>
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/news" element={<News/>} />
+      <Route path="/investment-partner" element={<Investment/>} />
+      <Route path="/recommendation" element={<Recommend/>} />
+      <Route path="/settings" element={<Settings/>} />
+    </Routes>
+    </Layout>
+  </BrowserRouter>
     </>
   )
 }
