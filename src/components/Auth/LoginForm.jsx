@@ -1,18 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Card, Form, Row, Col, Button } from 'react-bootstrap';
 import Text from '../UI/Text'
 import { useFormik } from 'formik';
 import * as Yup from 'yup'
 import { MdError } from "react-icons/md";
 import { Link } from 'react-router';
+import { PiEyeLight,PiEyeSlash } from "react-icons/pi";
 import '../../assets/scss/component/Auth/authForm.scss'
 import FormHead from './FormHead';
 
-const LoginForm = () => {
+const LoginForm = () => { 
+
+  const [isPasswordVisible, setPasswordVisible] =  useState(false);
+
+  const passwordToggle = ()=> {
+    setPasswordVisible(!isPasswordVisible);
+  }
 
   const initialValues = {
-    name: '',
     email: '',
+    password: '',
   }
 
   const onSubmit = values => {
@@ -20,8 +27,11 @@ const LoginForm = () => {
   }
 
   const validationSchema = Yup.object({
-    name: Yup.string().required('Name is required'),
     email: Yup.string().email('Invalid email address').required('Email is required'),
+    password: Yup.string()
+    .min(8, 'Password must be at least 8 characters long')
+    .required('Password is required')
+    .matches(/[a-zA-Z]/, 'Password must contain both letters and numbers'),
   })
 
   const formik = useFormik({
@@ -29,6 +39,7 @@ const LoginForm = () => {
     onSubmit,
     validationSchema
   })
+
 
   // console.log('visited', formik.touched);
 
@@ -46,10 +57,11 @@ const LoginForm = () => {
               </div>
             </Form.Group>
             <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
-              <div className="inp-area">
+              <div className="inp-area position-relative">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="text" className='ct-inp' name="name" placeholder='Enter Your Password' onChange={formik.handleChange} value={formik.values.name} onBlur={formik.handleBlur} />
-                {formik.touched.name && formik.errors.name ? <small>{formik.errors.name}<MdError /></small> : null}
+                <Form.Control type={isPasswordVisible?'text':'password'} className='ct-inp' name="password" placeholder='Enter Your Password' onChange={formik.handleChange} value={formik.values.password} onBlur={formik.handleBlur} />
+                <Button type="button" variant='toggle' onClick={passwordToggle}>{isPasswordVisible?<PiEyeLight />:<PiEyeSlash />}</Button>
+                {formik.touched.password && formik.errors.password ? <small>{formik.errors.password}<MdError /></small> : null}
               </div>
             </Form.Group>
             <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>

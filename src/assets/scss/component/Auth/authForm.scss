@@ -18,6 +18,20 @@
             @include formText(400,18px,-0.04px);
         }
     }
+    .btn-toggle {
+        position: absolute;
+        right: 14px;
+        bottom: 40px;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+        font-size: 22px;
+        color: $black-clr;
+        // &:active {
+        //     bor
+        // }
+    }
     .btn-submit {
         margin-top: 38px;
         @include gradBtn($font-2,700,18px,56px,100%,8px);
