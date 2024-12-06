@@ -61,7 +61,7 @@ const LoginForm = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type={isPasswordVisible?'text':'password'} className='ct-inp' name="password" placeholder='Enter Your Password' onChange={formik.handleChange} value={formik.values.password} onBlur={formik.handleBlur} />
                 <Button type="button" variant='toggle' onClick={passwordToggle}>{isPasswordVisible?<PiEyeLight />:<PiEyeSlash />}</Button>
-                {formik.touched.password && formik.errors.password ? <small>{formik.errors.password}<MdError /></small> : null}
+                {formik.touched.password && formik.errors.password ? <small>{formik.errors.password}<MdError /></small> : null} 
               </div>
             </Form.Group>
             <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
