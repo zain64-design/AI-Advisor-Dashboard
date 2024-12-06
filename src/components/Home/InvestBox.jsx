@@ -10,7 +10,7 @@ const InvestBox = () => {
     <>
     <Card className='invest-box'>
         <figure>
-            <Image src={logo} className="blog-img" alt='blog'/>
+            <Image src={logo} className="logo" alt='blog'/>
         </figure>
         <div className="desc">
             <Text as="h6">Bitcoin</Text>

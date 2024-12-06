@@ -9,9 +9,17 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 16px;
-        margin-bottom: 24px;
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
         figure {
             margin: 0;
+            .logo {
+                height: 42px;
+                width: auto;
+                object-fit: contain;
+                object-position: center;
+            }
         }
         .desc {
             h6 {

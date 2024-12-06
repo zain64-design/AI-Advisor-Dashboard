@@ -25,6 +25,73 @@
     text-transform: capitalize;
 }
 
+@mixin proHead($letter-spacing) {
+    font-family: $font-1;
+    font-weight: 700;
+    font-size: 24px;
+    color: $black-clr;
+    text-transform: capitalize;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin proPara() {
+    font-family: $font-1;
+    font-weight: 400;
+    font-size: 18px;
+    color: $black-clr;
+}
+
+@mixin proLink() {
+    font-family: $font-1;
+    font-weight: 400;
+    font-size: 18px;
+    color: $black-clr;
+    text-transform: capitalize;
+}
+
+@mixin formInp() {
+    height: 52px;
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    background-color: $prim-bg-2;
+    color: $grey-clr-3;
+    font-family: $font-4;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 18px 16px 15px;
+}
+
+@mixin formXlHead() {
+    font-family: $font-2;
+    font-weight: 700;
+    font-size: 36px;
+    color: $green-clr-2;
+    text-transform: capitalize;
+    letter-spacing: -0.1px;
+}
+@mixin formText($font-weight,$font-size,$letter-spacing) {
+    font-family: $font-2;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    color: $white-clr;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin formInpAuth() {
+    height: 62px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    background-color: $prim-bg-2;
+    color: $black-clr;
+    font-family: $font-2;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 19px 24px;
+    letter-spacing: 0.128px;
+}
+
 @mixin gradBtn($font-family,$font-weight,$font-size,$height,$width,$border-radius) {
     font-family: $font-family;
     font-weight: $font-weight;
@@ -46,6 +113,7 @@
     &:hover {
         background-size: 500%;
         background-position: center;
+        color: $white-clr;
     }
 }
 

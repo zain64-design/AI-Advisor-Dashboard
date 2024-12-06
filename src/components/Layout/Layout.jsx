@@ -1,8 +1,9 @@
 import React from 'react'
+import { Outlet } from "react-router";
 import Header from '../Header/Header'
 import SideBar from '../SideBar/SideBar'
 
-const Layout = ({children}) => {
+const Layout = () => {
     return (
         <>
             <Header />
@@ -11,7 +12,7 @@ const Layout = ({children}) => {
                 <section className='sec-main'>
                     <div className="container-fluid">
                         <div className="inner-area">
-                        {children}
+                        <Outlet />
                         </div>
                     </div>
                 </section>

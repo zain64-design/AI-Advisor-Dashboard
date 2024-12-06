@@ -3,10 +3,10 @@ import { Card, Col, Row } from 'react-bootstrap';
 import DonutChart from '../components/Charts/DonutChart';
 import '../assets/scss/component/home/home.scss';
 import Text from '../components/UI/Text'
-import { FaPlus } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import InvestBox from '../components/Home/InvestBox';
 import InvestRecommendBox from '../components/Home/InvestRecommendBox';
+import TrendStocks from '../components/Home/TrendStocks';
 
 const Home = () => {
 
@@ -24,8 +24,18 @@ const Home = () => {
               </Card>
             </Col>
             <Col xs={12} sm={12} md={12} lg={5} xl={5} xxl={5}>
-              <Card className='stats-box'>
-
+              <Card className='stats-box trend-stock-area'>
+                <div className="head-area">
+                  <Text as='h5' className='fire-icon'>
+                    Trending Stocks
+                    </Text>
+                </div>
+                <div className="trend-stock-details">
+                  <TrendStocks />
+                  <TrendStocks />
+                  <TrendStocks />
+                  <TrendStocks />
+                </div>
               </Card>
             </Col>
             <Col xs={12} sm={12} md={12} lg={7} xl={7} xxl={7}>
@@ -53,11 +63,11 @@ const Home = () => {
                   </Link>
                 </div>
                 <div className="invest-details">
-                  <InvestBox/>
-                  <InvestBox/>
-                  <InvestBox/>
-                  <InvestBox/>
-                  <InvestBox/>
+                  <InvestBox />
+                  <InvestBox />
+                  <InvestBox />
+                  <InvestBox />
+                  <InvestBox />
                 </div>
               </Card>
             </Col>
@@ -67,13 +77,13 @@ const Home = () => {
                   <Text as='h5'>Investment Recommended for you</Text>
                 </div>
                 <div className="invest-recommend-details">
-                  <InvestRecommendBox/>
-                  <InvestRecommendBox/>
-                  <InvestRecommendBox/>
-                  <InvestRecommendBox/>
-                  <InvestRecommendBox/>
-                  <InvestRecommendBox/>
-                  <InvestRecommendBox/>
+                  <InvestRecommendBox />
+                  <InvestRecommendBox />
+                  <InvestRecommendBox />
+                  <InvestRecommendBox />
+                  <InvestRecommendBox />
+                  <InvestRecommendBox />
+                  <InvestRecommendBox />
                 </div>
               </Card>
             </Col>

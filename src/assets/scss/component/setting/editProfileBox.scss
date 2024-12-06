@@ -1,0 +1,27 @@
+@use '../../utils' as *;
+.edit-box {
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 35px 24px 20px;
+    margin-top: 50px;
+    .top-area {
+        align-content: center;
+        text-align: center;
+    }
+    .inp-area {
+        position: relative;
+        padding-bottom: 33px;
+        .ct-inp {
+            @include formInp();
+        }
+        small {
+            position: absolute;
+            left: 0;
+            margin-top: 5px;
+            color: #C62E2E;
+        }
+    }
+    .btn-save {
+        @include gradBtn($font-2,700,18px,56px,100%,8px);
+    }
+}

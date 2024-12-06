@@ -1,0 +1,14 @@
+@use '../../utils' as *;
+.setting-box {
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 38px 34px 24px;
+    .top-area {
+        align-content: center;
+        text-align: center;
+    }
+    .logout-btn {
+        margin-top: 70px;
+        @include gradBtn($font-2,700,28px,86px,100%,10px);
+    }
+}

@@ -1,0 +1,12 @@
+@use '../../utils' as *;
+
+.profile-desc {
+    h6 {
+        @include proHead(-0.04px);
+        margin-bottom: 8px;
+    }
+    span {
+        line-height: normal;
+        @include proPara();
+    }
+}

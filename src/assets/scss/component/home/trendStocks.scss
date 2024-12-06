@@ -1,0 +1,41 @@
+@use '../../utils' as *;
+
+.trend-stock-details {
+    .stock-box {
+        padding: 12px 20px 12px 12px;
+        border-radius: 8px;
+        border: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        figure {
+            margin: 0;
+            .chart {
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+        .desc {
+            h6 {
+                @include boxHead(700,$black-clr-6,uppercase);
+            }
+            span {
+                @include boxSpan($grey-clr-2,16px);
+            }
+        }
+        .stats-info {
+            h6 {
+                @include boxHead(700,$black-clr-6,unset);
+            }
+            span {
+                text-align: right;
+                display: block;
+                @include boxSpan($pr-green-clr,16px);
+            }  
+        }
+    }
+}

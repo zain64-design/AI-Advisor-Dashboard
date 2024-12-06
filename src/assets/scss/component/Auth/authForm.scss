@@ -1,0 +1,54 @@
+@use '../../utils' as *;
+
+.auth-form {
+    border-radius: 24px !important;
+    border: none !important;
+    background-color: transparent !important;
+    background-blend-mode: overlay;
+    backdrop-filter: blur(4px);
+    padding: 61px 44px 39px;
+    box-shadow: -0.5px -0.5px 0px #ffffff, 1px 1px 0px #4e4e4e;
+    span {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        @include formText(400,18px,-0.04px);
+        a {
+            text-decoration: underline;
+            @include formText(400,18px,-0.04px);
+        }
+    }
+    .btn-submit {
+        margin-top: 38px;
+        @include gradBtn($font-2,700,18px,56px,100%,8px);
+    }
+    .inp-area {
+        position: relative;
+        padding-bottom: 24px;
+        small {
+            position: absolute;
+            left: 0;
+            margin-top: 5px;
+            color: #C62E2E;
+        }
+        .form-label {
+            margin-bottom: 16px;
+            @include formText(700,16px,0.128px)
+        }
+        .ct-inp {
+            @include formInpAuth();
+            &::-webkit-input-placeholder {
+                color: $black-clr;
+            }
+            &::-moz-placeholder {
+                color: $black-clr;
+            }
+            &:-ms-input-placeholder {
+                color: $black-clr;
+            }
+            &:-moz-placeholder {
+                color: $black-clr;
+            }
+        }
+    }
+}

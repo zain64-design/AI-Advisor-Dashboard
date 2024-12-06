@@ -14,7 +14,8 @@ const DonutChart = ({series}) => {
         breakpoint: 480,
         options: {
           chart: {
-            width: 200,
+            width: '100%',
+            height: 200
           },
           legend: {
             position: 'bottom',

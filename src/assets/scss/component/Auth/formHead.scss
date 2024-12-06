@@ -1,0 +1,13 @@
+@use '../../utils' as *;
+
+.form-head {
+    h6 {
+        text-align: center;
+        @include formXlHead();
+    }
+    p {
+        text-align: center;
+        margin-top: 16px;
+        @include formText(400,16px,-0.04px);
+    }
+}

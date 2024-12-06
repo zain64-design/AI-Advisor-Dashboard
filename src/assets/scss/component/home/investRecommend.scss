@@ -14,6 +14,12 @@
         }
         figure {
             margin: 0;
+            .logo {
+                height: 44px;
+                width: auto;
+                object-fit: contain;
+                object-position: center;
+            }
         }
         .desc {
             h6 {
