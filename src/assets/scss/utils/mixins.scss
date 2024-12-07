@@ -10,6 +10,14 @@
     text-transform: capitalize;
 }
 
+@mixin ctHead($font-weight,$font-size,$color,$text-transform) {
+    font-family: $font-1;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    color: $color;
+    text-transform: $text-transform;
+}
+
 @mixin boxHead($font-weight,$color,$text-transform) {
     font-family: $font-1;
     font-weight: $font-weight;
@@ -92,6 +100,37 @@
     letter-spacing: 0.128px;
 }
 
+@mixin questionInp() {
+    height: 48px;
+    width: 100%;
+    border-radius: 100px;
+    border: none;
+    background-color: $prim-bg-2;
+    color: $black-clr-4;
+    font-family: $font-1;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 15px 12px;
+    text-align: left;
+    margin: 0 auto;
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
+
+@mixin chatInp() {
+    height: 64px;
+    width: 100%;
+    border-radius: 100px;
+    border: none;
+    background-color: $prim-bg-2;
+    color: $grey-clr-3;
+    font-family: $font-1;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 16px;
+}
+
 @mixin gradBtn($font-family,$font-weight,$font-size,$height,$width,$border-radius) {
     font-family: $font-family;
     font-weight: $font-weight;
@@ -102,7 +141,7 @@
     border: none;
     max-width: 100%;
     color: $white-clr;
-    padding: 6px 7px;
+    padding: 6px;
     background: $gradient-bg;
     background-size: 100%;
     text-transform: capitalize;

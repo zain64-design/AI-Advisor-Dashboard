@@ -4,6 +4,7 @@ const useScrollNav = () => {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
+      
       const handleScroll = () => {
         const isScrolled = window.scrollY > 0;
         setScrolled(isScrolled);

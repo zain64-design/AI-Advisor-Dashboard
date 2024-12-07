@@ -1,0 +1,13 @@
+@use '../../utils' as *;
+
+.question-area {
+    margin: 66px auto 100px;
+    .questions {
+        max-width: 825px;
+        @include questionInp();
+        &:focus {
+            background-color: $prim-bg-2;
+            border: 1px solid $green-clr;
+        }
+    }
+}

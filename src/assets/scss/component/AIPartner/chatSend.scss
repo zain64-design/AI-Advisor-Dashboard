@@ -1,0 +1,30 @@
+@use '../../utils' as *;
+.send-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 24px;
+    .chat-inp {
+        @include chatInp();
+        &::-webkit-input-placeholder {
+            color: $grey-clr-3;
+        }
+        &::-moz-placeholder {
+            color: $grey-clr-3;
+        }
+        &:-ms-input-placeholder {
+            color: $grey-clr-3;
+        }
+        &:-moz-placeholder {
+            color: $grey-clr-3;
+        }
+        &:focus {
+            background-color: $prim-bg-2;
+            color: $grey-clr-3;
+        }
+    }
+    .btn-send {
+        @include gradBtn($font-1,400,20px,64px,64px,50%)
+    }
+}
