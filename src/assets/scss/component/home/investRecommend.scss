@@ -16,7 +16,7 @@
             margin: 0;
             .logo {
                 height: 44px;
-                width: auto;
+                max-width: 60px;
                 object-fit: contain;
                 object-position: center;
             }
@@ -34,10 +34,15 @@
             h6 {
                 @include boxHead(600,$black-clr-6,unset);
             }
-            span {
+            span.investment-value {
                 text-align: right;
                 display: block;
+            }
+            span.investment-value.text-green {
                 @include boxSpan($pr-green-clr,16px);
+            }  
+            span.investment-value.text-red {
+                @include boxSpan($pr-red-clr,16px);
             }  
         }
     }

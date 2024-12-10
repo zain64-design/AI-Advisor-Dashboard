@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "image": "/images/investments/ir1.svg",
+        "head": "SOL",
+        "sub": "Solana",
+        "price": "$150.91",
+        "value": "+1.29%"
+    },
+    {
+        "id": 2,
+        "image": "/images/investments/ir2.svg",
+        "head": "JPM",
+        "sub": "JPMorgan Chase & Co",
+        "price": "$213.41",
+        "value": "+2.67%"
+    },
+    {
+        "id": 3,
+        "image": "/images/investments/ir3.svg",
+        "head": "DOGE",
+        "sub": "Dogecoin",
+        "price": "$0.1089",
+        "value": "-1.29%"
+    },
+    {
+        "id": 4,
+        "image": "/images/investments/ir4.svg",
+        "head": "CVX",
+        "sub": "Chevron",
+        "price": "$149.65",
+        "value": "+0.90%"
+    },
+    {
+        "id": 5,
+        "image": "/images/investments/ir5.svg",
+        "head": "TON",
+        "sub": "Toncoin",
+        "price": "$5.69",
+        "value": "+0.32%"
+    },
+    {
+        "id": 6,
+        "image": "/images/investments/ir6.svg",
+        "head": "DIS",
+        "sub": "Walt Disney",
+        "price": "$93.60",
+        "value": "+1.11%"
+    },
+    {
+        "id": 7,
+        "image": "/images/investments/ir7.svg",
+        "head": "NVDA",
+        "sub": "Nvidia Corp",
+        "price": "$132.65",
+        "value": "-0.26%"
+    }
+]

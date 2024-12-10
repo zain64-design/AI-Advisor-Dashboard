@@ -16,7 +16,7 @@
             margin: 0;
             .logo {
                 height: 42px;
-                width: auto;
+                width: 42px;
                 object-fit: contain;
                 object-position: center;
             }
@@ -25,7 +25,7 @@
             h6 {
                 @include boxHead(600,$black-clr,capitalize);
             }
-            span {
+            span.date {
                 @include boxSpan($grey-clr-2,16px);
             }
         }

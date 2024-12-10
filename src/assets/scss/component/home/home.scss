@@ -6,7 +6,7 @@
         border: none;
         margin-bottom: 30px;
         &.invest-box-area {
-            padding: 17px 27px 30px 24px;
+            padding: 17px 27px 16px 24px;
             .head-area {
                 display: flex;
                 align-items: center;
@@ -15,7 +15,7 @@
                 flex-wrap: wrap;
                 gap:10px;
                 h5 {
-                    @include xsHead(600);
+                    @include xsHead(600,22px);
                     font-weight: 600;
                 }
                 .add-btn {
@@ -48,8 +48,7 @@
             .head-area {
                 margin-bottom: 18px;
                 h5 {
-                    @include xsHead(600);
-                    font-weight: 600;
+                    @include xsHead(600,22px);
                 }
             }
         }
@@ -58,8 +57,7 @@
             .head-area {
                 margin-bottom: 18px;
                 h5 {
-                    @include xsHead(600);
-                    font-weight: 600;
+                    @include xsHead(600,22px);
                     &.fire-icon {
                         position: relative;
                         gap: 16px;

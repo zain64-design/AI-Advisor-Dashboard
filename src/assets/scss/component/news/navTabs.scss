@@ -1,0 +1,17 @@
+@use '../../utils' as *;
+.ct-tabs {
+    margin-top: 47px;
+    margin-bottom: 44px !important;
+    gap: 5px 16px;
+    border-bottom: none !important;
+    .nav-item {
+        .nav-link {
+            min-width: 185px;
+            @include solidBtn($font-1,400,18px,49px,100%,50px);
+            &.active {
+                background: $green-bg;
+                color: $white-clr;
+            }
+        }
+    }
+}

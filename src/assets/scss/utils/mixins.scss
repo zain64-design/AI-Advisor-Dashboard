@@ -1,10 +1,10 @@
 @use './variables.scss' as *;
 @use './fonts.scss' as *;
 
-@mixin xsHead($font-weight) {
+@mixin xsHead($font-weight,$font-size) {
     font-family: $font-2;
     font-weight: $font-weight;
-    font-size: 22px;
+    font-size: $font-size;
     color: $black-clr;
     letter-spacing: -0.04px;
     text-transform: capitalize;
@@ -152,6 +152,30 @@
     &:hover {
         background-size: 500%;
         background-position: center;
+        color: $white-clr;
+    }
+}
+
+@mixin solidBtn($font-family,$font-weight,$font-size,$height,$width,$border-radius) {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    height: $height;
+    width: $width;
+    border-radius: $border-radius;
+    border: none;
+    max-width: 100%;
+    color: $green-clr;
+    padding: 5px;
+    background: $prim-bg;
+    background-size: 100%;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s ease-in-out;
+    &:hover {
+        background: $green-bg;
         color: $white-clr;
     }
 }

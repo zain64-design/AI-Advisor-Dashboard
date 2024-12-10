@@ -1,22 +1,45 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import Image from '../UI/Image';
-import logo from '/images/investments/i1.svg';
 import Text from '../UI/Text';
-import '../../assets/scss/component/home/investBox.scss'
+import '../../assets/scss/component/home/investBox.scss';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
-const InvestBox = () => {
+const InvestBox = ({recentData,isRecentLoading}) => {
+
+  if (isRecentLoading) {
+    return (
+      <div>
+        <Card className='invest-box'>
+          <figure>
+            <Skeleton circle={true} height={50} width={50} />
+          </figure>
+          <div className="desc" style={{ display: 'flex' }}>
+            <Skeleton count={1} />
+            <Skeleton count={2} />
+          </div>
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <>
-    <Card className='invest-box'>
+    {recentData?.map((data)=> {
+      const {id,image,head,date} = data;
+      return(
+        <Card className='invest-box' key={id}>
         <figure>
-            <Image src={logo} className="logo" alt='blog'/>
+            <Image src={image} className="logo" alt='blog'/>
         </figure>
         <div className="desc">
-            <Text as="h6">Bitcoin</Text>
-            <Text as="span">09 Sep</Text>
+            <Text as="h6">{head}</Text>
+            <Text as="span" className='date'>{date}</Text>
         </div>
     </Card>
+      )
+    })}
     </>
   )
 }

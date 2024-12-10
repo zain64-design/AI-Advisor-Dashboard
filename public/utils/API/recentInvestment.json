@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "image": "/public/images/investments/i1.svg",
+        "head": "Bitcoin",
+        "date": "09 Sep"
+    },
+    {
+        "id": 2,
+        "image": "/images/investments/i2.svg",
+        "head": "AirBnb",
+        "date": "08 Sep"
+    },
+    {
+        "id": 3,
+        "image": "/images/investments/i3.svg",
+        "head": "Apple",
+        "date": "04 Sep"
+    },
+    {
+        "id": 4,
+        "image": "/images/investments/i4.svg",
+        "head": "Netflix",
+        "date": "01 Sep"
+    },
+    {
+        "id": 5,
+        "image": "/images/investments/i4.svg",
+        "head": "Netflix",
+        "date": "01 Sep"
+    }
+]

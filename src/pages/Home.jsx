@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import DonutChart from '../components/Charts/DonutChart';
 import '../assets/scss/component/home/home.scss';
@@ -7,8 +7,26 @@ import { Link } from 'react-router-dom';
 import InvestBox from '../components/Home/InvestBox';
 import InvestRecommendBox from '../components/Home/InvestRecommendBox';
 import TrendStocks from '../components/Home/TrendStocks';
+import { INVEST_RECOMMEND_API } from '../utils/constant';
+import { RECENT_INVEST_API } from '../utils/constant';
+import { useQuery } from '@tanstack/react-query';
+import fetchData from '../utils/hooks/fetchData';
+
+
+const useFetchData = (key,url)=> {
+  return useQuery({
+    queryKey: key,
+    queryFn: ()=> fetchData(url)
+  })
+}
 
 const Home = () => {
+
+  const {data:investData,isLoading:isInvestLoading,isError:isInvestError,error:investError,} = useFetchData(['Recommended Investment Data'],INVEST_RECOMMEND_API);
+
+  const {data:recentData,isLoading:isRecentLoading,isError:isRecentError,error:recentError,} = useFetchData(['Recent Investment Data'],RECENT_INVEST_API);
+  
+  
 
   const series = [50, 50, 50, 50, 50];
   return (
@@ -63,11 +81,7 @@ const Home = () => {
                   </Link>
                 </div>
                 <div className="invest-details">
-                  <InvestBox />
-                  <InvestBox />
-                  <InvestBox />
-                  <InvestBox />
-                  <InvestBox />
+                  {isRecentError?<Text as='h1'>Fetching Recent Investment Data:{recentError.message} </Text>:<InvestBox recentData={recentData} isRecentLoading={isRecentLoading} />}
                 </div>
               </Card>
             </Col>
@@ -77,13 +91,7 @@ const Home = () => {
                   <Text as='h5'>Investment Recommended for you</Text>
                 </div>
                 <div className="invest-recommend-details">
-                  <InvestRecommendBox />
-                  <InvestRecommendBox />
-                  <InvestRecommendBox />
-                  <InvestRecommendBox />
-                  <InvestRecommendBox />
-                  <InvestRecommendBox />
-                  <InvestRecommendBox />
+                  {isInvestError?<Text as='h1'>Fetching Recommend Investment Data:{investError.message} </Text>:<InvestRecommendBox investData={investData} isInvestLoading={isInvestLoading}/>}
                 </div>
               </Card>
             </Col>

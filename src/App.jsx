@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router";
+import { QueryClient,QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import Layout from './components/Layout/Layout';
 import Login from './pages/Login';
 import Home from './pages/Home'
@@ -15,10 +17,24 @@ import FAQ from './pages/FAQ';
 import TermsConditions from './pages/TermsConditions';
 import AuthLayout from './components/Layout/AuthLayout';
 
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: false,
+      staleTime: 5000,
+      cacheTime: 180000,      // Cache time is now 3 minutes (180,000 ms) 
+      retry: 2,              // Retry the request up to 2 times
+      refetchOnWindowFocus: false, // No refetch on window focus
+    },
+  },
+});
+
 function App() {
 
   return (
     <>
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
@@ -41,6 +57,8 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
     </>
   )
 }

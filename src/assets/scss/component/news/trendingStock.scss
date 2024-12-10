@@ -1,0 +1,22 @@
+@use '../../utils' as *;
+.trending-stock-area {
+    .head-area {
+        h6 {
+            @include xsHead(700,24px);
+            margin-bottom: 19px;
+            &.fire-icon {
+                position: relative;
+                gap: 16px;
+                display: inline-flex;
+                align-items: center;
+                &::before {
+                    content: '';
+                    display: inline-flex;
+                    background: url(/images/icons/fire.svg) center/contain no-repeat;
+                    height: 24px;
+                    width: 19px;
+                }
+            }
+        }
+    }
+}
