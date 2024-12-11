@@ -10,22 +10,25 @@ const InvestBox = ({recentData,isRecentLoading}) => {
 
   if (isRecentLoading) {
     return (
-      <div>
-        <Card className='invest-box'>
-          <figure>
-            <Skeleton circle={true} height={50} width={50} />
-          </figure>
-          <div className="desc" style={{ display: 'flex' }}>
-            <Skeleton count={1} />
-            <Skeleton count={2} />
-          </div>
-        </Card>
-      </div>
+      <>
+        {console.log('invoked InvestBox Loading')}
+        {Array.from({ length: 5 }).map((_, index) => (
+          <Card className="invest-box" key={index}>
+            <figure>
+              <Skeleton circle={true} height={42} width={42} />
+            </figure>
+            <div className="desc" style={{ display: 'flex' }}>
+              <Skeleton count={2} height={10} width={100} />
+            </div>
+          </Card>
+        ))}
+      </>
     );
   }
 
   return (
     <>
+        {console.log('invoked InvestBox')}
     {recentData?.map((data)=> {
       const {id,image,head,date} = data;
       return(

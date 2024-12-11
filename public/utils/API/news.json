@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "thumbnail": "/images/news/n1.svg",
+        "title": "Nvidia Holds the Key to the Market. But Is It Worth This Much?",
+        "authImg": "/public/images/news/user.png",
+        "authName": "James Mark",
+        "category": "real-estate"
+    },
+    {
+        "id": 2,
+        "thumbnail": "/images/news/n2.svg",
+        "title": "Growth Stocks. Value Stocks. What Do Those Labels Mean?",
+        "authImg": "/public/images/news/user.png",
+        "authName": "James Mark",
+        "category": "real-estate"
+    },
+    {
+        "id": 3,
+        "thumbnail": "/images/news/n3.svg",
+        "title": "Advice: When the Stock Market Drops, Stay Calm and Do Nothing",
+        "authImg": "/public/images/news/user.png",
+        "authName": "James Mark",
+        "category": "stocks"
+    },
+    {
+        "id": 4,
+        "thumbnail": "/images/news/n1.svg",
+        "title": "Bitcoin Reaches Record Highs in 2024",
+        "authImg": "/public/images/news/user.png",
+        "authName": "Alice Turner",
+        "category": "stocks"
+    },
+    {
+        "id": 5,
+        "thumbnail": "/images/news/n2.svg",
+        "title": "Ethereum's New Update Promises Faster Transactions",
+        "authImg": "/public/images/news/user.png",
+        "authName": "Alice Turner",
+        "category": "mutual-funds"
+    },
+    {
+        "id": 6,
+        "thumbnail": "/images/news/n3.svg",
+        "title": "Understanding Blockchain: What You Need to Know",
+        "authImg": "/public/images/news/user.png",
+        "authName": "Alice Turner",
+        "category": "mutual-funds"
+    },
+    {
+        "id": 7,
+        "thumbnail": "/images/news/n1.svg",
+        "title": "Real Estate Market Booms in Major Cities",
+        "authImg": "/public/images/news/user.png",
+        "authName": "Emily Walker",
+        "category": "mutual-funds"
+    },
+    {
+        "id": 8,
+        "thumbnail": "/images/news/n2.svg",
+        "title": "The Future of Commercial Real Estate After COVID-19",
+        "authImg": "/public/images/news/user.png",
+        "authName": "Emily Walker",
+        "category": "crypto"
+    },
+    {
+        "id": 9,
+        "thumbnail": "/images/news/n3.svg",
+        "title": "How to Invest in Real Estate for Beginners",
+        "authImg": "/public/images/news/user.png",
+        "authName": "Emily Walker",
+        "category": "crypto"
+    }
+]

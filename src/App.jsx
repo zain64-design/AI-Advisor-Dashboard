@@ -22,10 +22,10 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       suspense: false,
-      staleTime: 5000,
-      cacheTime: 180000,      // Cache time is now 3 minutes (180,000 ms) 
+      staleTime: 5000,      // Data is considered fresh for 5 seconds after it's fetched (staleTime: 5000)
+      cacheTime: 10000,     // data will remain in cache for 10 seconds after the last use (cacheTime: 10000). 
       retry: 2,              // Retry the request up to 2 times
-      refetchOnWindowFocus: false, // No refetch on window focus
+      refetchOnWindowFocus: true, // refetch on window focus
     },
   },
 });

@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "image": "/public/images/investments/i1.svg",
+        "image": "/images/investments/i1.svg",
         "head": "Bitcoin",
         "date": "09 Sep"
     },
