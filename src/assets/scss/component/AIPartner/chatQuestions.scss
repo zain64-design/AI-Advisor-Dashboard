@@ -11,3 +11,18 @@
         }
     }
 }
+
+@include respond-to('tiny') {
+    .question-area {
+        margin: 20px auto 30px;
+        .questions {
+            border-radius: 10px;
+        }
+    }
+  }
+
+  @include respond-to('sm') {
+    .question-area {
+        margin: 20px auto 30px;
+    }
+  }

@@ -101,7 +101,7 @@
 }
 
 @mixin questionInp() {
-    height: 48px;
+    height: auto;
     width: 100%;
     border-radius: 100px;
     border: none;
@@ -111,8 +111,10 @@
     font-weight: 600;
     font-size: 14px;
     padding: 15px 12px;
+    align-content: center;
     text-align: left;
     margin: 0 auto;
+    white-space: normal;
     &:not(:last-child) {
         margin-bottom: 16px;
     }

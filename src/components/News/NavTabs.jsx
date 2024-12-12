@@ -1,10 +1,9 @@
-import React, { Suspense, useState,lazy } from 'react'
+import React, { useState } from 'react'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import '../../assets/scss/component/news/navTabs.scss'
 import { Row } from 'react-bootstrap';
 import NewsCard from './NewsCard';
-// const NewsCard = lazy (()=> import ('./NewsCard')) ;
 import Text from '../UI/Text'
 import { useQuery } from '@tanstack/react-query';
 import useFetchAPI from '../../utils/hooks/useFetchAPI';
@@ -58,14 +57,18 @@ const NavTabs = () => {
         id="controlled-tab-example"
         activeKey={key}
         onSelect={(k) => setKey(k)}
-        className="ct-tabs"
+        className="ct-tabs justify-content-center justify-content-sm-center justify-content-md-start justify-content-lg-start justify-content-xl-start justify-content-xxl-start"
       >
         {tabsInfo?.map(({title,eventKey},index) => (
           <Tab eventKey={eventKey} title={title} key={index}>
             <Row>
-              {isLoading ?<NewsLoader/>:
-              isError ? <Text as='h1'>Error: {error.message}</Text>:
-              <NewsCard filteredNewsData={filteredNewsData} />}
+              {isLoading
+              ? Array.from({ length: 3 }).map((_,index) => (
+                <NewsLoader key={index}/>
+              ))
+              : isError
+              ? <Text as='h1'>Error: {error.message}</Text>
+              : <NewsCard filteredNewsData={filteredNewsData} />}
             </Row>
           </Tab>
         ))}

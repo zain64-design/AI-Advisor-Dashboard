@@ -12,6 +12,8 @@ import InvestBox from '../components/Home/InvestBox';
 import InvestRecommendBox from '../components/Home/InvestRecommendBox';
 import TrendStocks from '../components/Home/TrendStocks';
 import SkChartLoader from '../components/Loader/SkChartLoader';
+import SkRecommendLoader from '../components/Loader/SkRecommendLoader';
+import SkInvestLoader from '../components/Loader/SkInvestLoader';
 
 
 const useFetchData = (key, url) => {
@@ -28,30 +30,34 @@ const Home = () => {
 
   const { data: recentData, isLoading: isRecentLoading, isError: isRecentError, error: recentError, } = useFetchData(['Recent Investment Data'], RECENT_INVEST_API);
 
-  const {data:statsData,isLoading:isStatsLoading,isError:isStatsError,error: statError} = useFetchData(['stats data'],STATS_API);
+  const { data: statsData, isLoading: isStatsLoading, isError: isStatsError, error: statError } = useFetchData(['stats data'], STATS_API);
 
   const transformDataForChart = (data) => {
     return data ? data.map(item => item.value) : [];
   };
 
   const chartLabels = Array.isArray(statsData) && statsData.length > 0
-? statsData.map(item => item.category)
-  : [];
+    ? statsData.map(item => item.category)
+    : [];
 
   const series = Array.isArray(statsData) && statsData.length > 0
-  ? transformDataForChart(statsData)
-  : [];
-  
-  
+    ? transformDataForChart(statsData)
+    : [];
+
+
   return (
     <>
       <div className="home-area">
         <div className="container-ct">
           <Row>
             <Col xs={12} sm={12} md={12} lg={7} xl={7} xxl={7}>
-              <Card className='stats-box'>
+              <Card className='stats-box chart-area'>
                 <div className="chart-main">
-                  {isStatsLoading?<SkChartLoader/>:<DonutChart series={series} labels={chartLabels} />}
+                  {isStatsLoading
+                  ? <SkChartLoader />
+                    : isStatsError
+                      ? <Text as='h1'>Fetching Recent Investment Data:{statError.message} </Text>
+                      : <DonutChart series={series} labels={chartLabels} />}
                 </div>
               </Card>
             </Col>
@@ -95,9 +101,11 @@ const Home = () => {
                   </Link>
                 </div>
                 <div className="invest-details">
-                  {isRecentError ?
-                    <Text as='h1'>Fetching Recent Investment Data:{recentError.message} </Text>
-                    : <InvestBox recentData={recentData} isRecentLoading={isRecentLoading} />}
+                  {isRecentLoading
+                    ? Array.from({ length: 5 }).map((_, index) => (<SkInvestLoader key={index} />))
+                    : isRecentError
+                      ? <Text as='h1'>Fetching Recent Investment Data:{recentError.message} </Text>
+                      : <InvestBox recentData={recentData} isRecentLoading={isRecentLoading} />}
                 </div>
               </Card>
             </Col>
@@ -107,10 +115,12 @@ const Home = () => {
                   <Text as='h5'>Investment Recommended for you</Text>
                 </div>
                 <div className="invest-recommend-details">
-                  {isInvestError ?
-                    <Text as='h1'>Fetching Recommend Investment Data:{investError.message} </Text>
-                    : <InvestRecommendBox investData={investData} isInvestLoading={isInvestLoading} />
-                    }
+                  {isInvestLoading
+                    ? Array.from({ length: 7 }).map((_, index) => (<SkRecommendLoader key={index} />))
+                    : isInvestError
+                      ? <Text as='h1'>Fetching Recommend Investment Data:{investError.message} </Text>
+                      : <InvestRecommendBox investData={investData} isInvestLoading={isInvestLoading} />
+                  }
                 </div>
               </Card>
             </Col>

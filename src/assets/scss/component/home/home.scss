@@ -5,6 +5,43 @@
         border-radius: 24px;
         border: none;
         margin-bottom: 30px;
+        overflow: hidden;
+        &.chart-area {
+            .skl-img {
+                width: clamp(200px,20vw,319px);
+                height: clamp(200px,20vw,319px);
+            }
+            padding: 24px 0;
+            // .head-area {
+            //     margin-bottom: 18px;
+            //     h5 {
+            //         @include xsHead(600,clamp(18px,1.5vw,22px));
+            //     }
+            // }
+        }
+        &:has(.ct-chart) {
+            height: 93%;
+            align-content: center;
+            display: block;
+        }
+        .ct-chart {
+            .apexcharts-canvas {
+                margin: 0 auto;
+            }
+            .apexcharts-legend.apx-legend-position-right {
+                justify-content: center;
+            }
+            .apexcharts-legend-text {
+                color: $grey-clr-2 !important;
+                margin-left: 0;
+            }
+            .apexcharts-datalabels-group {
+
+            }
+            // min-height: 286px !important;
+            // max-height: 286px;
+            // height: 286px !important;
+        }
         &.invest-box-area {
             padding: 17px 27px 16px 24px;
             .head-area {
@@ -15,7 +52,7 @@
                 flex-wrap: wrap;
                 gap:10px;
                 h5 {
-                    @include xsHead(600,22px);
+                    @include xsHead(600,clamp(18px,1.5vw,22px));
                     font-weight: 600;
                 }
                 .add-btn {
@@ -48,7 +85,7 @@
             .head-area {
                 margin-bottom: 18px;
                 h5 {
-                    @include xsHead(600,22px);
+                    @include xsHead(600,clamp(18px,1.5vw,22px));
                 }
             }
         }
@@ -57,7 +94,7 @@
             .head-area {
                 margin-bottom: 18px;
                 h5 {
-                    @include xsHead(600,22px);
+                    @include xsHead(600,clamp(18px,1.5vw,22px));
                     &.fire-icon {
                         position: relative;
                         gap: 16px;

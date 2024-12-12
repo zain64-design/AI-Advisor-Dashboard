@@ -25,6 +25,69 @@
         }
     }
     .btn-send {
-        @include gradBtn($font-1,400,20px,64px,64px,50%)
+        &>svg {
+            height: 30px;
+        }
+        @include gradBtn($font-1,400,0,64px,64px,50%)
     }
 }
+
+@include respond-to('tiny') {
+    .send-area {
+        gap: 5px; 
+        flex-direction: column;
+        .chat-inp {
+            height: 50px;
+            font-size: 14px;
+            padding: 5px 10px;
+        }
+        .btn-send {
+            &>svg {
+                height: 15px;
+            }
+            height: 40px;
+            width: 100%;
+            border-radius: 50px;
+        }
+    }
+  }
+
+  @include respond-to('sm') {
+    .send-area {
+        gap: 10px; 
+        .chat-inp {
+            height: 50px;
+            font-size: 14px;
+            padding: 5px 10px;
+            width: 85%;
+        }
+        .btn-send {
+            &>svg {
+                height: 15px;
+            }
+            height: 40px;
+            width: 40px;
+            border-radius: 50px;
+        }
+    }
+  }
+
+  @include respond-to('md') {
+    .send-area {
+        gap: 10px; 
+        .chat-inp {
+            height: 50px;
+            font-size: 14px;
+            padding: 5px 10px;
+            width: 90%;
+        }
+        .btn-send {
+            &>svg {
+                height: 20px;
+            }
+            height: 45px;
+            width: 45px;
+            border-radius: 50px;
+        }
+    }
+  }

@@ -6,17 +6,20 @@ import Navbar from 'react-bootstrap/Navbar';
 import '../../assets/scss/layout/header.scss';
 import userProfile from '/images/user.png';
 import useScrollNav from '../../utils/hooks/useScrollNav';
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Header = () => {
     const scrolled = useScrollNav();
 
     return (
         <header className={`${scrolled ? 'sticky' : ''}`}>
-            <Navbar>
+            <Navbar expand="sm">
                 <Container fluid className='px-2 px-sm-5 px-md-5 px-lg-5 px-xl-5 px-xxl-5'>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Toggle aria-controls="basic-navbar-nav">
+                    <RxHamburgerMenu />
+                    </Navbar.Toggle>
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="flex-wrap justify-content-center justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between justify-content-xxl-between ms-auto w-100">
+                        <Nav className="flex-wrap align-items-center justify-content-center justify-content-sm-between justify-content-md-between justify-content-lg-between justify-content-xl-between justify-content-xxl-between w-100 gap-3">
                         <li className="nav-item">
                                 <div className="user-details">
                                     <h6><span>Hi,</span> Welcome Daniel</h6>

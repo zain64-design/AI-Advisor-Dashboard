@@ -7,8 +7,6 @@ import { HiArrowUpRight } from "react-icons/hi2";
 import Author from './Author'
 import '../../assets/scss/component/news/newsCard.scss';
 
-
-
 const NewsCard = ({filteredNewsData}) => {
     return (
         <>
@@ -21,7 +19,7 @@ const NewsCard = ({filteredNewsData}) => {
                         <Image src={thumbnail} className="news-img" alt='news' />
                     </figure>
                     <div className="desc">
-                        <Text as="h6">{title}</Text>
+                        <Text as="h6">{title.length > 100 ? `${title.substring(0, 100)}...` : title}</Text>
                         <Author authImg={authImg} authName={authName} />
                         <Link className="btn read-btn">read more <HiArrowUpRight /></Link>
                     </div>

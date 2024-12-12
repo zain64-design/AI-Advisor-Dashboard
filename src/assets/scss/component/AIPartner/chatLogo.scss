@@ -18,3 +18,39 @@
         }
     }
 }
+
+@include respond-to('tiny') {
+    .top-bar {
+        text-align: center;
+        .chat-logo {
+            margin: 0;
+            .logo {
+                height: 200px;
+                margin: 0 auto;
+            }
+        }
+        .desc {
+            h6 {
+                margin-top: 0;
+                font-size: 20px;
+            }
+        }
+    }    
+  }
+  @include respond-to('sm') {
+    .top-bar {
+        text-align: center;
+        .chat-logo {
+            .logo {
+                height: 200px;
+                margin: 0 auto;
+            }
+        }
+        .desc {
+            h6 {
+                margin-top: 0;
+                font-size: 20px;
+            }
+        }
+    }    
+  }

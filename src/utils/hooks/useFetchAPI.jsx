@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const useFetchAPI = async (url,params) => {
-  console.log('fetch api invoked');
   
     await new Promise((resolve) => setTimeout(resolve, 3000));
     try {

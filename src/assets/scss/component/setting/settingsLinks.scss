@@ -19,7 +19,7 @@
                 display: inline-flex;
                 background: url(/images/icons/chevron-right.svg) center/contain no-repeat;
                 height: 16px;
-                width: 10px;
+                min-width: 10px;
                 margin: 0 0 0 auto;
                 transition: all 0.2s ease-in-out;
             }
@@ -28,8 +28,47 @@
                 &::after {
                     transform: rotate(180deg);
                 }
+                .icon {
+                    &>svg {
+                        path {
+                            fill: $green-clr;
+                            transform: scale(0.9);
+                        }
+                    }
+                }
+            }
+            .icon {
+                &>svg {
+                    height: 30px;
+                    path {
+                        transition: all 0.2s ease-in-out;
+                        will-change: transform;
+                    }
+                }
             }
 
         }
     }
 }
+
+@include respond-to('tiny') {
+    .settings-ul {
+        margin-top: 20px;
+        li {
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+            a {
+                font-size: 14px;
+                &::after {
+                    height: 10px;
+                }
+                .icon {
+                    &>svg {
+                        height: 20px;
+                    }  
+                }
+            }
+        }
+    }
+  }

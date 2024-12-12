@@ -6,8 +6,6 @@ const DonutChart = ({series,labels}) => {
   const [options, setOptions] = useState({
     chart: {
       type: 'donut',
-      width: '100%',
-      height: 200,
     },
     labels: labels,
     responsive: [
@@ -16,10 +14,32 @@ const DonutChart = ({series,labels}) => {
         options: {
           chart: {
             width: '100%',
-            height: 350
+            height: 300
           },
           legend: {
             position: 'bottom',
+            fontSize: '14px',
+            itemMargin: {
+              horizontal: 2,
+              vertical: 2,
+            },
+            markers: {
+              size: 7,
+            },
+          },
+          plotOptions: {
+            pie: {
+              donut: {
+                labels: {
+                  total: { 
+                    fontSize: '10px',
+                   },
+                  value: {
+                    fontSize: '16px',
+                  },
+                }
+              }
+            }
           },
         },
       },
@@ -28,10 +48,17 @@ const DonutChart = ({series,labels}) => {
         options: {
           chart: {
             width: '100%',
-            height: 400
           },
           legend: {
             position: 'bottom',
+            fontSize: '18px',
+            itemMargin: {
+              horizontal: 5,
+              vertical: 5,
+            },
+            markers: {
+              size: 8,
+            },
           },
         },
       },
@@ -40,10 +67,16 @@ const DonutChart = ({series,labels}) => {
         options: {
           chart: {
             width: '100%',
-            height: 350
+            height: 500
           },
           legend: {
             position: 'right',
+            horizontalAlign: 'center',
+            fontSize: '20px',
+            itemMargin: {
+              horizontal: 5,
+              vertical: 5,
+            }
           },
         },
       },
@@ -52,7 +85,6 @@ const DonutChart = ({series,labels}) => {
         options: {
           chart: {
             width: '100%',
-            height: 600
           },
           legend: {
             position: 'right',
@@ -64,30 +96,108 @@ const DonutChart = ({series,labels}) => {
         options: {
           chart: {
             width: '100%',
-            height: 500
           },
           legend: {
             position: 'right',
+            fontSize: '16px',
+            itemMargin: {
+              horizontal: 1,
+              vertical: 10,
+            },
+            markers: {
+              size: 8,
+            },
           },
         },
       },
+      {
+        breakpoint: 3000,
+        options: {
+          chart: {
+            width: '72%',
+          },
+          // legend: {
+          //   position: 'right',
+          //   fontSize: '16px',
+          //   itemMargin: {
+          //     horizontal: 1,
+          //     vertical: 10,
+          //   },
+          //   markers: {
+          //     size: 8,
+          //   },
+          // },
+        },
+      },
     ],
+    dataLabels: {
+      enabled: false
+    },
+    plotOptions: {
+      pie: {
+        donut: {
+          startAngle: 0,
+          endAngle: 360,
+          donut: {
+            size: "70",
+          },
+          labels: {
+            show: true,
+            total: { 
+              show: true,
+              fontSize: '20px',
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: '400',
+              color: '#67677A',
+              label: 'Portfolio Value', 
+             },
+             name: {
+              color: '#67677A',
+            },
+            value: {
+              fontSize: '30px',
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: '700',
+              color: '#000',
+            },
+          }
+        }
+      }
+    },
     legend: {
-      position: 'right', // To position the legend at the bottom
-      horizontalAlign: 'center', // Center the legend horizontally
-      verticalAlign: 'center', // Center the legend vertically
+      position: 'right',
+      horizontalAlign: 'center',
+      verticalAlign: 'middle',
       fontSize: '22px',
       fontFamily: 'Inter,sans-serif',
-      fontWeight: 400,
+      fontWeight: '400',
       color: '#67677A',
       itemMargin: {
-        horizontal: 5, // Horizontal margin between legend items
-        vertical: 5, // Vertical margin between legend items
+        horizontal: 1,
+        vertical: 14,
       },
       markers: {
-        width: 28, // Size of the markers next to each legend item
-        height: 28,
+        size: 12,
+        shape: 'circle',
+        radius: 6,
+        strokeWidth: 2,
+        strokeColor: '#000',
       },
+      formatter: (seriesName, opts) => {
+        // Fetch current series value
+        const total = opts.w.globals.series[opts.seriesIndex];
+        return `${seriesName} (${total}%)`;
+      }
+    },
+    title: {
+      text: 'Statistics',
+      align: 'left',
+      style: {
+        fontSize: '22px',
+        fontFamily: 'Inter,sans-serif',
+        fontWeight: '700',
+        color: '#04091E',
+      }
     },
     colors: ['#089BAB', '#FFBF3E', '#6347EB', '#F36068', '#01C5DB'],
   });
@@ -101,7 +211,7 @@ const DonutChart = ({series,labels}) => {
 
   return (
     <>
-    <ApexCharts options={options} series={series} type='donut'/>
+    <ApexCharts className='ct-chart' options={options} series={series} type='donut'/>
     </>
   )
 }

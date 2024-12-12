@@ -6,7 +6,6 @@
         border-radius: 0;
         border: none;
         flex-direction: row;
-        flex-wrap: wrap;
         align-items: center;
         gap: 21px;
         &:not(:last-child) {
@@ -25,7 +24,7 @@
             h6 {
                 @include boxHead(700,$black-clr-6,uppercase);
             }
-            span {
+            small {
                 @include boxSpan($grey-clr-4,14px);
             }
         }
@@ -34,16 +33,51 @@
             h6 {
                 @include boxHead(600,$black-clr-6,unset);
             }
-            span.investment-value {
+            small.investment-value {
                 text-align: right;
                 display: block;
             }
-            span.investment-value.text-green {
+            small.investment-value.text-green {
                 @include boxSpan($pr-green-clr,16px);
             }  
-            span.investment-value.text-red {
+            small.investment-value.text-red {
                 @include boxSpan($pr-red-clr,16px);
             }  
         }
     }
 }
+
+@include respond-to('tiny') {
+    .invest-recommend-details {
+        .invest-box {
+            padding: 11px 0 0 0;
+            figure {
+                .logo {
+                    height: 30px;
+                    max-width: 40px;                
+                }
+            }
+            .desc {
+                h6 {
+                    font-size: 14px;
+                }
+                small {
+                    font-size: 12px;
+                    line-height: normal;
+                    display: inline-flex;
+                }
+            }
+            .stats-info {
+                h6 {
+                    font-size: 14px;
+                }
+                small.investment-value.text-green {
+                    font-size: 14px;
+                }
+                small.investment-value.text-red {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+  }

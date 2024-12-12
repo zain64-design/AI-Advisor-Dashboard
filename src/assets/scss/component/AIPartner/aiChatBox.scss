@@ -1,5 +1,13 @@
+@use '../../utils/mixins.scss' as *;
+
 .ai-chat-box {
     border-radius: 24px !important;
     border: none !important;
     padding: 34px 26px !important;
 }
+
+@include respond-to('tiny') {
+    .ai-chat-box {
+        padding: 10px 15px !important;
+    }
+  }

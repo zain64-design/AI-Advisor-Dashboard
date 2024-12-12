@@ -12,3 +12,14 @@
         @include gradBtn($font-2,700,28px,86px,100%,10px);
     }
 }
+
+@include respond-to('tiny') {
+    .setting-box {
+        padding: 24px;
+        .logout-btn {
+            height: 50px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    }
+  }
