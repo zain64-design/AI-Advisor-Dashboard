@@ -5,8 +5,24 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import TrendStocks from '../Home/TrendStocks'
+import { TREND_STOCKS_API} from '../../utils/constant';
+import { useQuery } from '@tanstack/react-query';
+import useFetchAPI from '../../utils/hooks/useFetchAPI';
+import SkTrendLoader from '../../components/Loader/SkTrendLoader';
+
+const useFetchData = (key, url) => {
+    return useQuery({
+      queryKey: key,
+      queryFn: async () => await useFetchAPI(url),
+      suspense: false,
+    });
+  };
 
 const StocksSlider = () => {
+    
+
+      const { data: trendData, isLoading: isTrendLoading, isError: isTrendError, error: trendError } = useFetchData(['Trends Stocks Data'], TREND_STOCKS_API);
+
     return (
         <>
         <Swiper modules={[Autoplay,Thumbs, A11y, Controller]}
@@ -45,24 +61,12 @@ const StocksSlider = () => {
                     }}
                     className="stock-slider"
                 >
-                    <SwiperSlide>
-                        <TrendStocks/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <TrendStocks/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <TrendStocks/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <TrendStocks/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <TrendStocks/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <TrendStocks/>
-                    </SwiperSlide>
+                    
+                    {isTrendLoading
+                    ? Array.from({length:4}).map((_,index)=> <SkTrendLoader key={index} />)
+                    : isTrendError
+                      ? <Text as='h6'>Fetching Trending Stocks Data:{trendError.message}</Text>
+                      : trendData?.map(data => <SwiperSlide key={data.id}><TrendStocks trendData={trendData} /></SwiperSlide>)}
                 </Swiper>
         </>
     )

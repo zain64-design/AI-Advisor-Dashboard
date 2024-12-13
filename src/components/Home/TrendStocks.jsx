@@ -1,26 +1,35 @@
 import React from 'react'
-import { Card} from 'react-bootstrap';
-import Image from '../UI/Image';
+import { Card } from 'react-bootstrap';
 import Text from '../UI/Text';
-import chart from '/images/investments/st1.svg'
 import '../../assets/scss/component/home/trendStocks.scss'
+import AreaChart from '../Charts/AreaChart';
 
-const TrendStocks = () => {
+const TrendStocks = ({head,sub,price,value,trendChartData}) => {
+
+  const getValueClass = (value) => {
+    if (value.startsWith('+')) {
+      return 'text-green';
+    } else if (value.startsWith('-')) {
+      return 'text-red';
+    }
+    return 'text-black';
+  };
+
   return (
     <>
-        <Card className='stock-box'>
+      <Card className='stock-box'>
         <div className="desc">
-            <Text as="h6">NFLX</Text>
-            <Text as="span">Netflix</Text>
+          <Text as="h6">{head}</Text>
+          <Text as="span">{sub}</Text>
         </div>
-        <figure>
-            <Image src={chart} className="chart" alt='chart'/>
-        </figure>
+        <div className="chart-main">
+          <AreaChart trendData={trendChartData} stockName={sub} title={head} />
+        </div>
         <div className="stats-info">
-          <Text as="h6">$88.91</Text>
-          <Text as="span">+ 1.29%</Text>
+          <Text as="h6">{price}</Text>
+          <Text as="span" className={`investment-value ${getValueClass(data.value)}`}>{value}</Text>
         </div>
-    </Card>
+      </Card>
     </>
   )
 }

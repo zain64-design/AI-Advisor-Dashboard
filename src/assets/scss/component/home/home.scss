@@ -50,7 +50,7 @@
                 justify-content: space-between;
                 margin-bottom: 18px;
                 flex-wrap: wrap;
-                gap:10px;
+                gap: 10px 50px;
                 h5 {
                     @include xsHead(600,clamp(18px,1.5vw,22px));
                     font-weight: 600;
@@ -71,6 +71,7 @@
                             
                         }
                         &>svg {
+                            height: 20px;
                             background: $gradient-bg;
                             -webkit-background-clip: text;
                             -webkit-text-fill-color: transparent;
@@ -109,6 +110,31 @@
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@include respond-to('tiny') {
+    .home-area {
+        .stats-box {
+            .head-area {
+                text-align: center;
+                justify-content: center !important;
+            }
+            &.invest-box-area {
+                .add-btn {
+                    font-size: 12px !important;
+                    height: 40px !important;
+                    width: 155px !important;
+                    &>.icon {
+                        height: 30px !important;
+                        width: 30px !important;
+                        &>svg {
+                            height: 15px !important;
+                        }
+                    }
+                } 
             }
         }
     }
