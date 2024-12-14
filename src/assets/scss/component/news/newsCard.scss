@@ -6,35 +6,40 @@
     border-radius: 15px !important;
     padding: 15.24px;
     margin-bottom: 24px;
+
     figure {
         margin-bottom: 0;
+
         .news-img {
             object-fit: cover;
             object-position: center;
-            height: clamp(120px, 14.8vw, 310px);
+            height: clamp(170px, 14.8vw, 310px);
             width: 100%;
             margin: 0 auto;
             display: block;
             border-radius: 12px;
         }
     }
+
     .desc {
         h6 {
             font-family: $font-1;
             color: $black-clr;
             font-size: clamp(14px, 3vw, 18px);
-            line-height: clamp(18px,4vw, 24px);
-            margin-top: clamp(10px,2vw,19px);
+            line-height: clamp(18px, 4vw, 24px);
+            margin-top: clamp(10px, 2vw, 19px);
             margin-bottom: 10px;
             font-weight: 600;
         }
+
         .author-area {
             display: flex;
             align-items: center;
             justify-content: flex-start;
             gap: 8px;
             flex-wrap: wrap;
-            margin-bottom: clamp(10px,2vw,19px);
+            margin-bottom: clamp(10px, 2vw, 19px);
+
             .auth-ico {
                 height: 34px;
                 width: 34px;
@@ -42,6 +47,7 @@
                 object-position: center;
                 border-radius: 50%;
             }
+
             span {
                 font-family: $font-1;
                 font-size: clamp(16px, 2.3vw, 20px);
@@ -54,12 +60,29 @@
         }
 
         .read-btn {
-            @include gradBtn($font-1,600,18px,60px,100%,11.43px);
+            @include gradBtn($font-1, 600, 18px, 60px, 100%, 11.43px);
             gap: 9px;
+
             svg {
                 color: $white-clr;
-                font-size: clamp(16px,2vw,23px);
+                font-size: clamp(16px, 2vw, 23px);
                 transition: all 0.5s ease-in-out;
+            }
+        }
+    }
+}
+
+@include respond-to('tiny') {
+    .news-card {
+        figure {
+            .news-img {
+                object-position: bottom;
+            }
+        }
+        .desc {
+            .read-btn {
+                height: 50px;
+                font-size: 16px;
             }
         }
     }

@@ -11,7 +11,7 @@ const SkInvestLoader = () => {
                     <Skeleton circle={true} height={42} width={42} />
                 </figure>
                 <div className="desc" style={{ display: 'flex' }}>
-                    <Skeleton count={2} height={10} width={100} />
+                    <Skeleton count={2} height={10} width={80} />
                 </div>
             </Card>
         </>

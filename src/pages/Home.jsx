@@ -16,23 +16,24 @@ import SkInvestLoader from '../components/Loader/SkInvestLoader';
 import SkTrendLoader from '../components/Loader/SkTrendLoader';
 
 
-const useFetchData = (key, url) => {
+const useFetchData = (key, url,staleTime) => {
   return useQuery({
     queryKey: key,
-    queryFn: async () => await useFetchAPI(url),
+    queryFn: () => useFetchAPI(url),
     suspense: false,
+    staleTime: staleTime,
   });
 };
 
 const Home = () => {
 
-  const { data: investData, isLoading: isInvestLoading, isError: isInvestError, error: investError, } = useFetchData(['Recommended Investment Data'], INVEST_RECOMMEND_API);
+  const { data: investData, isLoading: isInvestLoading, isError: isInvestError, error: investError, } = useFetchData(['Recommended Investment Data'], INVEST_RECOMMEND_API,1000);
 
-  const { data: recentData, isLoading: isRecentLoading, isError: isRecentError, error: recentError, } = useFetchData(['Recent Investment Data'], RECENT_INVEST_API);
+  const { data: recentData, isLoading: isRecentLoading, isError: isRecentError, error: recentError, } = useFetchData(['Recent Investment Data'], RECENT_INVEST_API,60000);
 
-  const { data: statsData, isLoading: isStatsLoading, isError: isStatsError, error: statError } = useFetchData(['Stats Data'], STATS_API);
+  const { data: statsData, isLoading: isStatsLoading, isError: isStatsError, error: statError } = useFetchData(['Stats Data'], STATS_API,1000);
 
-  const { data: trendData, isLoading: isTrendLoading, isError: isTrendError, error: trendError } = useFetchData(['Trends Stocks Data'], TREND_STOCKS_API);
+  const { data: trendData, isLoading: isTrendLoading, isError: isTrendError, error: trendError } = useFetchData(['Trends Stocks Data'], TREND_STOCKS_API,1000);
   
 
   const transformDataForChart = (data) => {
@@ -77,9 +78,9 @@ const Home = () => {
                     : isTrendError
                       ? <Text as='h6'>Fetching Trending Stocks Data:{trendError.message}</Text>
                       : trendData?.map((data) => {
-                        const {id,head,sub,price,value,trendChartData} = data;
+                        const {id} = data;
                         return (
-                          <TrendStocks key={id}  head={head} sub={sub} price={price} value={value}trendChartData={trendChartData}  />
+                          <TrendStocks key={id} data={data} />
                         )
                       })}
                 </div>

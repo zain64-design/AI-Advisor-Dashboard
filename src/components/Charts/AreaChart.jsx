@@ -1,8 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import ApexCharts from 'react-apexcharts';
 
-const AreaChart = ({trendData,stockName,title}) => {
-  console.log(stockName);
+const AreaChart = ({trendData,stockName,title,trendColor}) => {
   
   const [chartOptions, setChartOptions] = useState({
     chart: {
@@ -25,8 +24,8 @@ const AreaChart = ({trendData,stockName,title}) => {
         breakpoint: 576,
         options: {
           chart: {
-            width: '45%',
-            height: 80
+            width: '25%',
+            height: 90
           }
         }
       },
@@ -34,8 +33,8 @@ const AreaChart = ({trendData,stockName,title}) => {
         breakpoint: 5000,
         options: {
           chart: {
-            width: '50%',
-            height: 90
+            width: '40%',
+            height: 100
           }
         }
       }
@@ -59,7 +58,7 @@ const AreaChart = ({trendData,stockName,title}) => {
         inverseColors: false,
         opacityFrom: 0.5,
         opacityTo: 0,
-        stops: [0, 90, 100]
+        stops: [0, 50, 100]
       },
 
     },
@@ -125,6 +124,7 @@ const AreaChart = ({trendData,stockName,title}) => {
 
       setChartOptions((prevOptions) => ({
         ...prevOptions,
+        colors:[trendColor],
         xaxis: {
           ...prevOptions.xaxis,
           categories: trendData.map((_, index) => title),
@@ -135,7 +135,7 @@ const AreaChart = ({trendData,stockName,title}) => {
         },
       }));
     }
-  }, [trendData]);
+  }, [trendData,trendColor]);
 
   return (
     <>

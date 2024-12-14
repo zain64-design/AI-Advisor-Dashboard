@@ -11,10 +11,10 @@ const SkRecommendLoader = () => {
           <Skeleton circle={true} height={44} width={44} />
         </figure>
         <div className="desc">
-          <Skeleton count={2} height={10} width={80} />
+          <Skeleton count={2} height={10} width={60} />
         </div>
         <div className="stats-info">
-          <Skeleton count={2} height={10} width={50} />
+          <Skeleton count={2} height={10} width={40} />
         </div>
       </Card>
     </>

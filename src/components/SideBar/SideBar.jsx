@@ -12,7 +12,7 @@ const SideBar = () => {
     const [isSidebarOpen,toggleSidebar] = useSideBarToggle(null);
 
     return (
-        <aside className={`side-bar ${isSidebarOpen ? 'sidebar-open' : 'sidebar-close'}`}>
+        <aside className={`side-bar ${isSidebarOpen ? 'sidebar-close' : 'sidebar-open'}`}>
             <button className="side-bar-toggle" onClick={toggleSidebar}>
                 <i className="fa-regular fa-chevron-right arrow-ct"></i>
             </button>

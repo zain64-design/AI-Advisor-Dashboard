@@ -40,7 +40,8 @@ const NavTabs = () => {
   const useFetchData = (key, url) => {
     return useQuery({
       queryKey: ['news', key],
-      queryFn: () => useFetchAPI(url, { category: key })
+      queryFn: () => useFetchAPI(url, { category: key }),
+      staleTime: 60000,
     })
   }
 

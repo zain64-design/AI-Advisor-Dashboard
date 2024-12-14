@@ -2,7 +2,7 @@
 .trending-stock-area {
     .head-area {
         h6 {
-            @include xsHead(700,24px);
+            @include xsHead(700,clamp(18px, 1.5vw, 22px));
             margin-bottom: 19px;
             &.fire-icon {
                 position: relative;

@@ -45,3 +45,29 @@
         } 
     }
 }
+
+@include respond-to('tiny') {
+    .stock-box {
+        padding: 10px;
+        gap: 0;
+        .desc {
+            h6 {
+                font-size: 12px;
+            }
+            span {
+                font-size: 12px;
+            }
+        }
+        .stats-info {
+            h6 {
+                font-size: 12px;
+            }
+            span.investment-value.text-green {
+                font-size: 10px;
+            }  
+            span.investment-value.text-red {
+                font-size: 10px;
+            } 
+        }
+    }
+}

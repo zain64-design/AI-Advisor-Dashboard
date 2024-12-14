@@ -8,8 +8,8 @@
         overflow: hidden;
         &.chart-area {
             .skl-img {
-                width: clamp(200px,20vw,319px);
-                height: clamp(200px,20vw,319px);
+                width: clamp(150px,20vw,319px);
+                height: clamp(150px,20vw,319px);
             }
             padding: 24px 0;
             // .head-area {
@@ -123,8 +123,9 @@
                 justify-content: center !important;
             }
             &.invest-box-area {
+                padding: 17px 10px;
                 .add-btn {
-                    font-size: 12px !important;
+                    font-size: 11px !important;
                     height: 40px !important;
                     width: 155px !important;
                     &>.icon {
@@ -135,6 +136,12 @@
                         }
                     }
                 } 
+            }
+            &.recommend-box-area {
+                padding: 23px 10px;
+            }
+            &.trend-stock-area {
+                padding: 20px 0;
             }
         }
     }

@@ -4,7 +4,7 @@ import Text from '../UI/Text';
 import '../../assets/scss/component/home/trendStocks.scss'
 import AreaChart from '../Charts/AreaChart';
 
-const TrendStocks = ({head,sub,price,value,trendChartData}) => {
+const TrendStocks = ({data}) => {
 
   const getValueClass = (value) => {
     if (value.startsWith('+')) {
@@ -15,6 +15,17 @@ const TrendStocks = ({head,sub,price,value,trendChartData}) => {
     return 'text-black';
   };
 
+    const getTrendColor = (value) => {
+      if (value.startsWith('+')) {
+        return '#4ddeb2';
+      } else if (value.startsWith('-')) {
+        return '#e20029';
+      }
+      return '#000000';
+    };
+
+  const {head,sub,price,value,trendChartData} = data;
+
   return (
     <>
       <Card className='stock-box'>
@@ -23,11 +34,11 @@ const TrendStocks = ({head,sub,price,value,trendChartData}) => {
           <Text as="span">{sub}</Text>
         </div>
         <div className="chart-main">
-          <AreaChart trendData={trendChartData} stockName={sub} title={head} />
+          <AreaChart trendData={trendChartData} stockName={sub} title={head} trendColor={getTrendColor(value)} />
         </div>
         <div className="stats-info">
           <Text as="h6">{price}</Text>
-          <Text as="span" className={`investment-value ${getValueClass(data.value)}`}>{value}</Text>
+          <Text as="span" className={`investment-value ${getValueClass(value)}`}>{value}</Text>
         </div>
       </Card>
     </>
