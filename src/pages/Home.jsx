@@ -14,6 +14,7 @@ import SkChartLoader from '../components/Loader/SkChartLoader';
 import SkRecommendLoader from '../components/Loader/SkRecommendLoader';
 import SkInvestLoader from '../components/Loader/SkInvestLoader';
 import SkTrendLoader from '../components/Loader/SkTrendLoader';
+import useAOS from '../utils/hooks/useAOS';
 
 
 const useFetchData = (key, url,staleTime) => {
@@ -26,6 +27,8 @@ const useFetchData = (key, url,staleTime) => {
 };
 
 const Home = () => {
+
+  useAOS();
 
   const { data: investData, isLoading: isInvestLoading, isError: isInvestError, error: investError, } = useFetchData(['Recommended Investment Data'], INVEST_RECOMMEND_API,1000);
 
@@ -51,7 +54,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="home-area">
+      <div data-aos="fade-in" className="home-area">
         <div className="container-ct">
           <Row>
             <Col xs={12} sm={12} md={12} lg={7} xl={7} xxl={7}>

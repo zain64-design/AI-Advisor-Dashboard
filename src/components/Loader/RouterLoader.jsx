@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../assets/scss/component/loader/routeLoader.scss'
 
 const RouterLoader = () => {
   return (

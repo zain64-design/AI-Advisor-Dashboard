@@ -7,12 +7,14 @@ import '../../assets/scss/layout/header.scss';
 import userProfile from '/images/user.png';
 import useScrollNav from '../../utils/hooks/useScrollNav';
 import { RxHamburgerMenu } from "react-icons/rx";
+import useAOS from '../../utils/hooks/useAOS';
 
 const Header = () => {
     const scrolled = useScrollNav();
+    useAOS();
 
     return (
-        <header className={`${scrolled ? 'sticky' : ''}`}>
+        <header data-aos="fade-in-down" className={`${scrolled ? 'sticky' : ''}`}>
             <Navbar expand="sm">
                 <Container fluid className='px-2 px-sm-5 px-md-5 px-lg-5 px-xl-5 px-xxl-5'>
                     <Navbar.Toggle aria-controls="basic-navbar-nav">
