@@ -66,3 +66,24 @@
         }
     }
 }
+
+@include respond-to('tiny') {
+    .auth-form {
+        padding: 20px 10px;
+        span {
+            margin-top: 10px;
+        }
+        .btn-submit {
+            margin-top: 10px;
+        }
+        .btn-toggle {
+            bottom: 30px;
+        }
+        .inp-area {
+            .ct-inp {
+                height: 45px;
+                padding: 5px 24px;
+            }
+        }
+    }
+}

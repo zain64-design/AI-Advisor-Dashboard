@@ -9,10 +9,10 @@ const Login = () => {
 
   return (
     <>
-      <Container>
+      <Container data-aos="fade-in">
         <Row className='justify-content-end'>
           <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
-            <LoginForm data-aos="fade-in" />
+            <LoginForm />
           </Col>
         </Row>
       </Container>

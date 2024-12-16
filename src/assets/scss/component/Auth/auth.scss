@@ -1,3 +1,5 @@
+@use '../../utils' as *;
+
 .auth-area {
     background: url(/images/backgrounds/login-bg.svg) center/cover no-repeat;
     height: 100vh;
@@ -7,3 +9,10 @@
     justify-content: center;
     overflow: hidden;
 }
+
+// @include respond-to('tiny') {
+//     .auth-area {
+//         overflow: visible;
+//         height: 100%;
+//     } 
+// }
