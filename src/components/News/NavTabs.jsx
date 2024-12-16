@@ -37,15 +37,15 @@ const NavTabs = () => {
     }
   ]
 
-  const useFetchData = (key, url) => {
+  const useFetchData = (key, url,staleTime) => {
     return useQuery({
       queryKey: ['news', key],
       queryFn: () => useFetchAPI(url, { category: key }),
-      staleTime: 60000,
+      staleTime: staleTime,
     })
   }
 
-  const { data: newsData, isLoading, isError, error } = useFetchData(['news data'], NEWS_API)
+  const { data: newsData, isLoading, isError, error } = useFetchData(['news data'], NEWS_API,120000)
 
   const filteredNewsData = newsData ? newsData.filter((item) => {
     return key === 'all' || item.category === key;

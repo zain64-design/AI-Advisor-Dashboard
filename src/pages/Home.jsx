@@ -21,7 +21,6 @@ const useFetchData = (key, url,staleTime) => {
   return useQuery({
     queryKey: key,
     queryFn: () => useFetchAPI(url),
-    suspense: false,
     staleTime: staleTime,
   });
 };
@@ -30,13 +29,13 @@ const Home = () => {
 
   useAOS();
 
-  const { data: investData, isLoading: isInvestLoading, isError: isInvestError, error: investError, } = useFetchData(['Recommended Investment Data'], INVEST_RECOMMEND_API,1000);
+  const { data: investData, isLoading: isInvestLoading, isError: isInvestError, error: investError, } = useFetchData(['Recommended Investment Data'], INVEST_RECOMMEND_API,60000);
 
   const { data: recentData, isLoading: isRecentLoading, isError: isRecentError, error: recentError, } = useFetchData(['Recent Investment Data'], RECENT_INVEST_API,60000);
 
-  const { data: statsData, isLoading: isStatsLoading, isError: isStatsError, error: statError } = useFetchData(['Stats Data'], STATS_API,1000);
+  const { data: statsData, isLoading: isStatsLoading, isError: isStatsError, error: statError } = useFetchData(['Stats Data'], STATS_API,10000);
 
-  const { data: trendData, isLoading: isTrendLoading, isError: isTrendError, error: trendError } = useFetchData(['Trends Stocks Data'], TREND_STOCKS_API,1000);
+  const { data: trendData, isLoading: isTrendLoading, isError: isTrendError, error: trendError } = useFetchData(['Trends Stocks Data'], TREND_STOCKS_API,10000);
   
 
   const transformDataForChart = (data) => {

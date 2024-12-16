@@ -23,7 +23,6 @@ import AuthLayout from './components/Layout/AuthLayout';
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      suspense: true,
       retry: 1,
       refetchOnWindowFocus: false,
     },

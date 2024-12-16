@@ -14,7 +14,7 @@ const Header = () => {
     useAOS();
 
     return (
-        <header data-aos="fade-in-down" className={`${scrolled ? 'sticky' : ''}`}>
+        <header data-aos="fade-down" className={`${scrolled ? 'sticky' : ''}`}>
             <Navbar expand="sm">
                 <Container fluid className='px-2 px-sm-5 px-md-5 px-lg-5 px-xl-5 px-xxl-5'>
                     <Navbar.Toggle aria-controls="basic-navbar-nav">

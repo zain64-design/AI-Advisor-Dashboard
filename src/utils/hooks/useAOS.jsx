@@ -7,7 +7,9 @@ const useAOS = (config = {}) => {
     const defaultConfig = {
       delay: 100,
       duration: 500,
+      once: true,
       easing: 'ease-in-out',
+      disable: 'mobile',
       ...config,
     };
 
