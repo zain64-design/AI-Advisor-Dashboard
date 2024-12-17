@@ -2,13 +2,8 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import InvestBoxScss from '../../assets/scss/component/home/investBox.scss?inline';
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS'
 
 const SkInvestLoader = () => {
-
-    useDynamicCSS(InvestBoxScss);
-
     return (
         <>
             <Card className="invest-box">

@@ -1,10 +1,8 @@
 import React from 'react'
 import Text from '../UI/Text'
-import FormHeadScss from '../../assets/scss/component/Auth/formHead.scss?inline'
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS'
+import '../../assets/scss/component/Auth/formHead.scss'
 
 const FormHead = () => {
-  useDynamicCSS(FormHeadScss);
   return (
     <>
     <div className="form-head">

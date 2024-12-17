@@ -1,10 +1,8 @@
 import React from 'react'
 import { Outlet } from "react-router";
-import AuthLayoutScss from '../../assets/scss/component/Auth/auth.scss?inline'
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
+import '../../assets/scss/component/Auth/auth.scss'
 
 const AuthLayout = () => {
-  useDynamicCSS(AuthLayoutScss);
   return (
     <>
     <section className='auth-area'>

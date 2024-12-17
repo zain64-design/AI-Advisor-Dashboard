@@ -9,8 +9,7 @@ import { TREND_STOCKS_API } from '../../utils/constant';
 import { useQuery } from '@tanstack/react-query';
 import useFetchAPI from '../../utils/hooks/useFetchAPI';
 import SkTrendLoader from '../../components/Loader/SkTrendLoader';
-import StocksSliderScss from '../../assets/scss/component/news/stockSlider.scss?inline'
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
+import '../../assets/scss/component/news/stockSlider.scss'
 
 const useFetchData = (key, url) => {
     return useQuery({
@@ -22,7 +21,6 @@ const useFetchData = (key, url) => {
 
 const StocksSlider = () => {
 
-    useDynamicCSS(StocksSliderScss);
 
     const { data: trendData, isLoading: isTrendLoading, isError: isTrendError, error: trendError } = useFetchData(['Trends Stocks Data'], TREND_STOCKS_API);
 

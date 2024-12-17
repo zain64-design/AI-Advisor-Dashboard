@@ -2,12 +2,9 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import Image from '../UI/Image';
 import Text from '../UI/Text';
-import InvestRecommendBoxScss from '../../assets/scss/component/home/investRecommend.scss?inline';
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
+import '../../assets/scss/component/home/investRecommend.scss';
 
 const InvestRecommendBox = ({ investData }) => {
-
-  useDynamicCSS(InvestRecommendBoxScss);
 
   const getValueClass = (value) => {
     if (value.startsWith('+')) {

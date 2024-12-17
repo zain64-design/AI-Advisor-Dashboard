@@ -2,12 +2,9 @@ import React, { useRef } from 'react'
 import Image from '../UI/Image'
 import UserImage from '/images/user-2.png';
 import Button from 'react-bootstrap/Button';
-import ProfileImageScss from '../../assets/scss/component/setting/profileImage.scss?inline'
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
+import '../../assets/scss/component/setting/profileImage.scss'
 
 const ProfileImage = () => {
-
-    useDynamicCSS(ProfileImageScss);
 
     const fileInputRef = useRef(null);
 

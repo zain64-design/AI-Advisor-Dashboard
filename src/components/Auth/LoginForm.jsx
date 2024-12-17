@@ -6,13 +6,11 @@ import * as Yup from 'yup'
 import { MdError } from "react-icons/md";
 import { Link } from 'react-router';
 import { PiEyeLight,PiEyeSlash } from "react-icons/pi";
-import LoginFormScss from '../../assets/scss/component/Auth/authForm.scss?inline'
+import '../../assets/scss/component/Auth/authForm.scss'
 import FormHead from './FormHead';
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
 
 const LoginForm = () => { 
-  useDynamicCSS(LoginFormScss);
-  
+
   const [isPasswordVisible, setPasswordVisible] =  useState(false);
 
   const passwordToggle = ()=> {

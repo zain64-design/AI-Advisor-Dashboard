@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import DonutChart from '../components/Charts/DonutChart';
-import HomeScss from '../assets/scss/component/home/home.scss?inline';
+import '../assets/scss/component/home/home.scss';
 import Text from '../components/UI/Text'
 import { Link } from 'react-router-dom';
 import { INVEST_RECOMMEND_API, STATS_API, TREND_STOCKS_API, RECENT_INVEST_API } from '../utils/constant';
@@ -15,7 +15,6 @@ import SkRecommendLoader from '../components/Loader/SkRecommendLoader';
 import SkInvestLoader from '../components/Loader/SkInvestLoader';
 import SkTrendLoader from '../components/Loader/SkTrendLoader';
 import useAOS from '../utils/hooks/useAOS';
-import useDynamicCSS from '../utils/hooks/useDynamicCSS';
 
 
 const useFetchData = (key, url,staleTime) => {
@@ -27,8 +26,6 @@ const useFetchData = (key, url,staleTime) => {
 };
 
 const Home = () => {
-
-  useDynamicCSS(HomeScss);
 
   useAOS();
 

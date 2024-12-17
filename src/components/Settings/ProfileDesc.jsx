@@ -1,10 +1,8 @@
 import React from 'react';
 import Text from '../UI/Text';
-import ProfileDescScss from '../../assets/scss/component/setting/profileDesc.scss?inline'
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
+import '../../assets/scss/component/setting/profileDesc.scss'
 
 const ProfileDesc = () => {
-  useDynamicCSS(ProfileDescScss);
   return (
     <>
       <div className="profile-desc">
