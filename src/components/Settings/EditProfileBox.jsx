@@ -4,12 +4,9 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup'
 import { MdError } from "react-icons/md";
 import ProfileImage from './ProfileImage'
-import EditProfileBoxScss from '../../assets/scss/component/setting/editProfileBox.scss?inline'
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
+import '../../assets/scss/component/setting/editProfileBox.scss'
 
 const EditProfileBox = () => {
-
-  useDynamicCSS(EditProfileBoxScss);
 
   const initialValues = {
     name: '',

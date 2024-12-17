@@ -1,13 +1,11 @@
 import React from 'react'
 import Text from '../UI/Text'
 import StocksSlider from './StocksSlider'
-import TrendingStockScss from '../../assets/scss/component/news/trendingStock.scss?inline'
+import '../../assets/scss/component/news/trendingStock.scss'
 import NavTabs from './NavTabs'
 import Paginations from './Paginations'
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS'
 
 const TrendingStocks = () => {
-  useDynamicCSS(TrendingStockScss);
   return (
     <>
     <div className="trending-stock-area">

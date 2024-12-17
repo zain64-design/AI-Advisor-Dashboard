@@ -1,13 +1,10 @@
 import React from 'react'
 import { Card } from 'react-bootstrap';
 import Text from '../UI/Text';
-import TrendStockScss from '../../assets/scss/component/home/trendStocks.scss?inline'
+import '../../assets/scss/component/home/trendStocks.scss'
 import AreaChart from '../Charts/AreaChart';
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
 
 const TrendStocks = ({data}) => {
-
-  useDynamicCSS(TrendStockScss);
 
   const getValueClass = (value) => {
     if (value.startsWith('+')) {

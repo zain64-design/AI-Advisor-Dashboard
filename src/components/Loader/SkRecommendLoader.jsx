@@ -2,11 +2,8 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import InvestRecommendBoxScss from '../../assets/scss/component/home/investRecommend.scss?inline';
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
 
 const SkRecommendLoader = () => {
-  useDynamicCSS(InvestRecommendBoxScss);
   return (
     <>
       <Card className="invest-box">

@@ -2,11 +2,9 @@ import React from 'react'
 import chatLogo from '/images/ai-bot.svg';
 import Image from '../UI/Image'
 import Text from '../UI/Text'
-import ChatLogoScss from '../../assets/scss/component/AIPartner/chatLogo.scss?inline'
-import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
+import '../../assets/scss/component/AIPartner/chatLogo.scss'
 
 const ChatLogo = () => {
-    useDynamicCSS(ChatLogoScss);
     return (
         <>
             <div className="top-bar">
