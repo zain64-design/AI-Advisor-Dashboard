@@ -3,13 +3,16 @@ import { NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import '../../assets/scss/layout/header.scss';
+import HeaderScss from '../../assets/scss/layout/header.scss?inline';
 import userProfile from '/images/user.png';
 import useScrollNav from '../../utils/hooks/useScrollNav';
 import { RxHamburgerMenu } from "react-icons/rx";
 import useAOS from '../../utils/hooks/useAOS';
+import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
 
 const Header = () => {
+    useDynamicCSS(HeaderScss);
+
     const scrolled = useScrollNav();
     useAOS();
 

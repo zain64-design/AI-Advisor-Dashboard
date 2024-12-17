@@ -1,8 +1,10 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
-import '../../assets/scss/component/news/searchBar.scss'
+import SearchBarScss from '../../assets/scss/component/news/searchBar.scss?inline'
+import useDynamicCSS from '../../utils/hooks/useDynamicCSS'
 
 const SearchBar = () => {
+    useDynamicCSS(SearchBarScss);
     return (
         <>
             <Form className='search-bar'>

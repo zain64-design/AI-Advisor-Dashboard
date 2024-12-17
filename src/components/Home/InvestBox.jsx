@@ -2,9 +2,12 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 import Image from '../UI/Image';
 import Text from '../UI/Text';
-import '../../assets/scss/component/home/investBox.scss';
+import InvestBoxScss from '../../assets/scss/component/home/investBox.scss?inline';
+import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
 
 const InvestBox = ({recentData}) => {
+
+  useDynamicCSS(InvestBoxScss);
 
   return (
     <>

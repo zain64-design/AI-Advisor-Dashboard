@@ -4,9 +4,11 @@ import ProfileImage from '../Settings/ProfileImage'
 import ProfileDesc from '../Settings/ProfileDesc'
 import SettingsLinks from '../Settings/SettingsLinks'
 import { Link } from 'react-router'
-import '../../assets/scss/component/setting/settingBox.scss'
+import SettingBoxScss from '../../assets/scss/component/setting/settingBox.scss?inline'
+import useDynamicCSS from '../../utils/hooks/useDynamicCSS'
 
 const SettingBox = () => {
+    useDynamicCSS(SettingBoxScss);
     return (
         <>
             <Card className="setting-box">

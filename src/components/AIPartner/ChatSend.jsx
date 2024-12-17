@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import '../../assets/scss/component/AIPartner/chatSend.scss'
+import ChatSendScss from '../../assets/scss/component/AIPartner/chatSend.scss?inline'
+import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
 
 const ChatSend = () => {
+    useDynamicCSS(ChatSendScss);
     return (
         <>
             <div className="send-area">

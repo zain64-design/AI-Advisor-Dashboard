@@ -1,9 +1,11 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
-import '../../assets/scss/component/AIPartner/chatQuestions.scss'
+import ChatQuestionsScss from '../../assets/scss/component/AIPartner/chatQuestions.scss?inline'
+import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
 
 const ChatQuestions = () => {
-
+  useDynamicCSS(ChatQuestionsScss);
+  
     const questions = [
         "What stocks to buy today?",
         "What is dollar-cost averaging, and how does it work?",

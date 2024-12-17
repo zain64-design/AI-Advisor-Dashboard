@@ -1,15 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router';
 import Logo from '/images/logo-header.png';
-import Logosm from '/images/sm-logo.png';
 import Image from '../UI/Image';
 import useSideBarToggle from '../../utils/hooks/useSideBarToggle';
-import '../../assets/scss/layout/sidebar.scss'
+import SideBarScss from '../../assets/scss/layout/sidebar.scss?inline'
 import Links from './Links';
 import useAOS from '../../utils/hooks/useAOS';
+import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
+import { FaChevronRight } from "react-icons/fa6";
 
 const SideBar = () => {
-
+    useDynamicCSS(SideBarScss);
     useAOS();
 
     const [isSidebarOpen,toggleSidebar] = useSideBarToggle(null);
@@ -17,7 +18,7 @@ const SideBar = () => {
     return (
         <aside data-aos="fade-right" className={`side-bar ${isSidebarOpen ? 'sidebar-close' : 'sidebar-open'}`}>
             <button className="side-bar-toggle" onClick={toggleSidebar}>
-                <i className="fa-regular fa-chevron-right arrow-ct"></i>
+            <FaChevronRight />
             </button>
             <div className="side-top">
                 <div className="side-logo">

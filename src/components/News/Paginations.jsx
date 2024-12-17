@@ -1,9 +1,11 @@
 import React from 'react';
 import {Pagination,Col} from 'react-bootstrap';
 import { LuChevronRight } from "react-icons/lu";
-import '../../assets/scss/component/news/pagination.scss'
+import PaginationScss from '../../assets/scss/component/news/pagination.scss?inline'
+import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
 
 const Paginations = () => {
+  useDynamicCSS(PaginationScss);
   return (
     <>
     <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
