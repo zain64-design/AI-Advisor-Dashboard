@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import '../../assets/scss/component/news/navTabs.scss'
+import NavTabsScss from '../../assets/scss/component/news/navTabs.scss?inline'
 import { Row } from 'react-bootstrap';
 import NewsCard from './NewsCard';
 import Text from '../UI/Text'
@@ -9,8 +9,11 @@ import { useQuery } from '@tanstack/react-query';
 import useFetchAPI from '../../utils/hooks/useFetchAPI';
 import { NEWS_API } from '../../utils/constant';
 import NewsLoader from '../Loader/NewsLoader';
+import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
 
 const NavTabs = () => {
+
+  useDynamicCSS(NavTabsScss);
 
   const [key, setKey] = useState('all');
 

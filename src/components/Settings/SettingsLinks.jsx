@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router';
-import '../../assets/scss/component/setting/settingsLinks.scss'
+import SettingsLinkScss from '../../assets/scss/component/setting/settingsLinks.scss?inline'
+import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
 
 const SettingsLinks = () => {
-
+    useDynamicCSS(SettingsLinkScss);
     const settingLinks = [
         {
             title: 'Edit Profile',

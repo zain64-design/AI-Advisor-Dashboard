@@ -5,9 +5,13 @@ import Image from '../UI/Image'
 import { Col,Card } from 'react-bootstrap';
 import { HiArrowUpRight } from "react-icons/hi2";
 import Author from './Author'
-import '../../assets/scss/component/news/newsCard.scss';
+import NewsCardScss from '../../assets/scss/component/news/newsCard.scss?inline';
+import useDynamicCSS from '../../utils/hooks/useDynamicCSS';
 
 const NewsCard = ({filteredNewsData}) => {
+
+    useDynamicCSS(NewsCardScss);
+
     return (
         <>
         {filteredNewsData?.map((data)=> {

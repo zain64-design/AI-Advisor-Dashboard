@@ -12,12 +12,6 @@
                 height: clamp(150px,20vw,319px);
             }
             padding: 24px 0;
-            // .head-area {
-            //     margin-bottom: 18px;
-            //     h5 {
-            //         @include xsHead(600,clamp(18px,1.5vw,22px));
-            //     }
-            // }
         }
         &:has(.ct-chart) {
             height: 93%;
