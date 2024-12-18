@@ -8,6 +8,19 @@ const DonutChart = ({series,labels}) => {
       type: 'donut',
     },
     labels: labels,
+    tooltip: {
+      enabled: true,
+      style: {
+        fontSize: '12px',
+        fontFamily: 'Inter, sans-serif',
+      },
+      y: {
+        formatter: (value) => {
+          return `${value.toFixed()}%`;
+        }
+      }
+  
+    },
     responsive: [
       {
         breakpoint: 576,
@@ -149,7 +162,11 @@ const DonutChart = ({series,labels}) => {
               fontFamily: 'Inter, sans-serif',
               fontWeight: '400',
               color: '#67677A',
-              label: 'Portfolio Value', 
+              label: 'Portfolio Value',
+              formatter: (w) => {
+                const totalValue = w.globals.seriesTotals.reduce((a, b) => a + b, 0);
+                return `$${totalValue.toFixed()}`;
+              }
              },
              name: {
               color: '#67677A',
@@ -159,6 +176,7 @@ const DonutChart = ({series,labels}) => {
               fontFamily: 'Inter, sans-serif',
               fontWeight: '700',
               color: '#000',
+              formatter: (val) => `$${val}`,
             },
           }
         }

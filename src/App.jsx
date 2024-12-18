@@ -36,7 +36,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route index path="/home" element={<Home />} />
+            <Route index path="/dashboard" element={<Home />} />
             <Route path="/news" element={<News />} />
             <Route path="/investment-partner" element={<InvestmentPartner />} />
             <Route path="/recommendation" element={<Recommend />} />

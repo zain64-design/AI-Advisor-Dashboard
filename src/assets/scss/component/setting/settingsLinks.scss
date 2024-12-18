@@ -7,11 +7,12 @@
             margin-bottom: 35px;
         }
         a {
+            padding: 0 0 0 45px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            gap: 18px;
+            gap: 5px;
             transition: all 0.2s ease-in-out;
             @include proLink();
             &::after {
@@ -38,6 +39,8 @@
                 }
             }
             .icon {
+                position: absolute;
+                left: 0;
                 &>svg {
                     height: 30px;
                     path {
@@ -60,6 +63,7 @@
             }
             a {
                 font-size: 14px;
+                padding: 0 0 0 30px;
                 &::after {
                     height: 10px;
                 }

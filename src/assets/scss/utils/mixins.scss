@@ -96,8 +96,9 @@
     font-family: $font-2;
     font-weight: 400;
     font-size: 16px;
-    padding: 19px 24px;
+    padding: 0 24px;
     letter-spacing: 0.128px;
+    align-content: center;
 }
 
 @mixin questionInp() {

@@ -7,7 +7,15 @@
     }
     p {
         text-align: center;
-        margin-top: 16px;
+        margin: 16px 0 38px;
         @include formText(400,16px,-0.04px);
     }
+}
+
+@include respond-to('tiny') {
+    .form-head {
+        p {
+            margin: 15px 0 15px;
+        }
+    } 
 }

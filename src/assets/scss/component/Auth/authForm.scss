@@ -1,5 +1,13 @@
 @use '../../utils' as *;
 
+
+.ct-flex-row {
+    .ct-flex-col {
+        max-width: 100%;
+        width: 578px;
+    }
+}
+
 .auth-form {
     border-radius: 24px !important;
     border: none !important;
@@ -53,15 +61,22 @@
             @include formInpAuth();
             &::-webkit-input-placeholder {
                 color: $black-clr;
+                font-size: 16px;
             }
             &::-moz-placeholder {
                 color: $black-clr;
+                font-size: 16px;
             }
             &:-ms-input-placeholder {
                 color: $black-clr;
+                font-size: 16px;
             }
             &:-moz-placeholder {
                 color: $black-clr;
+                font-size: 16px;
+            }
+            &[type='password'] {
+                font-family: $font-4;
             }
         }
     }
