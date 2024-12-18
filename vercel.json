@@ -1,0 +1,56 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/news",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/investment-partner",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/recommendation",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/settings",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/settings/edit-profile",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/settings/change-password",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/settings/investment-questionnaire",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/settings/privacy-policy",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/settings/faq",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/settings/terms-conditions",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
