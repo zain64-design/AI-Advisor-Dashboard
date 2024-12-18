@@ -36,7 +36,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route index path="/" element={<Home />} />
+            <Route index path="/home" element={<Home />} />
             <Route path="/news" element={<News />} />
             <Route path="/investment-partner" element={<InvestmentPartner />} />
             <Route path="/recommendation" element={<Recommend />} />
@@ -51,7 +51,7 @@ function App() {
             </Route>
           </Route>
           <Route element={<AuthLayout />}>
-            <Route path="login" element={<Login />} />
+            <Route path="/" element={<Login />} />
           </Route>
         </Routes>
       </BrowserRouter>

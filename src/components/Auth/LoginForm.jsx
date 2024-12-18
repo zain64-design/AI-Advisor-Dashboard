@@ -4,7 +4,7 @@ import Text from '../UI/Text'
 import { useFormik } from 'formik';
 import * as Yup from 'yup'
 import { MdError } from "react-icons/md";
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { PiEyeLight,PiEyeSlash } from "react-icons/pi";
 import '../../assets/scss/component/Auth/authForm.scss'
 import FormHead from './FormHead';
@@ -68,9 +68,10 @@ const LoginForm = () => {
               <Text as='span'>Forgot your password? <Link>Reset Now</Link> </Text>
             </Form.Group>
             <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
-              <Button type='submit' variant='submit'>
+              {/* <Button type='submit' variant='submit'>
                 sign in
-              </Button>
+              </Button> */}
+              <NavLink className='btn-submit' to='/home'>sign in</NavLink>
             </Form.Group>
             <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
               <Text as='span'>Don’t have an account? <Link>Sign Up</Link> </Text>

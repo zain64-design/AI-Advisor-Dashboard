@@ -22,7 +22,7 @@ const SideBar = () => {
             <div className="side-top">
                 <div className="side-logo">
                     {/* NavLink for the logo */}
-                    <NavLink to="/">
+                    <NavLink to="/home">
                         <Image src={Logo} className="thumb-xl" alt="logo" />
                         {/* <Image src={Logosm} className="thumb-sm" alt="logo" /> */}
                     </NavLink>
