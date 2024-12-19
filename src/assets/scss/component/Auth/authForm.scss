@@ -8,14 +8,25 @@
     }
 }
 
+.ct-offset {
+    margin-right: 6%;
+}
+
 .auth-form {
     border-radius: 24px !important;
     border: none !important;
-    background-color: transparent !important;
+    // background-color: transparent !important;
+    // background: linear-gradient(150deg, #ffffff00 13.42%, #000000e0 110.97%) !important;
+    background: linear-gradient(150deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(0,0,0,1) 100%) !important;
     background-blend-mode: overlay;
     backdrop-filter: blur(4px);
     padding: 61px 44px 39px;
-    box-shadow: -0.5px -0.5px 0px #ffffff, 1px 1px 0px #4e4e4e;
+    // border-width: 1px !important;
+    // border-style: solid !important;
+    // border-color: transparent !important; 
+    // border-image-source: linear-gradient(150deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) !important;
+    // border-image-slice: 1 !important;
+    box-shadow: -0.5px -0.5px 0px #ffffff, 1px 1px 0px #ffffff00;
     span {
         display: block;
         text-align: center;

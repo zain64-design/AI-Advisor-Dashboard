@@ -15,7 +15,7 @@ const SettingBox = () => {
                     <ProfileDesc />
                 </div>
                 <SettingsLinks />
-                <Link to="/login" className='logout-btn'>logout</Link>
+                <Link to="/" className='logout-btn'>logout</Link>
             </Card>
         </>
     )

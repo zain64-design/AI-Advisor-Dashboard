@@ -130,7 +130,7 @@ const Home = () => {
                   {isInvestLoading
                     ? Array.from({ length: 7 }).map((_, index) => <SkRecommendLoader key={index} />)
                     : isInvestError
-                      ? <Text as='h1'>Fetching Recommend Investment Data:{investError.message} </Text>
+                      ? <Text as='h6'>Fetching Recommend Investment Data:{investError.message} </Text>
                       : <InvestRecommendBox investData={investData} />
                   }
                 </div>
