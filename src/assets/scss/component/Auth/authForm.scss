@@ -124,4 +124,17 @@
             }
         }
     }
+    .ct-offset {
+        margin-right: 0;
+    }
+}
+@include respond-to('sm') {
+    .ct-offset {
+        margin-right: 0;
+    }
+}
+@include respond-to('md') {
+    .ct-offset {
+        margin-right: 0;
+    }
 }
