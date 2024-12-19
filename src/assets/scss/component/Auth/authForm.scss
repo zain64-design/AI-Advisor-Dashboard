@@ -88,6 +88,18 @@
             }
             &[type='password'] {
                 font-family: $font-4;
+                &::-webkit-input-placeholder {
+                    font-family: $font-2;
+                }
+                &::-moz-placeholder {
+                    font-family: $font-2;
+                }
+                &:-ms-input-placeholder {
+                    font-family: $font-2;
+                }
+                &:-moz-placeholder {
+                    font-family: $font-2;
+                }
             }
         }
     }
