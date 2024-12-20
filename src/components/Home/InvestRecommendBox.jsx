@@ -1,4 +1,5 @@
 import React from 'react'
+import useGetValueClass from '../../utils/hooks/useGetValueClass';
 import { Card } from 'react-bootstrap'
 import Image from '../UI/Image';
 import Text from '../UI/Text';
@@ -6,14 +7,7 @@ import '../../assets/scss/component/home/investRecommend.scss';
 
 const InvestRecommendBox = ({ investData }) => {
 
-  const getValueClass = (value) => {
-    if (value.startsWith('+')) {
-      return 'text-green';
-    } else if (value.startsWith('-')) {
-      return 'text-red';
-    }
-    return 'text-black';
-  };
+  const {getValueClass} =  useGetValueClass();
 
   return (
     <>

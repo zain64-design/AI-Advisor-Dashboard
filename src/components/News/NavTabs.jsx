@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import '../../assets/scss/component/news/navTabs.scss'
-import { Row } from 'react-bootstrap';
+import { Row,Col } from 'react-bootstrap';
 import NewsCard from './NewsCard';
 import Text from '../UI/Text'
 import { useQuery } from '@tanstack/react-query';
@@ -64,12 +64,16 @@ const NavTabs = () => {
           <Tab eventKey={eventKey} title={title} key={index}>
             <Row>
               {isLoading
-              ? Array.from({ length: 3 }).map((_,index) => (
-                <NewsLoader key={index}/>
+              ? Array.from({ length: 6 }).map((_,index) => (
+                <Col className='mb-4' xs= {12} sm={6} md={6} lg={4} xl={4} xxl={4} key={index}>
+                  <NewsLoader/>
+                </Col>
               ))
               : isError
               ? <Text as='h1'>Error: {error.message}</Text>
-              : <NewsCard filteredNewsData={filteredNewsData} />}
+              : filteredNewsData?.map(value=><Col className='mb-4' xs={12} sm={6} md={6} lg={4} xl={4} xxl={4} key={value.id}>
+                <NewsCard newsData={value} />
+                </Col>)}
             </Row>
           </Tab>
         ))}

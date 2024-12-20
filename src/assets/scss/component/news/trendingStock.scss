@@ -1,9 +1,12 @@
 @use '../../utils' as *;
 .trending-stock-area {
     .head-area {
+        &.ct-m {
+            margin-top: 40px
+        }
         h6 {
-            @include xsHead(700,clamp(18px, 1.5vw, 22px));
-            margin-bottom: 19px;
+            @include xsHead(700,clamp(18px, 1.5vw, 24px));
+            margin-bottom: 24px;
             &.fire-icon {
                 position: relative;
                 gap: 16px;

@@ -8,30 +8,84 @@
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
+        justify-content: space-between;
         gap: 16px;
 
         &:not(:last-child) {
             margin-bottom: 24px;
         }
 
-        figure {
-            margin: 0;
-
-            .logo {
-                height: 42px;
-                width: 42px;
-                object-fit: contain;
-                object-position: center;
+        .info-area {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 16px;
+            figure {
+                margin: 0;
+    
+                .logo {
+                    height: 42px;
+                    width: 42px;
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+    
+            .desc {
+                h6 {
+                    @include boxHead(600, $black-clr, capitalize);
+                }
+    
+                span.date {
+                    @include boxSpan($grey-clr-2, 16px);
+                }
             }
         }
-
-        .desc {
+        .stats-area {
+            @include flex(center,center,row,wrap,5px);
+            .chart-main {
+                margin: 0;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                position: relative;
+                .area-chart {
+                    min-height: 50px !important;
+                }
+            }
+            small{
+                &.investment-value {
+                    text-align: right;
+                    display: block;
+                    &.text-green {
+                        @include boxSpan($pr-green-clr,16px);
+                    }
+                    &.text-red {
+                        @include boxSpan($pr-red-clr,16px);
+                    } 
+                }
+            }
+        }
+        .actions-area {
+            @include flex(center,center,row,wrap,5px 15px);
             h6 {
                 @include boxHead(600, $black-clr, capitalize);
             }
-
-            span.date {
-                @include boxSpan($grey-clr-2, 16px);
+            .btn-delete {
+                @include actionBtn($pr-red-clr-2,1px solid $pr-red-clr-2);
+                &>svg {
+                    height: 14px;
+                    width: 13px;
+                }
+                &:hover {
+                    background: $white-bg;
+                    &>svg {
+                        path {
+                            fill: $pr-red-clr-2;
+                        }
+                    }
+                }
             }
         }
     }

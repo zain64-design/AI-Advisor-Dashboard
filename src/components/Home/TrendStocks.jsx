@@ -3,27 +3,12 @@ import { Card } from 'react-bootstrap';
 import Text from '../UI/Text';
 import '../../assets/scss/component/home/trendStocks.scss'
 import AreaChart from '../Charts/AreaChart';
+import useGetValueClass from '../../utils/hooks/useGetValueClass';
+import useGetTrendColor from '../../utils/hooks/useGetTrendColor';
 
 const TrendStocks = ({data}) => {
-
-  const getValueClass = (value) => {
-    if (value.startsWith('+')) {
-      return 'text-green';
-    } else if (value.startsWith('-')) {
-      return 'text-red';
-    }
-    return 'text-black';
-  };
-
-    const getTrendColor = (value) => {
-      if (value.startsWith('+')) {
-        return '#4ddeb2';
-      } else if (value.startsWith('-')) {
-        return '#e20029';
-      }
-      return '#000000';
-    };
-
+  const {getValueClass} = useGetValueClass();
+  const {getTrendColor} = useGetTrendColor();
   const {head,sub,price,value,trendChartData} = data;
 
   return (
@@ -34,7 +19,7 @@ const TrendStocks = ({data}) => {
           <Text as="span">{sub}</Text>
         </div>
         <div className="chart-main">
-          <AreaChart trendData={trendChartData} stockName={sub} title={head} trendColor={getTrendColor(value)} />
+          <AreaChart chartData={trendChartData} stockName={sub} title={head} chartColor={getTrendColor(value)} />
         </div>
         <div className="stats-info">
           <Text as="h6">{price}</Text>

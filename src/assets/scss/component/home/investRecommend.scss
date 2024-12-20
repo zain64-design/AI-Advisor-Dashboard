@@ -33,16 +33,18 @@
             h6 {
                 @include boxHead(600,$black-clr-6,unset);
             }
-            small.investment-value {
-                text-align: right;
-                display: block;
+            small{
+                &.investment-value {
+                    text-align: right;
+                    display: block;
+                    &.text-green {
+                        @include boxSpan($pr-green-clr,16px);
+                    }
+                    &.text-red {
+                        @include boxSpan($pr-red-clr,16px);
+                    } 
+                }
             }
-            small.investment-value.text-green {
-                @include boxSpan($pr-green-clr,16px);
-            }  
-            small.investment-value.text-red {
-                @include boxSpan($pr-red-clr,16px);
-            }  
         }
     }
 }

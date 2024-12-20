@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import ApexCharts from 'react-apexcharts';
 
-const AreaChart = ({trendData,stockName,title,trendColor}) => {
+const AreaChart = ({chartData,stockName,title,chartColor}) => {
   
   const [chartOptions, setChartOptions] = useState({
     chart: {
@@ -114,28 +114,28 @@ const AreaChart = ({trendData,stockName,title,trendColor}) => {
   ]);
 
   useEffect(() => {
-    if (trendData && trendData.length > 0) {
+    if (chartData && chartData.length > 0) {
       setChartSeries([
         {
           name: stockName,
-          data: trendData,
+          data: chartData,
         },
       ]);
 
       setChartOptions((prevOptions) => ({
         ...prevOptions,
-        colors:[trendColor],
+        colors:[chartColor],
         xaxis: {
           ...prevOptions.xaxis,
-          categories: trendData.map((_, index) => title),
+          categories: chartData.map((_, index) => title),
         },
         yaxis: {
           ...prevOptions.yaxis,
-          max: Math.max(...trendData)
+          max: Math.max(...chartData)
         },
       }));
     }
-  }, [trendData,trendColor]);
+  }, [chartData,chartColor]);
 
   return (
     <>

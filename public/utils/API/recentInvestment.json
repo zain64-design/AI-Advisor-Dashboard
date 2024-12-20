@@ -3,30 +3,45 @@
         "id": 1,
         "image": "/images/investments/i1.svg",
         "head": "Bitcoin",
-        "date": "09 Sep"
+        "date": "09 Sep",
+        "price": "$20,000",
+        "value": "+3.25%",
+        "recentChartData": [10, 20.15, 20, 10.15, 30, 40.15, 40, 30.15, 100, 60.15, 60, 50.15, 70, 80.15, 80, 70.15, 90, 90.15, 100 ]
     },
     {
         "id": 2,
         "image": "/images/investments/i2.svg",
         "head": "AirBnb",
-        "date": "08 Sep"
+        "date": "08 Sep",
+        "price": "$12,000",
+        "value": "-2.25%",
+        "recentChartData": [60.15, 60, 50.15, 70, 80.15, 80, 70.15, 90, 30.15, 50, 10, 20.15, 20, 10.15, 30, 40.15, 40, 30.15, 100]
     },
     {
         "id": 3,
         "image": "/images/investments/i3.svg",
         "head": "Apple",
-        "date": "04 Sep"
+        "date": "04 Sep",
+        "price": "$12,000",
+        "value": "+1.29%",
+        "recentChartData": [10, 20.15, 20, 10.15, 30, 40.15, 40, 30.15, 100, 60.15, 60, 50.15, 70, 80.15, 80, 70.15, 90, 90.15, 100 ]
     },
     {
         "id": 4,
         "image": "/images/investments/i4.svg",
         "head": "Netflix",
-        "date": "01 Sep"
+        "date": "01 Sep",
+        "price": "$12,000",
+        "value": "+1.29%",
+        "recentChartData": [60.15, 60, 50.15, 70, 80.15, 80, 70.15, 90, 30.15, 50, 10, 20.15, 20, 10.15, 30, 40.15, 40, 30.15, 100]
     },
     {
         "id": 5,
-        "image": "/images/investments/i4.svg",
-        "head": "Netflix",
-        "date": "01 Sep"
+        "image": "/images/investments/i5.svg",
+        "head": "Chevron",
+        "date": "01 Sep",
+        "price": "$14,000",
+        "value": "-0.26%",
+        "recentChartData": [10, 20.15, 20, 10.15, 30, 40.15, 40, 30.15, 100, 60.15, 60, 50.15, 70, 80.15, 80, 70.15, 90, 90.15, 100 ]
     }
 ]

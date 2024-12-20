@@ -1,0 +1,46 @@
+@use '../../utils' as *;
+
+.news-slider {
+    .slider-control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 18px 0 0 0;
+        .swiper-pagination {
+            position: relative;
+            width: auto;
+            .swiper-pagination-bullet {
+                height: 12px;
+                width: 12px;
+                background: $grey-clr-5;
+                border: none;
+                opacity: 1;
+                font-size: 0;
+                &.swiper-pagination-bullet-active {
+                    background: $gradient-bg-2;
+                }
+            }
+        }
+        .swiper-button-prev,.swiper-button-next {
+            position: relative;
+            top: auto;
+            left: auto;
+            right: auto;
+            color: $black-clr;
+            margin-top: 0;
+            height: 32px;
+            width: 32px;
+            border: 2px solid transparent;
+            transition: all 0.2s ease-in-out;
+            z-index: 10;
+            svg {
+                height: 20px;
+                width: 12px;
+            }
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

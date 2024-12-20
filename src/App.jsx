@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router";
 import { QueryClient,QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import Layout from './components/Layout/Layout';
 import Login from './pages/Login';
 // const Home = lazy(() => import('./pages/Home'));
@@ -55,6 +56,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </>
   )

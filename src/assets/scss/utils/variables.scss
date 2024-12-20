@@ -14,6 +14,7 @@ $grey-clr: #747681;
 $grey-clr-2: #67677A;
 $grey-clr-3: #64748B;
 $grey-clr-4: #818898;
+$grey-clr-5: #D9D9D9;
 
 $green-clr: #1B5682;
 $green-clr-2: #3B90AA;
@@ -27,8 +28,11 @@ $grad-clr-2: #1B5682;
 $pr-green-clr: #16A34A;
 
 $pr-red-clr: #E20029;
+$pr-red-clr-2:#FF2C20;
 
 $gradient-bg: linear-gradient(91deg, $grad-clr-1 0.68%, $grad-clr-2 109.25%);
+
+$gradient-bg-2: linear-gradient(180deg, $grad-clr-1 0.68%, $grad-clr-2 109.25%);
 
 
 $prim-bg: #B2F1F8;
