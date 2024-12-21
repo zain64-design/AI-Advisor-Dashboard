@@ -18,6 +18,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import FAQ from './pages/FAQ';
 import TermsConditions from './pages/TermsConditions';
 import AuthLayout from './components/Layout/AuthLayout';
+import AddInvestment from './pages/AddInvestment';
 
 
 const queryClient = new QueryClient({
@@ -41,6 +42,7 @@ function App() {
             <Route path="/news" element={<News />} />
             <Route path="/investment-partner" element={<InvestmentPartner />} />
             <Route path="/recommendation" element={<Recommend />} />
+            <Route path="/add-investment" element={<AddInvestment />} />
             <Route path="/settings">
               <Route index element={<Settings />} />
               <Route path="edit-profile" element={<EditProfile />} />

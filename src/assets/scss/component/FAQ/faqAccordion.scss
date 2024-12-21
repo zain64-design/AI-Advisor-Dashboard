@@ -1,0 +1,64 @@
+@use '../../utils' as *;
+
+.ct-accord {
+    margin-top: 32px;
+    .accordion-item {
+        border: 1px solid $grey-clr-5 !important;
+        border-radius: 10px !important;
+        margin-bottom: 16px;
+        &:first-child {
+            border-top: 1px solid $grey-clr-5 !important;
+        }
+        &:last-child {
+            border-top: 1px solid $grey-clr-5 !important;
+        }
+        .accordion-header {
+            .accordion-button {
+                font-size: 18px;
+                font-family: $font-1;
+                font-weight: 400;
+                color: $black-clr-4;
+                background-color: transparent;
+                transition: all 0.2s ease-in-out;
+                overflow: hidden;
+                padding: 21px 12px;
+                .ct-icon {
+                    transform: rotate(0);
+                    margin: 0 0 0 auto;
+                    transition: all 0.2s ease-in-out;
+                    height: 24px;
+                    width: 24px;
+                    border-radius: 50%;
+                    background: $white-bg;
+                    @include ctflex(center,center);
+                    svg {
+                        transition: all 0.2s ease-in-out;
+                        color: $black-clr;
+                    }
+                }
+                &:not(.collapsed) {
+                    background-color: transparent;
+                    box-shadow: none;
+                    color: $black-clr-4;
+                    padding: 12px 12px;
+                    &>.ct-icon {
+                        transform: rotate(180deg);
+                        >svg {
+                            
+                        }
+                    }
+                }
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        .accordion-body {
+            padding: 0 58px 30px 12px;
+            p {
+                @include ctPara(18px,$grey-clr-3);
+                line-height: 24px;
+            }
+        }
+    }
+}

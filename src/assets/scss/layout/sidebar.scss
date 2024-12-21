@@ -13,13 +13,17 @@
     max-width: 312px;
     min-width: 312px;
     &.sidebar-open {
-
+        .side-bar-toggle {
+            &>svg {
+                transform: rotate(180deg);
+            }
+        }
     }
     &.sidebar-close {
         max-width: 58px;
         min-width: 58px;
         .side-bar-toggle {
-            .arrow-ct {
+            &>svg {
                 transform: rotate(0);
             }
         }

@@ -1,0 +1,19 @@
+@use '../../utils' as *;
+
+.settings-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    a {
+        svg {
+            font-size: 25px;
+            color: $black-clr;
+        }
+    }
+    h6 {
+        @include ctHead(700,24px,$black-clr,capitalize)
+    }
+}

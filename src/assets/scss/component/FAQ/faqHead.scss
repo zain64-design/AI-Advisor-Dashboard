@@ -1,0 +1,12 @@
+@use '../../utils' as *;
+
+.faq-head {
+    margin-top: 55px;
+    h5 {
+        @include ctHead(700,24px,$black-clr-4,capitalize);
+        margin-bottom: 16px;
+    }
+    p {
+        @include ctPara(18px,$black-clr-7)
+    }
+}

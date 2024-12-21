@@ -18,6 +18,13 @@
     text-transform: $text-transform;
 }
 
+@mixin ctPara($font-size,$color) {
+    font-family: $font-1;
+    font-weight: 400;
+    font-size: $font-size;
+    color: $color;
+}
+
 @mixin boxHead($font-weight,$color,$text-transform) {
     font-family: $font-1;
     font-weight: $font-weight;
@@ -203,6 +210,12 @@
     flex-direction: $flex-direction;
     flex-wrap: $flex-wrap;
     gap:$gap;
+}
+
+@mixin ctflex ($align-items,$justify-content) {
+    display: flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
 }
 
 @mixin respond-to($breakpoint) {
