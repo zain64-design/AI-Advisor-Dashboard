@@ -18,6 +18,14 @@
     text-transform: $text-transform;
 }
 
+@mixin ctHeadTwo($font-weight,$font-size,$color,$text-transform) {
+    font-family: $font-2;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    color: $color;
+    text-transform: $text-transform;
+}
+
 @mixin ctPara($font-size,$color) {
     font-family: $font-1;
     font-weight: 400;
@@ -75,6 +83,19 @@
     font-weight: 400;
     font-size: 14px;
     padding: 18px 16px 15px;
+}
+
+@mixin ctformInp($height,$background-color,$color,$font-family,$font-size,$padding) {
+    height: $height;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    background-color: $background-color;
+    color: $color;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: $font-size;
+    padding: $padding;
 }
 
 @mixin formXlHead() {

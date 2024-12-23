@@ -81,6 +81,33 @@ header {
                         }
                     }
                 }
+                .bell-icon {
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    background: $prim-clr-2;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .icon-area {
+                        position: relative;
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            height: 9px;
+                            width: 9px;
+                            background-color: $pr-red-clr-3;
+                            border-radius: 50%;
+                            border: 2px solid $prim-clr-2;
+                        }
+                        &>svg {
+                            width: 20px;
+                            height: 24px;
+                        }
+                    }
+                }
             }
         }
         .navbar-brand {

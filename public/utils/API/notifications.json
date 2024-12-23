@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "thumbnail": "/images/nt1.png",
+        "title": "When the Stock Market Drops, Stay Calm and Do Nothing",
+        "authImg": "/images/news/user.png",
+        "authName": "Alex Bale",
+        "category": "news"
+    },
+    {
+        "id": 2,
+        "thumbnail": "/images/nt2.png",
+        "title": "AirBnB price increased by 6.20%",
+        "date": "06 Sep",
+        "category": "market"
+    },
+    {
+        "id": 3,
+        "thumbnail": "/images/nt3.png",
+        "title": "Growth Stocks. Value Stocks. What Do Those Labels Mean?",
+        "authImg": "/images/news/user.png",
+        "authName": "Alex Bale",
+        "category": "news"
+    },
+    {
+        "id": 5,
+        "thumbnail": "/images/nt4.png",
+        "title": "Tesla price increased by 6.20%",
+        "date": "06 Sep",
+        "category": "market"
+    }
+]

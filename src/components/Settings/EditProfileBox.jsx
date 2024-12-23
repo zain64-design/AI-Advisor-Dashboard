@@ -6,6 +6,7 @@ import { MdError } from "react-icons/md";
 import ProfileImage from './ProfileImage'
 import '../../assets/scss/component/setting/editProfileBox.scss'
 import { Link } from 'react-router';
+import NavArea from './NavArea';
 
 const EditProfileBox = () => {
 
@@ -37,6 +38,7 @@ const EditProfileBox = () => {
       <Card className='edit-box'>
         <Form onSubmit={formik.handleSubmit}>
           <div className="top-area">
+            <NavArea title="Edit Profile"/>
             <ProfileImage />
           </div>
           <Row>
@@ -54,7 +56,7 @@ const EditProfileBox = () => {
                 {formik.touched.email && formik.errors.email ? <small className='d-none'>{formik.errors.email}<MdError /></small> : null}
               </div>
             </Form.Group>
-            <Form.Group as={Col} xs={12} sm={12} md={12} lg={6} xl={6} xxl={6}>
+            <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
               {/* <Button type='submit' variant='save'>
                 save changes
               </Button> */}

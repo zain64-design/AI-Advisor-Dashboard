@@ -8,17 +8,17 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 const FAQAccordion = ({ faqData, isLoading, isError, error }) => {
 
-    const [activeKey, setActiveKey] = useState(['1']);
+    const [activeKey, setActiveKey] = useState(['0']);
 
     return (
         <>
             <Accordion className='ct-accord' defaultActiveKey={activeKey} alwaysOpen>
                 {isLoading ? <SkAccordLoader />
                     : isError ? <Text as='h6'>{error.message}</Text>
-                        : faqData?.map((value) => {
+                        : faqData?.map((value,index) => {
                             const { id, head, para } = value;
                             return (
-                                <Accordion.Item eventKey={id} key={id}>
+                                <Accordion.Item eventKey={index.toString()} key={id}>
                                     <AccordionHeader head={head} />
                                     <AccordionBody para={para} />
                                 </Accordion.Item>
@@ -55,7 +55,7 @@ export const SkAccordLoader = () => {
     return (
         Array.from({ length: 6 }).map((_, index) => {
             return (
-                <Accordion.Item eventKey={index} key={index}>
+                <Accordion.Item eventKey={index.toString()} key={index}>
                     <AccordionHeader />
                     <AccordionBody />
                 </Accordion.Item>

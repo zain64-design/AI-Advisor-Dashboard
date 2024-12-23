@@ -1,0 +1,26 @@
+@use '../../utils' as *;
+
+.notification-box {
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 35px 35px 20px 58px !important;
+    .top-area {
+        position: relative;
+        padding-bottom: 13px;
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            max-width: 100%;
+            width: 358px;
+            height: 1px;
+            background: #E8E6EA;
+        }
+        h6 {
+            @include ctHead(700,24px,$black-clr,capitalize);
+            text-align:center;
+        }
+        margin-bottom: 38px;
+    }
+}

@@ -10,6 +10,15 @@ import useFetchAPI from '../../utils/hooks/useFetchAPI';
 import { NEWS_API } from '../../utils/constant';
 import NewsLoader from '../Loader/NewsLoader';
 
+
+const useFetchData = (key, url,staleTime) => {
+  return useQuery({
+    queryKey: ['news', key],
+    queryFn: () => useFetchAPI(url, { category: key }),
+    staleTime: staleTime,
+  })
+}
+
 const NavTabs = () => {
 
   const [key, setKey] = useState('all');
@@ -36,14 +45,6 @@ const NavTabs = () => {
       eventKey: 'crypto'
     }
   ]
-
-  const useFetchData = (key, url,staleTime) => {
-    return useQuery({
-      queryKey: ['news', key],
-      queryFn: () => useFetchAPI(url, { category: key }),
-      staleTime: staleTime,
-    })
-  }
 
   const { data: newsData, isLoading, isError, error } = useFetchData(['news data'], NEWS_API,120000)
 

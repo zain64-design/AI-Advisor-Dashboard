@@ -1,0 +1,19 @@
+@use '../../utils' as *;
+
+.nav-area {
+    @include flex(center,flex-start,row,wrap,10px);
+    h6 {
+        @include ctHeadTwo(700,36px,$green-clr-2,capitalize);
+        letter-spacing: -0.1px;
+        margin: 0 auto;
+    }
+    margin-bottom: 40px;
+}
+
+@include respond-to('tiny') {
+    .nav-area {
+        h6 {
+            font-size: 24px;
+        }
+    }
+}

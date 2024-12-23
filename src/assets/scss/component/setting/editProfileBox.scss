@@ -2,7 +2,7 @@
 .edit-box {
     border: none !important;
     border-radius: 16px !important;
-    padding: 35px 24px 20px;
+    padding: 35px 46px 20px;
     margin-top: 50px;
     .top-area {
         align-content: center;
@@ -11,8 +11,27 @@
     .inp-area {
         position: relative;
         padding-bottom: 33px;
+        label {
+            font-family: $font-4;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 14px;
+            color: $black-clr-8;
+        }
         .ct-inp {
             @include formInp();
+            &::-webkit-input-placeholder {
+                text-transform: capitalize;
+            }
+            &::-moz-placeholder {
+                text-transform: capitalize;
+            }
+            &:-ms-input-placeholder {
+                text-transform: capitalize;
+            }
+            &:-moz-placeholder {
+                text-transform: capitalize;
+            }
         }
         small {
             position: absolute;
@@ -22,6 +41,13 @@
         }
     }
     .btn-save {
-        @include gradBtn($font-2,700,18px,56px,100%,8px);
+        @include gradBtn($font-2,700,18px,72px,100%,8px);
+    }
+}
+
+@include respond-to('tiny') {
+    .edit-box {
+        padding: 35px 20px 20px;
+        margin-top: 0;
     }
 }
