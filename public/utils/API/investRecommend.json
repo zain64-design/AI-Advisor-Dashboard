@@ -5,7 +5,8 @@
         "head": "SOL",
         "sub": "Solana",
         "price": "$150.91",
-        "value": "+1.29%"
+        "value": "+1.29%",
+        "category": "crypto"
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "head": "JPM",
         "sub": "JPMorgan Chase & Co",
         "price": "$213.41",
-        "value": "+2.67%"
+        "value": "+2.67%",
+        "category": "real-estate"
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "head": "DOGE",
         "sub": "Dogecoin",
         "price": "$0.1089",
-        "value": "-1.29%"
+        "value": "-1.29%",
+        "category": "crypto"
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "head": "CVX",
         "sub": "Chevron",
         "price": "$149.65",
-        "value": "+0.90%"
+        "value": "+0.90%",
+        "category": "mutual-funds"
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "head": "TON",
         "sub": "Toncoin",
         "price": "$5.69",
-        "value": "+0.32%"
+        "value": "+0.32%",
+        "category": "crypto"
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "head": "DIS",
         "sub": "Walt Disney",
         "price": "$93.60",
-        "value": "+1.11%"
+        "value": "+1.11%",
+        "category": "mutual-funds"
     },
     {
         "id": 7,
@@ -53,6 +59,7 @@
         "head": "NVDA",
         "sub": "Nvidia Corp",
         "price": "$132.65",
-        "value": "-0.26%"
+        "value": "-0.26%",
+        "category": "mutual-funds"
     }
 ]

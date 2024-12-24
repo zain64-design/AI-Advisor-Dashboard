@@ -12,7 +12,7 @@ const Author = (otherData) => {
     <>
     <div className="author-area">
         <Image src={authImg} className="auth-ico" alt="author" />
-        <Text as='span'>{`by ${authName}`}</Text>
+        <Text as='small'>{`by ${authName}`}</Text>
     </div>
 </>
   )

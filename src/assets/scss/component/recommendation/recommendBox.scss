@@ -1,0 +1,89 @@
+@use '../../utils' as *;
+
+.recommend-details {
+    .invest-box {
+        padding: 23px 21px 23px 34px;
+        border-radius: 8px;
+        border: none;
+        flex-direction: row;
+        align-items: center;
+        gap: 21px;
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+        figure {
+            margin: 0;
+            .logo {
+                height: 48px;
+                max-width: 60px;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+        .desc {
+            a {
+                @include boxHead(700,$black-clr-6,uppercase);
+                margin-bottom: 4px;
+                display: block;
+            }
+            small {
+                @include boxSpan(400,16px,$grey-clr-4);
+            }
+        }
+        .stats-info {
+            margin: 0 0 0 auto;
+            h6 {
+                @include boxHead(700,$black-clr-6,unset);
+            }
+            small{
+                &.investment-value {
+                    text-align: right;
+                    display: block;
+                    font-weight: 600;
+                    &.text-green {
+                        @include boxSpan(600,16px,$pr-green-clr);
+                    }
+                    &.text-red {
+                        @include boxSpan(600,16px,$pr-red-clr);
+                    } 
+                }
+            }
+        }
+    }
+}
+
+@include respond-to('tiny') {
+    .invest-recommend-details {
+        .invest-box {
+            padding: 11px 0 0 0;
+            gap: 5px;
+            figure {
+                .logo {
+                    height: 30px;
+                    max-width: 40px;                
+                }
+            }
+            .desc {
+                h6 {
+                    font-size: 14px;
+                }
+                small {
+                    font-size: 12px;
+                    line-height: normal;
+                    display: inline-flex;
+                }
+            }
+            .stats-info {
+                h6 {
+                    font-size: 14px;
+                }
+                small.investment-value.text-green {
+                    font-size: 14px;
+                }
+                small.investment-value.text-red {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+  }

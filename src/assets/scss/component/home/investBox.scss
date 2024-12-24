@@ -38,7 +38,7 @@
                 }
     
                 span.date {
-                    @include boxSpan($grey-clr-2, 16px);
+                    @include boxSpan(400,16px,$grey-clr-2);
                 }
             }
         }
@@ -59,10 +59,10 @@
                     text-align: right;
                     display: block;
                     &.text-green {
-                        @include boxSpan($pr-green-clr,16px);
+                        @include boxSpan(400,16px,$pr-green-clr);
                     }
                     &.text-red {
-                        @include boxSpan($pr-red-clr,16px);
+                        @include boxSpan(400,16px,$pr-red-clr);
                     } 
                 }
             }

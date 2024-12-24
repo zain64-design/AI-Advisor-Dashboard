@@ -20,6 +20,8 @@ import TermsConditions from './pages/TermsConditions';
 import AuthLayout from './components/Layout/AuthLayout';
 import AddInvestment from './pages/AddInvestment';
 import AllNotifications from './pages/AllNotifications';
+import NewsDetail from './pages/NewsDetail';
+import RecommendDetail from './pages/RecommendDetail';
 
 
 const queryClient = new QueryClient({
@@ -41,8 +43,12 @@ function App() {
           <Route element={<Layout />}>
             <Route index path="/dashboard" element={<Home />} />
             <Route path="/news" element={<News />} />
+            <Route path="/news-detail/:id" element={<NewsDetail />} />
             <Route path="/investment-partner" element={<InvestmentPartner />} />
-            <Route path="/recommendation" element={<Recommend />} />
+            <Route path="/recommendation">
+              <Route index element={<Recommend />} />
+              <Route path="/recommendation-detail/:id" element={<RecommendDetail/>}/>
+            </Route>
             <Route path="/add-investment" element={<AddInvestment />} />
             <Route path="/notifications" element={<AllNotifications />} />
             <Route path="/settings">

@@ -25,7 +25,7 @@
                 @include boxHead(700,$black-clr-6,uppercase);
             }
             small {
-                @include boxSpan($grey-clr-4,14px);
+                @include boxSpan(400,14px,$grey-clr-4);
             }
         }
         .stats-info {
@@ -38,10 +38,10 @@
                     text-align: right;
                     display: block;
                     &.text-green {
-                        @include boxSpan($pr-green-clr,16px);
+                        @include boxSpan(400,16px,$pr-green-clr);
                     }
                     &.text-red {
-                        @include boxSpan($pr-red-clr,16px);
+                        @include boxSpan(400,16px,$pr-red-clr);
                     } 
                 }
             }

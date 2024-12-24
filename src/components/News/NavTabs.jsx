@@ -13,7 +13,7 @@ import NewsLoader from '../Loader/NewsLoader';
 
 const useFetchData = (key, url,staleTime) => {
   return useQuery({
-    queryKey: ['news', key],
+    queryKey: [key],
     queryFn: () => useFetchAPI(url, { category: key }),
     staleTime: staleTime,
   })
@@ -72,9 +72,7 @@ const NavTabs = () => {
               ))
               : isError
               ? <Text as='h1'>Error: {error.message}</Text>
-              : filteredNewsData?.map(value=><Col className='mb-4' xs={12} sm={6} md={6} lg={4} xl={4} xxl={4} key={value.id}>
-                <NewsCard newsData={value} />
-                </Col>)}
+              : filteredNewsData?.map(value => <Col className='mb-4' xs={12} sm={6} md={6} lg={4} xl={4} xxl={4} key={value.id}> <NewsCard newsData={value} /> </Col>)}
             </Row>
           </Tab>
         ))}

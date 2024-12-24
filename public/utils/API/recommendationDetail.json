@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "image": "/images/investments/ibg1.svg",
+        "head": "SOL",
+        "sub": "Solana",
+        "price": "$150.91",
+        "value": "+1.29%",
+        "category": "crypto"
+    },
+    {
+        "id": 2,
+        "image": "/images/investments/ibg1.svg",
+        "head": "JPM",
+        "sub": "JPMorgan Chase & Co",
+        "price": "$213.41",
+        "value": "+2.67%",
+        "category": "real-estate"
+    },
+    {
+        "id": 3,
+        "image": "/images/investments/ibg1.svg",
+        "head": "DOGE",
+        "sub": "Dogecoin",
+        "price": "$0.1089",
+        "value": "-1.29%",
+        "category": "crypto"
+    },
+    {
+        "id": 4,
+        "image": "/images/investments/ibg1.svg",
+        "head": "CVX",
+        "sub": "Chevron",
+        "price": "$149.65",
+        "value": "+0.90%",
+        "category": "mutual-funds"
+    },
+    {
+        "id": 5,
+        "image": "/images/investments/ibg1.svg",
+        "head": "TON",
+        "sub": "Toncoin",
+        "price": "$5.69",
+        "value": "+0.32%",
+        "category": "crypto"
+    },
+    {
+        "id": 6,
+        "image": "/images/investments/ibg1.svg",
+        "head": "DIS",
+        "sub": "Walt Disney",
+        "price": "$93.60",
+        "value": "+1.11%",
+        "category": "mutual-funds"
+    },
+    {
+        "id": 7,
+        "image": "/images/investments/ibg1.svg",
+        "head": "NVDA",
+        "sub": "Nvidia Corp",
+        "price": "$132.65",
+        "value": "-0.26%",
+        "category": "mutual-funds"
+    },
+    {
+        "id": 8,
+        "image": "/images/investments/ibg1.svg",
+        "head": "ADA",
+        "sub": "Cardano",
+        "price": "$0.389",
+        "value": "+0.27%",
+        "category": "crypto"
+    }
+]

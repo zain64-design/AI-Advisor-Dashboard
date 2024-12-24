@@ -7,28 +7,25 @@ import '../../assets/scss/component/home/investRecommend.scss';
 
 const InvestRecommendBox = ({ investData }) => {
 
-  const {getValueClass} =  useGetValueClass();
+  const { getValueClass } = useGetValueClass();
+  const { image, head, sub, price, value } = investData;
+
 
   return (
     <>
-      {investData?.map((data) => {
-        const { id, image, head, sub, price, value } = data;
-        return (
-          <Card className='invest-box' key={id}>
-            <figure>
-              <Image src={image} className="logo" alt='logo' />
-            </figure>
-            <div className="desc">
-              <Text as="h6">{head}</Text>
-              <Text as="small">{sub}</Text>
-            </div>
-            <div className="stats-info">
-              <Text as="h6">{price}</Text>
-              <Text as="small" className={`investment-value ${getValueClass(data.value)}`}>{value}</Text>
-            </div>
-          </Card>
-        )
-      })}
+      <Card className='invest-box'>
+        <figure>
+          <Image src={image} className="logo" alt='logo' />
+        </figure>
+        <div className="desc">
+          <Text as="h6">{head}</Text>
+          <Text as="small">{sub}</Text>
+        </div>
+        <div className="stats-info">
+          <Text as="h6">{price}</Text>
+          <Text as="small" className={`investment-value ${getValueClass(value)}`}>{value}</Text>
+        </div>
+      </Card>
     </>
   )
 }

@@ -9,7 +9,7 @@ import '../../assets/scss/component/news/newsCard.scss';
 
 const NewsCard = ({ newsData }) => {
 
-    const { thumbnail, title, authName, authImg } = newsData;
+    const {id, thumbnail, title, authName, authImg } = newsData;
 
     return (
         <>
@@ -20,7 +20,7 @@ const NewsCard = ({ newsData }) => {
                 <div className="desc">
                     <Text as="h6">{title}</Text>
                     <Author authImg={authImg} authName={authName} />
-                    <Link className="btn read-btn">read more <HiArrowUpRight /></Link>
+                    <Link to={`/news-detail/${id}`} className="btn read-btn">read more <HiArrowUpRight /></Link>
                 </div>
             </Card>
         </>

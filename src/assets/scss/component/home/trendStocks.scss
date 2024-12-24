@@ -26,7 +26,7 @@
             @include boxHead(700,$black-clr-6,uppercase);
         }
         span {
-            @include boxSpan($grey-clr-2,16px);
+            @include boxSpan(400,16px,$grey-clr-2);
         }
     }
     .stats-info {
@@ -38,10 +38,10 @@
             display: block;
         } 
         span.investment-value.text-green {
-            @include boxSpan($pr-green-clr,16px);
+            @include boxSpan(400,16px,$pr-green-clr);
         }  
         span.investment-value.text-red {
-            @include boxSpan($pr-red-clr,16px);
+            @include boxSpan(400,16px,$pr-red-clr);
         } 
     }
 }

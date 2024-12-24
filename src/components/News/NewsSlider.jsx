@@ -78,13 +78,13 @@ const NewsSlider = () => {
                 <div className="slider-control">
                     <div className="swiper-button-prev">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 20" fill="none">
-                            <path d="M10 2L2 10L10 18" stroke="black" stroke-width="2.36732" stroke-linecap="round" />
+                            <path d="M10 2L2 10L10 18" stroke="black" strokeWidth="2.36732" strokeLinecap="round" />
                         </svg>
                     </div>
                     <div className="swiper-pagination"></div>
                     <div className="swiper-button-next">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 20" fill="none">
-                            <path d="M2 18L10 10L2 2" stroke="black" stroke-width="2.36732" stroke-linecap="round" />
+                            <path d="M2 18L10 10L2 2" stroke="black" strokeWidth="2.36732" strokeLinecap="round" />
                         </svg>
                     </div>
                 </div>

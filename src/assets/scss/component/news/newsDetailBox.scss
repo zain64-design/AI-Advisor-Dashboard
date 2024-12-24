@@ -1,0 +1,59 @@
+@use '../../utils' as *;
+
+.news-box {
+    figure {
+        position: relative;
+        overflow: hidden;
+        .back-btn {
+            position: absolute;
+            top: 35px;
+            left: 22px;
+        }
+        &>img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
+        }
+        margin-bottom: 33px;
+    }
+    h4 {
+        @include ctHead(600,24px,$black-clr,capitalize);
+        margin-bottom: 16px;
+    }
+    .author-area {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: clamp(10px, 2vw, 33px);
+
+        .auth-ico {
+            height: 32px;
+            width: 32px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+        }
+
+        small {
+            font-family: $font-1;
+            font-size: clamp(16px, 2.3vw, 18px);
+            line-height: normal;
+            color: $grey-clr-3;
+            text-transform: capitalize;
+            display: inline-flex;
+        }
+    }
+    .desc {
+        p {
+            @include ctPara(14px,$black-clr);
+            line-height: 24px;
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

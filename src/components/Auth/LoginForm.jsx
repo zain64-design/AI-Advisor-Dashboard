@@ -23,7 +23,7 @@ const LoginForm = () => {
   }
 
   const onSubmit = values => {
-    console.log('Submitting form', values);
+    // console.log('Submitting form', values);
   }
 
   const validationSchema = Yup.object({

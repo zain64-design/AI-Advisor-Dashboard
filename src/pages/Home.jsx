@@ -92,7 +92,7 @@ const Home = () => {
               <Card className='stats-box invest-box-area'>
                 <div className="head-area">
                   <Text as='h5'>Recent Investments</Text>
-                  <Link to='' className='btn add-btn'>
+                  <Link to='/add-investment' className='btn add-btn'>
                     <span className='icon'>
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19" fill="none">
                         <g clipPath="url(#clip0_715_2693)">
@@ -131,7 +131,7 @@ const Home = () => {
                     ? Array.from({ length: 7 }).map((_, index) => <SkRecommendLoader key={index} />)
                     : isInvestError
                       ? <Text as='h6'>Fetching Recommend Investment Data:{investError.message} </Text>
-                      : <InvestRecommendBox investData={investData} />
+                      : investData?.map((value)=> <InvestRecommendBox key={value.id} investData={value} />)
                   }
                 </div>
               </Card>

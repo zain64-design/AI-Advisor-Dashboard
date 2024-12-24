@@ -3,8 +3,8 @@
         "id": 1,
         "thumbnail": "/images/news/n1.svg",
         "title": "Nvidia Holds the Key to the Market. But Is It Worth This Much?",
-        "authImg": "/images/news/user.png",
-        "authName": "James Mark",
+        "authImg": "/images/news/user2.png",
+        "authName": "Jeff Sommer",
         "category": "real-estate"
     },
     {
@@ -21,14 +21,14 @@
         "title": "Advice: When the Stock Market Drops, Stay Calm and Do Nothing",
         "authImg": "/images/news/user.png",
         "authName": "James Mark",
-        "category": "stocks"
+        "category": "real-estate"
     },
     {
         "id": 4,
         "thumbnail": "/images/news/n1.svg",
         "title": "Bitcoin Reaches Record Highs in 2024",
-        "authImg": "/images/news/user.png",
-        "authName": "Alice Turner",
+        "authImg": "/images/news/user2.png",
+        "authName": "Jeff Sommer",
         "category": "stocks"
     },
     {
@@ -37,7 +37,7 @@
         "title": "Ethereum's New Update Promises Faster Transactions",
         "authImg": "/images/news/user.png",
         "authName": "Alice Turner",
-        "category": "mutual-funds"
+        "category": "stocks"
     },
     {
         "id": 6,
@@ -45,14 +45,14 @@
         "title": "Understanding Blockchain: What You Need to Know",
         "authImg": "/images/news/user.png",
         "authName": "Alice Turner",
-        "category": "mutual-funds"
+        "category": "stocks"
     },
     {
         "id": 7,
         "thumbnail": "/images/news/n1.svg",
         "title": "Real Estate Market Booms in Major Cities",
-        "authImg": "/images/news/user.png",
-        "authName": "Emily Walker",
+        "authImg": "/images/news/user2.png",
+        "authName": "Jeff Sommer",
         "category": "mutual-funds"
     },
     {
@@ -61,7 +61,7 @@
         "title": "The Future of Commercial Real Estate After COVID-19",
         "authImg": "/images/news/user.png",
         "authName": "Emily Walker",
-        "category": "crypto"
+        "category": "mutual-funds"
     },
     {
         "id": 9,
@@ -69,6 +69,30 @@
         "title": "How to Invest in Real Estate for Beginners",
         "authImg": "/images/news/user.png",
         "authName": "Emily Walker",
+        "category": "mutual-funds"
+    },
+    {
+        "id": 10,
+        "thumbnail": "/images/news/n3.svg",
+        "title": "How to Invest in Real Estate for Beginners",
+        "authImg": "/images/news/user.png",
+        "authName": "Emily Walker",
+        "category": "crypto"
+    },
+    {
+        "id": 11,
+        "thumbnail": "/images/news/n2.svg",
+        "title": "The Future of Commercial Real Estate After COVID-19",
+        "authImg": "/images/news/user.png",
+        "authName": "Emily Walker",
+        "category": "crypto"
+    },
+    {
+        "id": 12,
+        "thumbnail": "/images/news/n1.svg",
+        "title": "Real Estate Market Booms in Major Cities",
+        "authImg": "/images/news/user2.png",
+        "authName": "Jeff Sommer",
         "category": "crypto"
     }
 ]
