@@ -1,0 +1,36 @@
+@use '../../utils' as *;
+
+.otp-modal {
+    .modal-dialog {
+        .modal-content {
+            border: none;
+            border-radius: 24px;
+            .modal-body {
+                padding: 24px;
+                text-align: center;
+                .reset-area {
+                    padding: 30px 0;
+                    h6 {
+                        font-size: 24px;
+                        font-weight: 700;
+                        color: $black-clr;
+                        text-transform: capitalize;
+                        margin-bottom: 16px;
+                    }
+                    p {
+                        font-size: 18px;
+                        color: $black-clr;
+                        line-height: 24px;
+                    }
+                }
+            }
+            .modal-footer {
+                padding: 0;
+                border: none;
+                .btn-okay {
+                    @include gradBtn($font-1,700,24px,56px,100%,8px);
+                }
+            }
+        }
+    }
+}
