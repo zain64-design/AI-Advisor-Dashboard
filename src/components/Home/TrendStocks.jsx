@@ -11,6 +11,8 @@ const TrendStocks = ({data}) => {
   const {getTrendColor} = useGetTrendColor();
   const {head,sub,price,value,trendChartData} = data;
 
+  const valueClass = getValueClass(value || '');
+
   return (
     <>
       <Card className='stock-box'>
@@ -23,7 +25,7 @@ const TrendStocks = ({data}) => {
         </div>
         <div className="stats-info">
           <Text as="h6">{price}</Text>
-          <Text as="span" className={`investment-value ${getValueClass(value)}`}>{value}</Text>
+          <Text as="span" className={`investment-value ${valueClass}`}>{value}</Text>
         </div>
       </Card>
     </>

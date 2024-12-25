@@ -22,6 +22,8 @@ import AddInvestment from './pages/AddInvestment';
 import AllNotifications from './pages/AllNotifications';
 import NewsDetail from './pages/NewsDetail';
 import RecommendDetail from './pages/RecommendDetail';
+import SignUp from './pages/SignUp';
+import ForgotPassword from './pages/ForgotPassword';
 
 
 const queryClient = new QueryClient({
@@ -44,11 +46,17 @@ function App() {
             <Route index path="/dashboard" element={<Home />} />
             <Route path="/news" element={<News />} />
             <Route path="/news-detail/:id" element={<NewsDetail />} />
+            {/* <Route path="/news">
+            <Route index element={<News />} />
+            <Route path="/news-detail/:id" element={<NewsDetail />} />
+            </Route> */}
             <Route path="/investment-partner" element={<InvestmentPartner />} />
-            <Route path="/recommendation">
+            <Route path="/recommendation" element={<Recommend />} />
+              <Route path="/recommendation-detail/:id" element={<RecommendDetail/>}/>
+            {/* <Route path="/recommendation">
               <Route index element={<Recommend />} />
               <Route path="/recommendation-detail/:id" element={<RecommendDetail/>}/>
-            </Route>
+            </Route> */}
             <Route path="/add-investment" element={<AddInvestment />} />
             <Route path="/notifications" element={<AllNotifications />} />
             <Route path="/settings">
@@ -63,6 +71,8 @@ function App() {
           </Route>
           <Route element={<AuthLayout />}>
             <Route path="/" element={<Login />} />
+            <Route path="/sign-up" element={<SignUp/>} />
+            <Route path="/forgot-password" element={<ForgotPassword/>} />
           </Route>
         </Routes>
       </BrowserRouter>

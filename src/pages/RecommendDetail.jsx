@@ -4,7 +4,7 @@ import useAOS from '../utils/hooks/useAOS'
 import { useParams } from 'react-router';
 import { useQuery } from '@tanstack/react-query'
 import useFetchAPI from '../utils/hooks/useFetchAPI'
-import { INVEST_RECOMMEND_API } from '../utils/constant';
+import { RECOMMENDATION_DETAIL_API } from '../utils/constant';
 import SkNewsDetailLoader from '../components/Loader/SkNewsDetailLoader'
 import RecommendDetailsBox from '../components/Recommendation/RecommendDetailsBox';
 
@@ -15,7 +15,7 @@ const RecommendDetail = () => {
 
     const { data, isLoading, isError, error } = useQuery({
         queryKey: [id],
-        queryFn: () => useFetchAPI(INVEST_RECOMMEND_API),
+        queryFn: () => useFetchAPI(RECOMMENDATION_DETAIL_API),
     });
 
     const recommendData = data && Array.isArray(data) ? data.find(recommend => recommend.id === parseInt(id)) : null;

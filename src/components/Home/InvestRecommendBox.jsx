@@ -10,6 +10,8 @@ const InvestRecommendBox = ({ investData }) => {
   const { getValueClass } = useGetValueClass();
   const { image, head, sub, price, value } = investData;
 
+  const valueClass = getValueClass(value || '');
+
 
   return (
     <>
@@ -23,7 +25,7 @@ const InvestRecommendBox = ({ investData }) => {
         </div>
         <div className="stats-info">
           <Text as="h6">{price}</Text>
-          <Text as="small" className={`investment-value ${getValueClass(value)}`}>{value}</Text>
+          <Text as="small" className={`investment-value ${valueClass}`}>{value}</Text>
         </div>
       </Card>
     </>

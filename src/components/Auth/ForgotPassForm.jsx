@@ -1,0 +1,41 @@
+import React from 'react'
+import { Card, Form, Row, Col, Button } from 'react-bootstrap';
+import Text from '../UI/Text'
+import { Link, NavLink } from 'react-router';
+import '../../assets/scss/component/Auth/forgotPassForm.scss'
+
+const ForgotPassForm = () => {
+    return (
+        <>
+            <Card className='forgot-form'>
+                <div className="form-head">
+                    <div className="ct-flex">
+                        <Link to='/' className='back-btn'>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="21" viewBox="0 0 25 21" fill="none">
+                                <path d="M11.0418 2.32263L2.29183 10.5622M2.29183 10.5622L11.0418 18.8017M2.29183 10.5622L22.7085 10.5622" stroke="#3B90AA" stroke-width="3" stroke-linecap="round" />
+                            </svg>
+                        </Link>
+                        <Text as='h6'>Forgot Password?</Text>
+                    </div>
+                    <Text as='p'>Please enter the email you use to sign in and we will send you resent link.</Text>
+                </div>
+                <Form>
+                    <Row>
+                        <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
+                            <div className="inp-area">
+                                <Form.Label>Email</Form.Label>
+                                <Form.Control type="email" className='ct-inp' name="email" placeholder='Enter Your Email' />
+                            </div>
+                        </Form.Group>
+                        <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
+                            {/* <Button type='submit' variant='submit'>sign in</Button> */}
+                            <NavLink className='btn-submit' to='/dashboard'>submit</NavLink>
+                        </Form.Group>
+                    </Row>
+                </Form>
+            </Card>
+        </>
+    )
+}
+
+export default ForgotPassForm

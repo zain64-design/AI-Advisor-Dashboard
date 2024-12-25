@@ -9,11 +9,27 @@
       "destination": "/index.html"
     },
     {
+      "source": "/news-detail/:id",
+      "destination": "/index.html"
+    },
+    {
       "source": "/investment-partner",
       "destination": "/index.html"
     },
     {
       "source": "/recommendation",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/recommendation-detail/:id",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/add-investment",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/notifications",
       "destination": "/index.html"
     },
     {
@@ -54,3 +70,4 @@
     }
   ]
 }
+

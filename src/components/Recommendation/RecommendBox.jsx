@@ -11,6 +11,8 @@ const RecommendBox = ({ investData }) => {
     const { getValueClass } = useGetValueClass();
     const { id,image, head, sub, price, value } = investData;
 
+    const valueClass = getValueClass(value || ''); 
+
     return (
         <>
             <Card className='invest-box'>
@@ -18,12 +20,12 @@ const RecommendBox = ({ investData }) => {
                     <Image src={image} className="logo" alt='logo' />
                 </figure>
                 <div className="desc">
-                    <Link to={`/recommendation/recommendation-detail/${id}`}>{head}</Link>
+                    <Link to={`/recommendation-detail/${id}`}>{head}</Link>
                     <Text as="small">{sub}</Text>
                 </div>
                 <div className="stats-info">
                     <Text as="h6">{price}</Text>
-                    <Text as="small" className={`investment-value ${getValueClass(value)}`}>{value}</Text>
+                    <Text as="small" className={`investment-value ${valueClass}`}>{value}</Text>
                 </div>
             </Card>
         </>

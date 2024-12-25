@@ -2,73 +2,209 @@
     {
         "id": 1,
         "image": "/images/investments/ibg1.svg",
-        "head": "SOL",
-        "sub": "Solana",
-        "price": "$150.91",
-        "value": "+1.29%",
+        "head": "Crypto Recommendation: Solana (SOL)",
+        "listDetail": [
+            {
+                "id": 1,
+                "item": "Market cap: $69.0 billion"
+            },
+            {
+                "id": 2,
+                "item": "Year-over-year return: 653%"
+            }
+        ],
+        "desc": [
+            {
+                "id":1,
+                "para":"Developed to help power decentralized finance (DeFi) uses, decentralized apps (DApps) and smart contracts, Solana runs on a unique hybrid proof-of-stake and proof-of-history mechanisms to process transactions quickly and securely. SOL, Solana’s native token, powers the platform."
+            },
+            {
+                "id":2,
+                "para":"When it launched in 2020, SOL’s price started at $0.77. By late September 2024, its price was around $147.13, a gain of 19,008%."
+            }
+        ],
         "category": "crypto"
     },
     {
         "id": 2,
         "image": "/images/investments/ibg1.svg",
-        "head": "JPM",
-        "sub": "JPMorgan Chase & Co",
-        "price": "$213.41",
-        "value": "+2.67%",
+        "head": "Real-Estate Recommendation: JPMorgan Chase & Co (JPM)",
+        "listDetail": [
+            {
+                "id": 1,
+                "item": "Market cap: $69.0 billion"
+            },
+            {
+                "id": 2,
+                "item": "Year-over-year return: 653%"
+            }
+        ],
+        "desc": [
+            {
+                "id":1,
+                "para":"Developed to help power decentralized finance (DeFi) uses, decentralized apps (DApps) and smart contracts, Solana runs on a unique hybrid proof-of-stake and proof-of-history mechanisms to process transactions quickly and securely. SOL, Solana’s native token, powers the platform."
+            },
+            {
+                "id":2,
+                "para":"When it launched in 2020, SOL’s price started at $0.77. By late September 2024, its price was around $147.13, a gain of 19,008%."
+            }
+        ],
         "category": "real-estate"
     },
     {
         "id": 3,
         "image": "/images/investments/ibg1.svg",
-        "head": "DOGE",
-        "sub": "Dogecoin",
-        "price": "$0.1089",
-        "value": "-1.29%",
+        "head": "Crypto Recommendation: Dogecoin (DOGE)",
+        "listDetail": [
+            {
+                "id": 1,
+                "item": "Market cap: $69.0 billion"
+            },
+            {
+                "id": 2,
+                "item": "Year-over-year return: 653%"
+            }
+        ],
+        "desc": [
+            {
+                "id":1,
+                "para":"Developed to help power decentralized finance (DeFi) uses, decentralized apps (DApps) and smart contracts, Solana runs on a unique hybrid proof-of-stake and proof-of-history mechanisms to process transactions quickly and securely. SOL, Solana’s native token, powers the platform."
+            },
+            {
+                "id":2,
+                "para":"When it launched in 2020, SOL’s price started at $0.77. By late September 2024, its price was around $147.13, a gain of 19,008%."
+            }
+        ],
         "category": "crypto"
     },
     {
         "id": 4,
         "image": "/images/investments/ibg1.svg",
-        "head": "CVX",
-        "sub": "Chevron",
-        "price": "$149.65",
-        "value": "+0.90%",
+        "head": "Mutual Funds Recommendation: Chevron (CVX)",
+        "listDetail": [
+            {
+                "id": 1,
+                "item": "Market cap: $69.0 billion"
+            },
+            {
+                "id": 2,
+                "item": "Year-over-year return: 653%"
+            }
+        ],
+        "desc": [
+            {
+                "id":1,
+                "para":"Developed to help power decentralized finance (DeFi) uses, decentralized apps (DApps) and smart contracts, Solana runs on a unique hybrid proof-of-stake and proof-of-history mechanisms to process transactions quickly and securely. SOL, Solana’s native token, powers the platform."
+            },
+            {
+                "id":2,
+                "para":"When it launched in 2020, SOL’s price started at $0.77. By late September 2024, its price was around $147.13, a gain of 19,008%."
+            }
+        ],
         "category": "mutual-funds"
     },
     {
         "id": 5,
         "image": "/images/investments/ibg1.svg",
-        "head": "TON",
-        "sub": "Toncoin",
-        "price": "$5.69",
-        "value": "+0.32%",
+        "head": "Crypto Recommendation: Toncoin (TON)",
+        "listDetail": [
+            {
+                "id": 1,
+                "item": "Market cap: $69.0 billion"
+            },
+            {
+                "id": 2,
+                "item": "Year-over-year return: 653%"
+            }
+        ],
+        "desc": [
+            {
+                "id":1,
+                "para":"Developed to help power decentralized finance (DeFi) uses, decentralized apps (DApps) and smart contracts, Solana runs on a unique hybrid proof-of-stake and proof-of-history mechanisms to process transactions quickly and securely. SOL, Solana’s native token, powers the platform."
+            },
+            {
+                "id":2,
+                "para":"When it launched in 2020, SOL’s price started at $0.77. By late September 2024, its price was around $147.13, a gain of 19,008%."
+            }
+        ],
         "category": "crypto"
     },
     {
         "id": 6,
         "image": "/images/investments/ibg1.svg",
-        "head": "DIS",
-        "sub": "Walt Disney",
-        "price": "$93.60",
-        "value": "+1.11%",
+        "head": "Mutual Funds Recommendation: Walt Disney DIS",
+        "listDetail": [
+            {
+                "id": 1,
+                "item": "Market cap: $69.0 billion"
+            },
+            {
+                "id": 2,
+                "item": "Year-over-year return: 653%"
+            }
+        ],
+        "desc": [
+            {
+                "id":1,
+                "para":"Developed to help power decentralized finance (DeFi) uses, decentralized apps (DApps) and smart contracts, Solana runs on a unique hybrid proof-of-stake and proof-of-history mechanisms to process transactions quickly and securely. SOL, Solana’s native token, powers the platform."
+            },
+            {
+                "id":2,
+                "para":"When it launched in 2020, SOL’s price started at $0.77. By late September 2024, its price was around $147.13, a gain of 19,008%."
+            }
+        ],
         "category": "mutual-funds"
     },
     {
         "id": 7,
         "image": "/images/investments/ibg1.svg",
-        "head": "NVDA",
-        "sub": "Nvidia Corp",
-        "price": "$132.65",
-        "value": "-0.26%",
+        "head": "Mutual Funds Recommendation: Nvidia Corp (NVDA)",
+        "listDetail": [
+            {
+                "id": 1,
+                "item": "Market cap: $69.0 billion"
+            },
+            {
+                "id": 2,
+                "item": "Year-over-year return: 653%"
+            }
+        ],
+        "desc": [
+            {
+                "id":1,
+                "para":"Developed to help power decentralized finance (DeFi) uses, decentralized apps (DApps) and smart contracts, Solana runs on a unique hybrid proof-of-stake and proof-of-history mechanisms to process transactions quickly and securely. SOL, Solana’s native token, powers the platform."
+            },
+            {
+                "id":2,
+                "para":"When it launched in 2020, SOL’s price started at $0.77. By late September 2024, its price was around $147.13, a gain of 19,008%."
+            }
+        ],
         "category": "mutual-funds"
     },
     {
         "id": 8,
         "image": "/images/investments/ibg1.svg",
-        "head": "ADA",
-        "sub": "Cardano",
-        "price": "$0.389",
-        "value": "+0.27%",
+        "head": "Crypto Recommendation: Cardano (ADA)",
+        "listDetail": [
+            {
+                "id": 1,
+                "item": "Market cap: $69.0 billion"
+            },
+            {
+                "id": 2,
+                "item": "Year-over-year return: 653%"
+            }
+        ],
+        "desc": [
+            {
+                "id":1,
+                "para":"Developed to help power decentralized finance (DeFi) uses, decentralized apps (DApps) and smart contracts, Solana runs on a unique hybrid proof-of-stake and proof-of-history mechanisms to process transactions quickly and securely. SOL, Solana’s native token, powers the platform."
+            },
+            {
+                "id":2,
+                "para":"When it launched in 2020, SOL’s price started at $0.77. By late September 2024, its price was around $147.13, a gain of 19,008%."
+            }
+        ],
         "category": "crypto"
     }
 ]

@@ -5,15 +5,14 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup'
 import { MdError } from "react-icons/md";
 import { Link, NavLink } from 'react-router';
-import { PiEyeLight,PiEyeSlash } from "react-icons/pi";
-import '../../assets/scss/component/Auth/authForm.scss'
-import FormHead from './FormHead';
+import { PiEyeLight, PiEyeSlash } from "react-icons/pi";
+import '../../assets/scss/component/Auth/loginForm.scss'
 
-const LoginForm = () => { 
+const LoginForm = () => {
 
-  const [isPasswordVisible, setPasswordVisible] =  useState(false);
+  const [isPasswordVisible, setPasswordVisible] = useState(false);
 
-  const passwordToggle = ()=> {
+  const passwordToggle = () => {
     setPasswordVisible(!isPasswordVisible);
   }
 
@@ -29,9 +28,9 @@ const LoginForm = () => {
   const validationSchema = Yup.object({
     email: Yup.string().email('Invalid email address').required('Email is required'),
     password: Yup.string()
-    .min(8, 'Password must be at least 8 characters long')
-    .required('Password is required')
-    .matches(/[a-zA-Z]/, 'Password must contain both letters and numbers'),
+      .min(8, 'Password must be at least 8 characters long')
+      .required('Password is required')
+      .matches(/[a-zA-Z]/, 'Password must contain both letters and numbers'),
   })
 
   const formik = useFormik({
@@ -45,8 +44,11 @@ const LoginForm = () => {
 
   return (
     <>
-      <Card className='auth-form'>
-        <FormHead/>
+      <Card className='login-form'>
+        <div className="form-head">
+          <Text as='h6'>Welcome</Text>
+          <Text as='p'>Please enter your credentials to continue</Text>
+        </div>
         <Form onSubmit={formik.handleSubmit}>
           <Row>
             <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
@@ -59,13 +61,13 @@ const LoginForm = () => {
             <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
               <div className="inp-area position-relative">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type={isPasswordVisible?'text':'password'} className='ct-inp' name="password" placeholder='Enter Your Password' onChange={formik.handleChange} value={formik.values.password} onBlur={formik.handleBlur} />
-                <Button type="button" variant='toggle' onClick={passwordToggle}>{isPasswordVisible?<PiEyeLight />:<PiEyeSlash />}</Button>
-                {formik.touched.password && formik.errors.password ? <small className='d-none'>{formik.errors.password}<MdError /></small> : null} 
+                <Form.Control type={isPasswordVisible ? 'text' : 'password'} className='ct-inp' name="password" placeholder='Enter Your Password' onChange={formik.handleChange} value={formik.values.password} onBlur={formik.handleBlur} />
+                <Button type="button" variant='toggle' onClick={passwordToggle}>{isPasswordVisible ? <PiEyeLight /> : <PiEyeSlash />}</Button>
+                {formik.touched.password && formik.errors.password ? <small className='d-none'>{formik.errors.password}<MdError /></small> : null}
               </div>
             </Form.Group>
             <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
-              <Text as='span'>Forgot your password? <Link>Reset Now</Link> </Text>
+              <Text as='span'>Forgot your password? <Link to='/forgot-password'>Reset Now</Link> </Text>
             </Form.Group>
             <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
               {/* <Button type='submit' variant='submit'>
@@ -74,7 +76,7 @@ const LoginForm = () => {
               <NavLink className='btn-submit' to='/dashboard'>sign in</NavLink>
             </Form.Group>
             <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
-              <Text as='span'>Don’t have an account? <Link>Sign Up</Link> </Text>
+              <Text as='span'>Don’t have an account? <Link to='/sign-up'>Sign Up</Link> </Text>
             </Form.Group>
           </Row>
         </Form>

@@ -13,7 +13,7 @@ import NewsLoader from '../Loader/NewsLoader';
 
 const useFetchData = (key, url,staleTime) => {
   return useQuery({
-    queryKey: [key],
+    queryKey: ['category data',key],
     queryFn: () => useFetchAPI(url, { category: key }),
     staleTime: staleTime,
   })
@@ -46,7 +46,7 @@ const NavTabs = () => {
     }
   ]
 
-  const { data: newsData, isLoading, isError, error } = useFetchData(['news data'], NEWS_API,120000)
+  const { data: newsData, isLoading, isError, error } = useFetchData(['news data'], NEWS_API,1000)
 
   const filteredNewsData = newsData ? newsData.filter((item) => {
     return key === 'all' || item.category === key;

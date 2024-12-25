@@ -1,40 +1,16 @@
 @use '../../utils' as *;
 
-
-.ct-flex-row {
-    .ct-flex-col {
-        max-width: 100%;
-        width: 578px;
-    }
-}
-
-.ct-offset {
-    margin-right: 6%;
-}
-
-.auth-form {
+.forgot-form {
     border-radius: 24px !important;
     border: none !important;
-    // background-color: transparent !important;
-    // background: linear-gradient(150deg, #ffffff00 13.42%, #000000e0 110.97%) !important;
-    background: linear-gradient(150deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(0,0,0,1) 100%) !important;
-    background-blend-mode: overlay;
-    backdrop-filter: blur(4px);
-    padding: 61px 44px 39px;
-    // border-width: 1px !important;
-    // border-style: solid !important;
-    // border-color: transparent !important; 
-    // border-image-source: linear-gradient(150deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) !important;
-    // border-image-slice: 1 !important;
-    box-shadow: -0.5px -0.5px 0px #ffffff, 1px 1px 0px #ffffff00;
+    padding: 47px 64px 37px;
     span {
         display: block;
         text-align: center;
-        margin-top: 20px;
-        @include formText(400,18px,-0.04px);
+        margin-top: 38px;
+        @include formText(400,18px,$black-clr,-0.04px);
         a {
-            text-decoration: underline;
-            @include formText(400,18px,-0.04px);
+            @include formText(600,18px,$green-clr-3,-0.04px);
         }
     }
     .btn-toggle {
@@ -46,13 +22,13 @@
         padding: 0;
         margin: 0;
         font-size: 22px;
-        color: $black-clr;
+        color: $grey-clr-2;
         // &:active {
         //     bor
         // }
     }
     .btn-submit {
-        margin-top: 38px;
+        margin-top: 24px;
         @include gradBtn($font-2,700,18px,56px,100%,8px);
     }
     .inp-area {
@@ -66,24 +42,24 @@
         }
         .form-label {
             margin-bottom: 16px;
-            @include formText(700,16px,0.128px)
+            @include formText(700,16px,$black-clr,0.128px)
         }
         .ct-inp {
             @include formInpAuth();
             &::-webkit-input-placeholder {
-                color: $black-clr;
+                color: $grey-clr-2;
                 font-size: 16px;
             }
             &::-moz-placeholder {
-                color: $black-clr;
+                color: $grey-clr-2;
                 font-size: 16px;
             }
             &:-ms-input-placeholder {
-                color: $black-clr;
+                color: $grey-clr-2;
                 font-size: 16px;
             }
             &:-moz-placeholder {
-                color: $black-clr;
+                color: $grey-clr-2;
                 font-size: 16px;
             }
             &[type='password'] {
@@ -103,10 +79,29 @@
             }
         }
     }
+    .form-head {
+        .ct-flex {
+            @include ctflex(center,flex-start);
+            .back-btn {
+            }
+            h6 {
+                text-align: center;
+                margin: 0 auto;
+                @include formXlHead();
+            }
+        }
+        p {
+            font-size: 18px;
+            text-align: center;
+            color: $black-clr;
+            margin: 36px 0;
+            line-height: 26px;
+        }
+    }
 }
 
 @include respond-to('tiny') {
-    .auth-form {
+    .forgot-form {
         padding: 20px 10px;
         span {
             margin-top: 10px;
@@ -123,18 +118,16 @@
                 padding: 5px 24px;
             }
         }
-    }
-    .ct-offset {
-        margin-right: 0;
-    }
-}
-@include respond-to('sm') {
-    .ct-offset {
-        margin-right: 0;
-    }
-}
-@include respond-to('md') {
-    .ct-offset {
-        margin-right: 0;
+        .form-head {
+            .ct-flex {
+                h6 {
+                    font-size: 24px;
+                }
+            }
+            p {
+                margin: 15px 0;
+                font-size: 16px;
+            }
+        } 
     }
 }

@@ -13,7 +13,7 @@ import RecommendBox from './RecommendBox';
 
 const useFetchData = (key, url,staleTime) => {
     return useQuery({
-      queryKey: [key],
+      queryKey: ['category data',key],
       queryFn: () => useFetchAPI(url, { category: key }),
       staleTime: staleTime,
     })
@@ -42,7 +42,7 @@ const NavTabs = () => {
         }
       ]
     
-      const { data: recommendData, isLoading, isError, error } = useFetchData(['news data'], RECOMMENDATION_API,10000)
+      const { data: recommendData, isLoading, isError, error } = useFetchData(['news data'], RECOMMENDATION_API,1000)
     
       const filteredRecommendData = recommendData ? recommendData.filter((item) => {
         return key === 'all' || item.category === key;

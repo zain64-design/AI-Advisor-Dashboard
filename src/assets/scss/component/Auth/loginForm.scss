@@ -1,0 +1,156 @@
+@use '../../utils' as *;
+
+
+.ct-flex-row {
+    .ct-flex-col {
+        max-width: 100%;
+        width: 578px;
+    }
+}
+
+.ct-offset {
+    margin-right: 6%;
+}
+
+.login-form {
+    border-radius: 24px !important;
+    border: none !important;
+    // background-color: transparent !important;
+    // background: linear-gradient(150deg, #ffffff00 13.42%, #000000e0 110.97%) !important;
+    background: linear-gradient(150deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(0,0,0,1) 100%) !important;
+    background-blend-mode: overlay;
+    backdrop-filter: blur(4px);
+    padding: 61px 44px 39px;
+    // border-width: 1px !important;
+    // border-style: solid !important;
+    // border-color: transparent !important; 
+    // border-image-source: linear-gradient(150deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) !important;
+    // border-image-slice: 1 !important;
+    box-shadow: -0.5px -0.5px 0px #ffffff, 1px 1px 0px #ffffff00;
+    span {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        @include formText(400,18px,$white-clr,-0.04px);
+        a {
+            text-decoration: underline;
+            @include formText(400,18px,$white-clr,-0.04px);
+        }
+    }
+    .btn-toggle {
+        position: absolute;
+        right: 14px;
+        bottom: 40px;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+        font-size: 22px;
+        color: $black-clr;
+        // &:active {
+        //     bor
+        // }
+    }
+    .btn-submit {
+        margin-top: 38px;
+        @include gradBtn($font-2,700,18px,56px,100%,8px);
+    }
+    .inp-area {
+        position: relative;
+        padding-bottom: 24px;
+        small {
+            position: absolute;
+            left: 0;
+            margin-top: 5px;
+            color: #C62E2E;
+        }
+        .form-label {
+            margin-bottom: 16px;
+            @include formText(700,16px,$white-clr,0.128px)
+        }
+        .ct-inp {
+            @include formInpAuth();
+            &::-webkit-input-placeholder {
+                color: $black-clr;
+                font-size: 16px;
+            }
+            &::-moz-placeholder {
+                color: $black-clr;
+                font-size: 16px;
+            }
+            &:-ms-input-placeholder {
+                color: $black-clr;
+                font-size: 16px;
+            }
+            &:-moz-placeholder {
+                color: $black-clr;
+                font-size: 16px;
+            }
+            &[type='password'] {
+                font-family: $font-4;
+                &::-webkit-input-placeholder {
+                    font-family: $font-2;
+                }
+                &::-moz-placeholder {
+                    font-family: $font-2;
+                }
+                &:-ms-input-placeholder {
+                    font-family: $font-2;
+                }
+                &:-moz-placeholder {
+                    font-family: $font-2;
+                }
+            }
+        }
+    }
+    .form-head {
+        h6 {
+            text-align: center;
+            @include formXlHead();
+        }
+        p {
+            text-align: center;
+            margin: 16px 0 38px;
+            @include formText(400,16px,$white-clr,-0.04px);
+        }
+    }
+}
+
+@include respond-to('tiny') {
+    .login-form {
+        padding: 20px 10px;
+        span {
+            margin-top: 10px;
+        }
+        .btn-submit {
+            margin-top: 10px;
+        }
+        .btn-toggle {
+            bottom: 30px;
+        }
+        .inp-area {
+            .ct-inp {
+                height: 45px;
+                padding: 5px 24px;
+            }
+        }
+        .form-head {
+            p {
+                margin: 15px 0 15px;
+            }
+        } 
+    }
+    .ct-offset {
+        margin-right: 0;
+    }
+}
+@include respond-to('sm') {
+    .ct-offset {
+        margin-right: 0;
+    }
+}
+@include respond-to('md') {
+    .ct-offset {
+        margin-right: 0;
+    }
+}

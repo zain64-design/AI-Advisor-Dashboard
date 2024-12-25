@@ -1,0 +1,116 @@
+@use '../../utils' as *;
+
+.signup-form {
+    border-radius: 24px !important;
+    border: none !important;
+    padding: 50px 65px;
+    span {
+        display: block;
+        text-align: center;
+        margin-top: 38px;
+        @include formText(400,18px,$black-clr,-0.04px);
+        a {
+            @include formText(600,18px,$green-clr-3,-0.04px);
+        }
+    }
+    .btn-toggle {
+        position: absolute;
+        right: 14px;
+        bottom: 40px;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+        font-size: 22px;
+        color: $grey-clr-2;
+        // &:active {
+        //     bor
+        // }
+    }
+    .btn-submit {
+        margin-top: 38px;
+        @include gradBtn($font-2,700,18px,56px,100%,8px);
+    }
+    .inp-area {
+        position: relative;
+        padding-bottom: 24px;
+        small {
+            position: absolute;
+            left: 0;
+            margin-top: 5px;
+            color: #C62E2E;
+        }
+        .form-label {
+            margin-bottom: 16px;
+            @include formText(700,16px,$black-clr,0.128px)
+        }
+        .ct-inp {
+            @include formInpAuth();
+            &::-webkit-input-placeholder {
+                color: $grey-clr-2;
+                font-size: 16px;
+            }
+            &::-moz-placeholder {
+                color: $grey-clr-2;
+                font-size: 16px;
+            }
+            &:-ms-input-placeholder {
+                color: $grey-clr-2;
+                font-size: 16px;
+            }
+            &:-moz-placeholder {
+                color: $grey-clr-2;
+                font-size: 16px;
+            }
+            &[type='password'] {
+                font-family: $font-4;
+                &::-webkit-input-placeholder {
+                    font-family: $font-2;
+                }
+                &::-moz-placeholder {
+                    font-family: $font-2;
+                }
+                &:-ms-input-placeholder {
+                    font-family: $font-2;
+                }
+                &:-moz-placeholder {
+                    font-family: $font-2;
+                }
+            }
+        }
+    }
+    .form-head {
+        h6 {
+            text-align: center;
+            @include formXlHead();
+            margin-bottom: 38px;
+        }
+    }
+}
+
+@include respond-to('tiny') {
+    .signup-form {
+        padding: 20px 10px;
+        span {
+            margin-top: 10px;
+        }
+        .btn-submit {
+            margin-top: 10px;
+        }
+        .btn-toggle {
+            bottom: 30px;
+        }
+        .inp-area {
+            .ct-inp {
+                height: 45px;
+                padding: 5px 24px;
+            }
+        }
+        .form-head {
+            h6 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+        } 
+    }
+}

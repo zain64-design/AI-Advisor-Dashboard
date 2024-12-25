@@ -1,0 +1,17 @@
+@use '../../utils' as *;
+
+.signup-area {
+    padding: 110px 0;
+}
+
+@include respond-to('tiny') {
+    .signup-area {
+        padding: 50px 0;
+    } 
+}
+
+@include respond-to('sm') {
+    .signup-area {
+        padding: 70px 0;
+    } 
+}

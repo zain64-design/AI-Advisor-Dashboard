@@ -1,0 +1,19 @@
+@use '../../utils' as *;
+
+.forgot-area {
+    padding: 50px 0;
+    height: 100vh;
+    @include ctflex(center,center);
+}
+
+@include respond-to('tiny') {
+    .forgot-area {
+        padding: 50px 0;
+    } 
+}
+
+@include respond-to('sm') {
+    .forgot-area {
+        padding: 70px 0;
+    } 
+}

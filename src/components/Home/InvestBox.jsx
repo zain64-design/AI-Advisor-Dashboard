@@ -11,10 +11,10 @@ const InvestBox = ({ recentData }) => {
 
   const {getValueClass} = useGetValueClass();
   const {getTrendColor} = useGetTrendColor();
+  
 
   return (
     <>
-    {/* {recentData?.map((data)=> console.log(`InvestBox:${data.id}`))} */}
       {recentData?.map((data) => {
         const { id, image, head, date, price, value, recentChartData } = data;
         return (
