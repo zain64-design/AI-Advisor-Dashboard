@@ -4,8 +4,6 @@ import { QueryClient,QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import Layout from './components/Layout/Layout';
 import Login from './pages/Login';
-// const Home = lazy(() => import('./pages/Home'));
-// import RouteLoader from './components/Loader/RouterLoader'
 import Home from './pages/Home'
 import News from './pages/News';
 import InvestmentPartner from './pages/InvestmentPartner';

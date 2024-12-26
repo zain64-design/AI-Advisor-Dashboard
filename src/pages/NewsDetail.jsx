@@ -17,7 +17,7 @@ const NewsDetail = () => {
   const {id} =  useParams();
 
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: [id],
+    queryKey: ['newsDetail',id],
     queryFn: () => useFetchAPI(NEWS_DETAILS_API),
 });
 

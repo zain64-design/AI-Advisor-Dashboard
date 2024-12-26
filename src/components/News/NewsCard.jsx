@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router';
 import Text from '../UI/Text'
 import Image from '../UI/Image'
-import { Col, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { HiArrowUpRight } from "react-icons/hi2";
 import Author from './Author'
 import '../../assets/scss/component/news/newsCard.scss';

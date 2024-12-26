@@ -5,8 +5,8 @@ import { useParams } from 'react-router';
 import { useQuery } from '@tanstack/react-query'
 import useFetchAPI from '../utils/hooks/useFetchAPI'
 import { RECOMMENDATION_DETAIL_API } from '../utils/constant';
-import SkNewsDetailLoader from '../components/Loader/SkNewsDetailLoader'
 import RecommendDetailsBox from '../components/Recommendation/RecommendDetailsBox';
+import SkRecommendDetailLoader from '../components/Loader/SkRecommendDetailLoader';
 
 const RecommendDetail = () => {
     useAOS();
@@ -29,7 +29,7 @@ const RecommendDetail = () => {
                 <div className="container-ct">
                     <Row>
                         <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
-                            {isLoading ? <SkNewsDetailLoader />
+                            {isLoading ? <SkRecommendDetailLoader />
                                 : isError ? <Text as='h6'>{error.message}</Text>
                                     : <RecommendDetailsBox {...recommendData} />}
                         </Col>
