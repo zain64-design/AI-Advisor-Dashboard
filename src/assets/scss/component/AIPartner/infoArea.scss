@@ -1,0 +1,71 @@
+@use '../../utils' as *;
+
+.chat-info-area {
+    margin-bottom: 7rem;
+    .top-area {
+        @include flex(center,flex-start,row,wrap,10px);
+        .btn-back {
+            border: none;
+            padding: 0;
+            margin: 0;
+            &>svg {
+                width: 25px;
+            }
+        }
+        h6 {
+            @include ctHead(700,24px,$black-clr,unset);
+            letter-spacing: -0.1px;
+            margin: 0 auto;
+        }
+        margin-bottom: 8rem;
+    }
+    .desc {
+        p {
+            @include ctPara(18px,$grey-clr-2);
+            line-height: 24px;
+        }
+
+        ul {
+            margin-top: 2rem;
+            li {
+                @include ctPara(18px,$grey-clr-2);
+                line-height: 24px;
+                span {
+                    color: $black-clr;
+                    font-weight: 600;
+                }
+                &:not(:last-child) {
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+
+@include respond-to('tiny') {
+    .chat-info-area {
+        margin-bottom: 2rem;
+        .top-area {
+            margin-bottom: 2rem;
+            .btn-back {
+                &>svg {
+                    width: 18px;
+                }
+            }
+            h6 {
+                font-size: 18px;
+            }
+        }
+        .desc {
+            p {
+                font-size: 16px;
+            }
+            ul {
+                li {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

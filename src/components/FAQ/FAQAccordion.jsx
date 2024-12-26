@@ -1,7 +1,7 @@
 import React, { useId, useState } from 'react'
 import Accordion from 'react-bootstrap/Accordion';
 import Text from '../UI/Text';
-import '../../assets/scss/component/FAQ/faqAccordion.scss'
+import '../../assets/scss/component/faq/faqAccordion.scss'
 import { IoChevronDownSharp } from "react-icons/io5";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'

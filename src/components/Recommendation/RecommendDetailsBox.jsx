@@ -21,15 +21,15 @@ const RecommendDetailsBox = (recommendData) => {
                 </figure>
                 <Text as='h4'>{head}</Text>
                 <div className="desc">
-                    <ul>
+                    <Text as='ul'>
                     {listDetail?.map((value) => {
                         const { id, item } = value;
                         return (
 
-                            <li key={id}>{item}</li>
+                            <Text as='li' key={id}>{item}</Text>
                         )
                     })}
-                    </ul>
+                    </Text>
 
                     {desc?.map((value)=> {
                         const {id,para} = value;

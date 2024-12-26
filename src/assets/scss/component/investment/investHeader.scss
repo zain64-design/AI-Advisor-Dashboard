@@ -1,0 +1,18 @@
+@use '../../utils' as *;
+
+.invest-header {
+    @include flex(center,flex-start,row,wrap,5px 24px);
+    h6 {
+        @include ctHead(700,24px,$black-clr,capitalize);
+        letter-spacing: -0.04px;
+    }
+    margin-bottom: 40px;
+}
+
+@include respond-to('tiny') {
+    .invest-header {
+        h6 {
+            font-size: 18px;
+        }
+    }
+}

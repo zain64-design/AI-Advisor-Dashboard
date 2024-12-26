@@ -1,0 +1,104 @@
+@use '../../utils' as *;
+.add-invest-area {
+    margin-top: 60px;
+    .inp-area {
+        position: relative;
+        padding-bottom: 24px;
+        label {
+            font-family: $font-1;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: $black-clr-4;
+        }
+        .ct-inp {
+            @include ctformInp(48px,$white-bg,$black-clr-4,$font-1,16px,5px 12px);
+            &::-webkit-input-placeholder {
+                color: $black-clr-4;
+                font-size: 16px;
+                text-transform: unset;
+            }
+            &::-moz-placeholder {
+                color: $black-clr-4;
+                font-size: 16px;
+                text-transform: unset;
+            }
+            &:-ms-input-placeholder {
+                color: $black-clr-4;
+                font-size: 16px;
+                text-transform: unset;
+            }
+            &:-moz-placeholder {
+                color: $black-clr-4;
+                font-size: 16px;
+                text-transform: unset;
+            }
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+            &[type="number"] {
+                -moz-appearance: textfield;
+            }
+        }
+        .ct-select {
+            .btn-select {
+            @include ctformInp(48px,$white-bg,$black-clr-4,$font-1,16px,5px 30px 5px 12px);
+            position: relative;
+            text-align: left;
+            &::after {
+                border: none;
+                background-image: url(/public/images/icons/chevron-down.svg);
+                background-repeat: no-repeat;
+                width: 15px;
+                height: 9px;
+                position: absolute;
+                right: 15px;
+                top: 20px;
+                transition: all 0.2s ease-in-out;
+            }
+            &.show {
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+            }
+            .select-menu {
+                width: 100%;
+                border-radius: 10px;
+                border: none;
+                margin-top: 10px;
+                .dropdown-item {
+                    font-family: $font-1;
+                    font-weight: 400;
+                    color: $black-clr-4;
+                    &:not(:last-child) {
+                        margin-bottom: 6px;
+                    }
+                    &:active {
+                        background-color: $white-bg;
+                    }
+                }
+            }
+        }
+    }
+    .btn-save {
+        @include gradBtn($font-2,700,28px,86px,100%,10px);
+        margin-top: 10rem;
+    }
+}
+
+@include respond-to('tiny') {
+    .add-invest-area {
+        margin-top: 0;
+        .btn-save {
+            height: 45px;
+            font-size: 16px;
+            margin-top: 1rem;
+        }
+    }
+}

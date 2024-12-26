@@ -6,7 +6,7 @@ import * as Yup from 'yup'
 import { MdError } from "react-icons/md";
 import { Link, NavLink } from 'react-router';
 import { PiEyeLight, PiEyeSlash } from "react-icons/pi";
-import '../../assets/scss/component/Auth/loginForm.scss'
+import '../../assets/scss/component/auth/loginForm.scss'
 
 const LoginForm = () => {
 
@@ -55,7 +55,7 @@ const LoginForm = () => {
               <div className="inp-area">
                 <Form.Label>Email</Form.Label>
                 <Form.Control type="email" className='ct-inp' name="email" placeholder='Enter Your Email' onChange={formik.handleChange} value={formik.values.email} onBlur={formik.handleBlur} />
-                {formik.touched.email && formik.errors.email ? <small className='d-none'>{formik.errors.email}<MdError /></small> : null}
+                {/* {formik.touched.email && formik.errors.email ? <small>{formik.errors.email}<MdError /></small> : null} */}
               </div>
             </Form.Group>
             <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
@@ -63,7 +63,7 @@ const LoginForm = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type={isPasswordVisible ? 'text' : 'password'} className='ct-inp' name="password" placeholder='Enter Your Password' onChange={formik.handleChange} value={formik.values.password} onBlur={formik.handleBlur} />
                 <Button type="button" variant='toggle' onClick={passwordToggle}>{isPasswordVisible ? <PiEyeLight /> : <PiEyeSlash />}</Button>
-                {formik.touched.password && formik.errors.password ? <small className='d-none'>{formik.errors.password}<MdError /></small> : null}
+                {/* {formik.touched.password && formik.errors.password ? <small>{formik.errors.password}<MdError /></small> : null} */}
               </div>
             </Form.Group>
             <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>

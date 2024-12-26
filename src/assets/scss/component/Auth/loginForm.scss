@@ -2,6 +2,8 @@
 
 
 .ct-flex-row {
+    display: flex;
+    justify-content: flex-end;
     .ct-flex-col {
         max-width: 100%;
         width: 578px;
@@ -9,7 +11,7 @@
 }
 
 .ct-offset {
-    margin-right: 6%;
+    margin-right: 10%;
 }
 
 .login-form {
@@ -117,6 +119,9 @@
 }
 
 @include respond-to('tiny') {
+    .ct-flex-row {
+        justify-content: center;
+    }
     .login-form {
         padding: 20px 10px;
         span {
@@ -145,11 +150,33 @@
     }
 }
 @include respond-to('sm') {
+    .ct-flex-row {
+        justify-content: center;
+    }
     .ct-offset {
         margin-right: 0;
     }
 }
 @include respond-to('md') {
+    .ct-flex-row {
+        justify-content: center;
+    }
+    .ct-offset {
+        margin-right: 0;
+    }
+}
+@include respond-to('lg') {
+    .ct-offset {
+        margin-right: 0;
+    }
+    .ct-flex-row {
+        .ct-flex-col {
+            width: 520px;
+        }
+    }
+}
+
+@include respond-to('xl') {
     .ct-offset {
         margin-right: 0;
     }

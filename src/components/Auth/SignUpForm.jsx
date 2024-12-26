@@ -3,7 +3,7 @@ import { Card, Form, Row, Col, Button } from 'react-bootstrap';
 import Text from '../UI/Text'
 import { Link, NavLink } from 'react-router';
 import { PiEyeLight, PiEyeSlash } from "react-icons/pi";
-import '../../assets/scss/component/Auth/signUpForm.scss'
+import '../../assets/scss/component/auth/signUpForm.scss'
 
 const SignUpForm = () => {
     const [isPasswordVisible, setPasswordVisible] = useState(false);

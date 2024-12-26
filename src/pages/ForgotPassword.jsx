@@ -1,7 +1,6 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import useAOS from '../utils/hooks/useAOS';
-import SignUpForm from '../components/Auth/SignUpForm';
 import '../assets/scss/component/Auth/forgotArea.scss'
 import ForgotPassForm from '../components/Auth/ForgotPassForm';
 

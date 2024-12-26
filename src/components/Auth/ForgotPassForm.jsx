@@ -4,7 +4,7 @@ import Text from '../UI/Text'
 import { Link } from 'react-router';
 import ResetLinkModal from './ResetLinkModal';
 // import useModal from '../../utils/hooks/useModal';
-import '../../assets/scss/component/Auth/forgotPassForm.scss'
+import '../../assets/scss/component/auth/forgotPassForm.scss'
 import OTPModal from './OTPModal';
 
 const ForgotPassForm = () => {
