@@ -9,7 +9,7 @@
                 padding: 24px;
                 text-align: center;
                 .reset-area {
-                    padding: 30px 0;
+                    padding: 30px 0 24px;
                     h6 {
                         font-size: 24px;
                         font-weight: 700;
@@ -22,13 +22,71 @@
                         color: $black-clr;
                         line-height: 24px;
                     }
+                    small {
+                        font-family: $font-5;
+                        font-weight: 400;
+                        font-size: 18px;
+                        color: $black-clr-9;
+                        .btn-resend {
+                            padding: 0;
+                            margin: 0;
+                            border: none;
+                            font-family: $font-5;
+                            font-weight: 600;
+                            font-size: 18px;
+                            color: $green-clr-4;
+                        }
+                    }
+                    .otp-number-area {
+                        margin: 38px 0;
+                        .p-inputotp {
+                            gap: 20px;
+                            justify-content: center;
+                            .custom-otp-input {
+                                width: 69px;
+                                font-size: 36px;
+                                border: none;
+                                appearance: none;
+                                text-align: center;
+                                background: transparent;
+                                transition: all 0.2s;
+                                border-bottom: 2px solid $green-clr-4;
+                                font-family: $font-1;
+                                font-size: 38px;
+                                font-weight: 600;
+                                color: $green-clr-4;
+                                &:focus {
+                                    outline: none;
+                                    border-bottom-color: $green-clr-4;
+                                }
+                                &::-webkit-input-placeholder {
+                                    color: $green-clr-4;
+                                    font-size: 38px;
+                                }
+                                &::-moz-placeholder {
+                                    color: $green-clr-4;
+                                    font-size: 38px;
+                                }
+                                &:-ms-input-placeholder {
+                                    color: $green-clr-4;
+                                    font-size: 38px;
+                                }
+                                &:-moz-placeholder {
+                                    color: $green-clr-4;
+                                    font-size: 38px;
+                                }
+                            }
+                        }
+                        
+                    }
                 }
             }
             .modal-footer {
                 padding: 0;
                 border: none;
                 .btn-okay {
-                    @include gradBtn($font-1,700,24px,56px,100%,8px);
+                    @include gradBtn($font-1,700,24px,70px,100%,8px);
+                    margin: 0;
                 }
             }
         }
