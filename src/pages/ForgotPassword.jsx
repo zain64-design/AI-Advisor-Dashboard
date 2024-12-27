@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import useAOS from '../utils/hooks/useAOS';
-import '../assets/scss/component/auth/forgotArea.scss'
+import '../assets/scss/component/Auth/forgotArea.scss'
 import ForgotPassForm from '../components/Auth/ForgotPassForm';
 
 const ForgotPassword = () => {

@@ -2,7 +2,7 @@ import React from 'react'
 import LoginForm from '../components/Auth/LoginForm';
 import { Container } from 'react-bootstrap';
 import useAOS from '../utils/hooks/useAOS';
-import '../assets/scss/component/auth/loginArea.scss'
+import '../assets/scss/component/Auth/loginArea.scss'
 
 const Login = () => {
 

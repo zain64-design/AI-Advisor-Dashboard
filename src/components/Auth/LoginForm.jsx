@@ -6,7 +6,7 @@ import * as Yup from 'yup'
 import { MdError } from "react-icons/md";
 import { Link, NavLink } from 'react-router';
 import { PiEyeLight, PiEyeSlash } from "react-icons/pi";
-import '../../assets/scss/component/auth/loginForm.scss'
+import '../../assets/scss/component/Auth/loginForm.scss'
 
 const LoginForm = () => {
 
