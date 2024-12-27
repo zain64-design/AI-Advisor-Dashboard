@@ -45,7 +45,7 @@ const SignUpForm = () => {
                         </Form.Group>
                         <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
                             {/* <Button type='submit' variant='submit'>sign in</Button> */}
-                            <NavLink className='btn-submit' to='/dashboard'>Continue</NavLink>
+                            <NavLink className='btn-submit' to='/investment-questionnaire'>Continue</NavLink>
                         </Form.Group>
                         <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
                             <Text as='span'>Already have an account? <Link to='/'>Sign In</Link> </Text>

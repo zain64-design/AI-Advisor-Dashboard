@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Form, Button, ProgressBar, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button, ProgressBar, Card } from 'react-bootstrap';
+import Text from '../UI/Text'
+import '../../assets/scss/component/questionaire/stepForm.scss'
 
 // Step Form Component
 const StepForm = () => {
@@ -9,9 +11,11 @@ const StepForm = () => {
     step2: {},
     step3: {},
     step4: {},
+    step5: {},
+    step6: {},
   }); // Store data for each step
 
-  const totalSteps = 4; // Total steps in the form
+  const totalSteps = 6; // Total steps in the form
 
   // Handle form data change for each step
   const handleInputChange = (step, data) => {
@@ -46,91 +50,322 @@ const StepForm = () => {
   const progress = (currentStep / (totalSteps - 1)) * 100;
 
   return (
-    <Container className="step-form mt-5">
-      <Row>
-        <Col>
-          <ProgressBar now={progress} label={`${Math.round(progress)}%`} />
-          <span>Step {currentStep + 1} of {totalSteps}</span>
-        </Col>
-      </Row>
-      
-      <Row>
-        <Col>
-          {/* Step Content */}
-          {currentStep === 0 && <Step1 formData={formData.step1} handleInputChange={(data) => handleInputChange('step1', data)} />}
-          {currentStep === 1 && <Step2 formData={formData.step2} handleInputChange={(data) => handleInputChange('step2', data)} />}
-          {currentStep === 2 && <Step3 formData={formData.step3} handleInputChange={(data) => handleInputChange('step3', data)} />}
-          {currentStep === 3 && <Step4 formData={formData.step4} handleInputChange={(data) => handleInputChange('step4', data)} />}
-        </Col>
-      </Row>
+    <Card className='step-form-main'>
+            <div className="step-top-bar">
+              {currentStep > 0 && <Button variant="step-back" onClick={prevStep}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 31" fill="none">
+                  <path d="M16.375 2.75L3.625 15.5M3.625 15.5L16.375 28.25M3.625 15.5L33.375 15.5" stroke="black" strokeWidth="4" strokeLinecap="round" />
+                </svg>
+              </Button>}
+              <ProgressBar now={progress} label={`${Math.round(progress)}%`} />
+              <Text as='small'><Text as='span'>{currentStep + 1}</Text>/{totalSteps}</Text>
+            </div>
 
-      {/* Navigation Buttons */}
-      <Row>
-        <Col className="d-flex justify-content-between mt-3">
-          {currentStep > 0 && <Button variant="secondary" onClick={prevStep}>Back</Button>}
-          {currentStep < totalSteps - 1 && <Button variant="primary" onClick={nextStep}>Next</Button>}
-          {currentStep < totalSteps - 1 && <Button variant="link" onClick={skipStep}>Skip</Button>}
-          {currentStep === totalSteps - 1 && <Button variant="success" onClick={() => alert('Form Submitted')}>Submit</Button>}
-        </Col>
-      </Row>
+            <Text as='h6' className='form-head'>Investment Suitability Questionaire</Text>
 
-      {/* Display Current Step */}
-      <Row>
-      </Row>
-    </Container>
+            <div className="step-form-area">
+                  {currentStep === 0 && <Step1 formData={formData.step1} handleInputChange={(data) => handleInputChange('step1', data)} />}
+                  {currentStep === 1 && <Step2 formData={formData.step2} handleInputChange={(data) => handleInputChange('step2', data)} />}
+                  {currentStep === 2 && <Step3 formData={formData.step3} handleInputChange={(data) => handleInputChange('step3', data)} />}
+                  {currentStep === 3 && <Step4 formData={formData.step4} handleInputChange={(data) => handleInputChange('step4', data)} />}
+                  {currentStep === 4 && <Step5 formData={formData.step5} handleInputChange={(data) => handleInputChange('step5', data)} />}
+                  {currentStep === 5 && <Step6 formData={formData.step6} handleInputChange={(data) => handleInputChange('step6', data)} />}
+                </div>
+
+                <div className="step-btm-nav">
+                {currentStep < totalSteps - 1 && <Button variant="" onClick={nextStep}>Next</Button>}
+                {currentStep < totalSteps - 1 && <Button variant="" onClick={skipStep}>Skip</Button>}
+                {currentStep === totalSteps - 1 && <Button variant="" onClick={() => alert('Form Submitted')}>Submit</Button>}
+                </div>
+          </Card>
   );
 };
 
-// Example Step Components (React Bootstrap Form)
-const Step1 = ({ formData, handleInputChange }) => (
-  <Form>
-    <Form.Group controlId="formName">
-      <Form.Label>User Name</Form.Label>
-      <Form.Control
-        type="text"
-        placeholder="Enter your name"
-        value={formData.name || ''}
-        onChange={(e) => handleInputChange({ ...formData, name: e.target.value })}
-      />
-    </Form.Group>
-  </Form>
-);
+// Example Step Components with Checkboxes
+const Step1 = ({ formData, handleInputChange }) => {
+  const options = [
+    {
+      id: 1,
+      label: 'Capital Preservation:',
+      info: '(brokerage accounts) I have the preference for the relative safety of my invested capital over return on investments; this includes investing in products such as CD, TBILI and money markets. I am willing to accede the possibility of achieving minimal investment returns in exchange for minimum volatility and max volatility.'
+    },
+    {
+      id: 2,
+      label: 'Income:',
+      info: '(brokerage accounts) I have the preference for the relative safety of my invested capital over return on investments; this includes investing in products such as CD, TBILI and money markets. I am willing to accede the possibility of achieving minimal investment returns in exchange for minimum volatility and max volatility.'
+    },
+    {
+      id: 3,
+      label: 'Moderate Growth:',
+      info: '(brokerage accounts) I have the preference for the relative safety of my invested capital over return on investments; this includes investing in products such as CD, TBILI and money markets. I am willing to accede the possibility of achieving minimal investment returns in exchange for minimum volatility and max volatility.'
+    },
+    {
+      id: 4,
+      label: 'Growth:',
+      info: '(brokerage accounts) I have the preference for the relative safety of my invested capital over return on investments; this includes investing in products such as CD, TBILI and money markets. I am willing to accede the possibility of achieving minimal investment returns in exchange for minimum volatility and max volatility.'
+    },
+    {
+      id: 5,
+      label: 'Speculation'
+    },
+  ];
 
-const Step2 = ({ formData, handleInputChange }) => (
-  <Form>
-    <Form.Group controlId="formEmail">
-      <Form.Label>Email Address</Form.Label>
-      <Form.Control
-        type="email"
-        placeholder="Enter your email"
-        value={formData.email || ''}
-        onChange={(e) => handleInputChange({ ...formData, email: e.target.value })}
-      />
-    </Form.Group>
-  </Form>
-);
+  const handleCheckboxChange = (option) => {
+    const updatedData = { ...formData, [option]: !formData[option] };
+    handleInputChange(updatedData);
+  };
 
-const Step3 = ({ formData, handleInputChange }) => (
-  <Form>
-    <Form.Group controlId="formAddress">
-      <Form.Label>Address</Form.Label>
-      <Form.Control
-        type="text"
-        placeholder="Enter your address"
-        value={formData.address || ''}
-        onChange={(e) => handleInputChange({ ...formData, address: e.target.value })}
-      />
-    </Form.Group>
-  </Form>
-);
+  return (
+    <Form>
+      <Text as='h5'>1. Investment Objective</Text>
+      <Text as='h6'>What best describes your investment objective? </Text>
+      {options.map(option => (
+        <Form.Check
+          key={option.id}
+          type="checkbox"
+          id={`check-${option.id}`}
+          label={
+            <>
+              {option.label} <small className="sm-txt">{option.info}</small>
+            </>
+          }
+          checked={formData[option.label] || false}
+          onChange={() => handleCheckboxChange(option.label)}
+        />
+      ))}
+    </Form>
+  );
+};
 
-const Step4 = ({ formData, handleInputChange }) => (
-  <div>
-    <h3>Review Your Information</h3>
-    <p><strong>Name:</strong> {formData.name}</p>
-    <p><strong>Email:</strong> {formData.email}</p>
-    <p><strong>Address:</strong> {formData.address}</p>
-  </div>
-);
+const Step2 = ({ formData, handleInputChange }) => {
+  const options = [
+    {
+      id: 1,
+      label: 'Low',
+      info: 'I am willing to accept only minimal changes in the value of my portfolio. I understand that my investment returns may be very low because I value reduced risk of principal loss.( can only be selected with an investment objective of Capital preservation, income of  moderate growth).'
+    },
+    {
+      id: 2,
+      label: 'Moderate',
+      info: 'I am willing to accept possible principal loss if there is a potential for a moderate increase in the value of my portfolio over time. (Can only be selected with an investment objective of Income, moderate growth or growth)'
+    },
+    {
+      id: 3,
+      label: 'High'
+    }
+  ];
+
+  const handleCheckboxChange = (option) => {
+    const updatedData = { ...formData, [option]: !formData[option] };
+    handleInputChange(updatedData);
+  };
+
+  return (
+    <Form>
+      <Text as='h5'>2. Risk Tolerance</Text>
+      {options.map(option => (
+        <Form.Check
+          key={option.id}
+          type="checkbox"
+          id={`check-${option.id}`}
+          label={
+            <>
+              {option.label} <small className="sm-txt">{option.info}</small>
+            </>
+          }
+          checked={formData[option.label] || false}
+          onChange={() => handleCheckboxChange(option.label)}
+        />
+      ))}
+    </Form>
+  );
+};
+
+const Step3 = ({ formData, handleInputChange }) => {
+  const options = [
+    {
+      id: 1,
+      label: 'Not likely',
+      info: 'Can only be selected with an investment objective of Capital preservation, income of  moderate growth).'
+    },
+    {
+      id: 2,
+      label: 'Likely',
+      info: 'Can only be selected with an investment objective of Income, moderate growth or growth).'
+    },
+    {
+      id: 3,
+      label: 'Very Likely',
+      info: '(brokerage accounts) I have the preference for the relative safety of my invested capital over return on investments; this includes investing in products such as CD, TBILI and money markets. I am willing to accede the possibility of achieving minimal investment returns in exchange for minimum volatility and max volatility.'
+    }
+  ];
+
+  const handleCheckboxChange = (option) => {
+    const updatedData = { ...formData, [option]: !formData[option] };
+    handleInputChange(updatedData);
+  };
+
+  return (
+    <Form>
+      <Text as='h5'>3. How likely would you be able to tolerate the value of your account changing +/- 20% over three years.</Text>
+      {options.map(option => (
+        <Form.Check
+          key={option.id}
+          type="checkbox"
+          id={`check-${option.id}`}
+          label={
+            <>
+              {option.label} <small className="sm-txt">{option.info}</small>
+            </>
+          }
+          checked={formData[option.label] || false}
+          onChange={() => handleCheckboxChange(option.label)}
+        />
+      ))}
+    </Form>
+  );
+};
+
+const Step4 = ({ formData, handleInputChange }) => {
+  const options = [
+    {
+      id: 1,
+      label: 'Sell All'
+    },
+    {
+      id: 2,
+      label: 'Sell most'
+    },
+    {
+      id: 3,
+      label: 'Sell nothing',
+      info: 'Cannot be selected with an investment Objective of capital preservation'
+    },
+    {
+      id: 4,
+      label: 'Buy more'
+    }
+  ];
+
+  const handleCheckboxChange = (option) => {
+    const updatedData = { ...formData, [option]: !formData[option] };
+    handleInputChange(updatedData);
+  };
+
+  return (
+    <Form>
+      <Text as='h5'> 4. What would you do If the value of your investment dropped by 20%? </Text>
+      {options.map(option => (
+        <Form.Check
+          key={option.id}
+          type="checkbox"
+          id={`check-${option.id}`}
+          label={
+            <>
+              {option.label} <small className="sm-txt">{option.info}</small>
+            </>
+          }
+          checked={formData[option.label] || false}
+          onChange={() => handleCheckboxChange(option.label)}
+        />
+      ))}
+    </Form>
+  );
+};
+
+const Step5 = ({ formData, handleInputChange }) => {
+  const options = [
+    {
+      id: 1,
+      label: 'Less than 1 year '
+    },
+    {
+      id: 2,
+      label: '1-3 years'
+    },
+    {
+      id: 3,
+      label: '3-5 years',
+    },
+    {
+      id: 4,
+      label: '5-10 years'
+    },
+    {
+      id: 5,
+      label: 'Greater than 10 years'
+    },
+  ];
+
+  const handleCheckboxChange = (option) => {
+    const updatedData = { ...formData, [option]: !formData[option] };
+    handleInputChange(updatedData);
+  };
+
+  return (
+    <Form>
+      <Text as='h5'>5. Investment Horizon</Text>
+      <Text as='h6'>How long do you plan to invest this money to achieve your financial goal(s)? </Text>
+      {options.map(option => (
+        <Form.Check
+          key={option.id}
+          type="checkbox"
+          id={`check-${option.id}`}
+          label={
+            <>
+              {option.label} <small className="sm-txt">{option.info}</small>
+            </>
+          }
+          checked={formData[option.label] || false}
+          onChange={() => handleCheckboxChange(option.label)}
+        />
+      ))}
+    </Form>
+  );
+};
+
+const Step6 = ({ formData, handleInputChange }) => {
+  const options = [
+    {
+      id: 1,
+      label: 'Less than 3 years (short term)'
+    },
+    {
+      id: 2,
+      label: '3-10 years (medium term)'
+    },
+    {
+      id: 3,
+      label: 'Greater than 10 years (long term)'
+    }
+  ];
+
+  const handleCheckboxChange = (option) => {
+    const updatedData = { ...formData, [option]: !formData[option] };
+    handleInputChange(updatedData);
+  };
+
+  return (
+    <Form>
+      <Text as='h5'>6. Liquidity Needs</Text>
+      <Text as='h6'>When will you need to take withdrawals from this account exceeding 10%?</Text>
+      {options.map(option => (
+        <Form.Check
+          key={option.id}
+          type="checkbox"
+          id={`check-${option.id}`}
+          label={
+            <>
+              {option.label} <small className="sm-txt">{option.info}</small>
+            </>
+          }
+          checked={formData[option.label] || false}
+          onChange={() => handleCheckboxChange(option.label)}
+        />
+      ))}
+    </Form>
+  );
+};
+
 
 export default StepForm;

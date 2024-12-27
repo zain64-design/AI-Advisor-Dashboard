@@ -1,0 +1,8 @@
+@use '../../utils' as *;
+
+.questionnaire-area {
+    height: 100vh;
+    .ct-height {
+        height: 100%;
+    }
+}

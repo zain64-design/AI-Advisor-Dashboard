@@ -22,6 +22,7 @@ import NewsDetail from './pages/NewsDetail';
 import RecommendDetail from './pages/RecommendDetail';
 import SignUp from './pages/SignUp';
 import ForgotPassword from './pages/ForgotPassword';
+import StepFormLayout from './components/Layout/StepFormLayout';
 
 
 const queryClient = new QueryClient({
@@ -61,14 +62,17 @@ function App() {
               <Route index element={<Settings />} />
               <Route path="edit-profile" element={<EditProfile />} />
               <Route path="change-password" element={<ChangePassword />} />
-              <Route path="investment-questionnaire" element={<InvestmentQuestion />} />
+              {/* <Route path="investment-questionnaire" element={<InvestmentQuestion />} /> */}
               <Route path="privacy-policy" element={<PrivacyPolicy />} />
               <Route path="faq" element={<FAQ />} />
               <Route path="terms-conditions" element={<TermsConditions />} />
             </Route>
           </Route>
+          <Route element={<StepFormLayout/>}>
+          <Route index path="/investment-questionnaire" element={<InvestmentQuestion />} />
+          </Route>
           <Route element={<AuthLayout />}>
-            <Route path="/" element={<Login />} />
+            <Route index path="/" element={<Login />} />
             <Route path="/sign-up" element={<SignUp/>} />
             <Route path="/forgot-password" element={<ForgotPassword/>} />
           </Route>

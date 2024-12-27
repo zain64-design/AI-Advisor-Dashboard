@@ -1,0 +1,78 @@
+@use '../../utils' as *;
+
+.step-form-main {
+    .step-top-bar {
+        @include flex (center,center,row,wrap,20px);
+        margin-bottom: 64px;
+        .btn-step-back {
+            padding: 0;
+            &>svg {
+                width: 25px;
+            }
+        }
+        .progress {
+            max-width: 100%;
+            width: 970px;
+            height: 15px;
+            border-radius: 50px;
+            background-color: $grey-bg-5;
+            .progress-bar {
+                background-color: $green-bg;
+                border-radius: 50px;
+            }
+        }
+        small {
+            font-family: $font-1;
+            font-size: 24px;
+            color: $grey-clr-3;
+            font-weight: 400;
+            span {
+                font-weight: 700;
+                color: $green-clr;
+            }
+        }
+    }
+    .form-head {
+        @include ctHead(700,24px,$black-clr-4,capitalize);
+        margin-bottom: 44px;
+    }
+    .step-form-area {
+        h5 {
+            @include ctHead(700,24px,$green-clr,capitalize);
+            margin-bottom: 44px;
+        }
+        h6 {
+            @include ctHead(500,24px,$black-clr,unset);
+            margin-bottom: 44px;
+        }
+        .form-check {
+            margin-bottom: 32px;
+            padding-left: 70px;
+            .form-check-input {
+                height: 36px;
+                width: 36px;
+                border: 2px solid $black-clr;
+                border-radius: 50%;
+                margin-top: -0.2em;
+                margin-left: -3.5em;
+                &:checked {
+                    background-color: $prim-clr-2;
+                    background-size: 22px;
+                    &[type=checkbox] {
+                        --bs-form-check-bg-image: url(/public/images/icons/Ellipse-green.svg);
+                    }
+                }
+            }
+            .form-check-label {
+                @include ctHead(600,18px,$black-clr,capitalize);
+                display: flex;
+                flex-direction: column;
+                .sm-txt {
+                    @include ctHead(400,18px,$grey-clr-3,unset);
+                    line-height: 24px;
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+}
