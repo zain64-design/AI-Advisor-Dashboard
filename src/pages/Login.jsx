@@ -1,6 +1,6 @@
 import React from 'react'
 import LoginForm from '../components/Auth/LoginForm';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import useAOS from '../utils/hooks/useAOS';
 import '../assets/scss/component/auth/loginArea.scss'
 
