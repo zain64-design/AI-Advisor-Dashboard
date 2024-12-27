@@ -1,24 +1,14 @@
-import React ,{useState} from 'react'
+import React from 'react'
 import { Card, Form, Row, Col, Button } from 'react-bootstrap';
 import Text from '../UI/Text'
 import { Link } from 'react-router';
 import ResetLinkModal from './ResetLinkModal';
-// import useModal from '../../utils/hooks/useModal';
+import useModal from '../../utils/hooks/useModal';
 import '../../assets/scss/component/Auth/forgotPassForm.scss'
-import OTPModal from './OTPModal';
 
 const ForgotPassForm = () => {
 
-        const [showResetModal, setShowResetModal] = useState(false);
-        const [showOTPModal, setShowOTPModal] = useState(false);
-
-        const handleShowResetModal = () => setShowResetModal(true);
-        const handleCloseResetModal = () => {
-            setShowResetModal(false);
-            setShowOTPModal(true);
-        }
-
-        const handleCloseOTPModal = () => setShowOTPModal(false);
+    const {showModal,handleShowModal,handleCloseModal} = useModal();
 
     return (
         <>
@@ -43,14 +33,13 @@ const ForgotPassForm = () => {
                             </div>
                         </Form.Group>
                         <Form.Group as={Col} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
-                            <Button type='button' onClick={handleShowResetModal} variant='submit'>submit</Button>
+                            <Button type='button' onClick={handleShowModal} variant='submit'>submit</Button>
                         </Form.Group>
                     </Row>
                 </Form>
             </Card>
 
-            <ResetLinkModal showResetModal={showResetModal} handleCloseResetModal={handleCloseResetModal}/>
-            <OTPModal showOTPModal={showOTPModal} handleCloseOTPModal={handleCloseOTPModal}/>
+            <ResetLinkModal showResetModal={showModal} handleCloseResetModal={handleCloseModal}/>
         </>
     )
 }

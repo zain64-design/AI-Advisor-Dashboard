@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Row,Col } from 'react-bootstrap';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Text from '../UI/Text'
@@ -61,7 +60,7 @@ const NavTabs = () => {
           <Tab eventKey={eventKey} title={title} key={index}>
             <div className='recommend-details'>
               {isLoading
-              ? Array.from({ length: 6 }).map((_,index) => (<SkRecommendLoader key={index}/>))
+              ? Array.from({ length: 6 }).map((_,index) => <SkRecommendLoader key={index}/>)
               : isError
               ? <Text as='h6'>Error: {error.message}</Text>
               : filteredRecommendData?.map(value => <RecommendBox key={value.id} investData={value}/>)}

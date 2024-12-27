@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
+import {useNavigate,useLocation} from 'react-router'
 import { Form, Button, ProgressBar, Card } from 'react-bootstrap';
 import Text from '../UI/Text'
 import '../../assets/scss/component/questionaire/stepForm.scss'
+import OTPModal from '../../components/Auth/OTPModal';
+import useAOS from '../../utils/hooks/useAOS';
+import useModal from '../../utils/hooks/useModal'
 
-// Step Form Component
 const StepForm = () => {
-  const [currentStep, setCurrentStep] = useState(0); // Current step index
+  const{showModal,handleShowModal,handleCloseModal} =useModal();
+
+  const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState({
     step1: {},
     step2: {},
@@ -13,11 +18,12 @@ const StepForm = () => {
     step4: {},
     step5: {},
     step6: {},
-  }); // Store data for each step
+  });
 
-  const totalSteps = 6; // Total steps in the form
+  const totalSteps = 6;
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  // Handle form data change for each step
   const handleInputChange = (step, data) => {
     setFormData(prevData => ({
       ...prevData,
@@ -25,63 +31,87 @@ const StepForm = () => {
     }));
   };
 
-  // Function to go to next step and save data
   const nextStep = () => {
     if (currentStep < totalSteps - 1) {
       setCurrentStep(currentStep + 1);
     }
   };
 
-  // Function to go to previous step
-  const prevStep = () => {
-    if (currentStep > 0) {
-      setCurrentStep(currentStep - 1);
-    }
-  };
+    const prevStep = () => {
+      if (currentStep === 0) {
+        if (location.state?.from) {
+          navigate(location.state.from);
+        } else {
+          navigate(-1);
+        }
+      } else {
+        setCurrentStep(currentStep - 1);
+      }
+    };
 
-  // Function to skip to the next step without saving data
+  // const skipStep = () => {
+  //   if (currentStep < totalSteps - 1) {
+  //     setCurrentStep(currentStep + 1);
+  //   }
+  // };
+
   const skipStep = () => {
+    const stepKey = `step${currentStep + 1}`;
+    setFormData(prevData => ({
+      ...prevData,
+      [stepKey]: {}
+    }));
+    
     if (currentStep < totalSteps - 1) {
       setCurrentStep(currentStep + 1);
     }
   };
 
-  // Progress bar calculation
-  const progress = (currentStep / (totalSteps - 1)) * 100;
+  // const progress = (currentStep / (totalSteps - 1)) * 100;
+
+  const progress = ((currentStep + 1) / totalSteps) * 100;
+
+  const viewFormData = () => {
+    console.log('Form Data:', formData);
+  };
 
   return (
+    <>
     <Card className='step-form-main'>
-            <div className="step-top-bar">
-              {currentStep > 0 && <Button variant="step-back" onClick={prevStep}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 31" fill="none">
-                  <path d="M16.375 2.75L3.625 15.5M3.625 15.5L16.375 28.25M3.625 15.5L33.375 15.5" stroke="black" strokeWidth="4" strokeLinecap="round" />
-                </svg>
-              </Button>}
-              <ProgressBar now={progress} label={`${Math.round(progress)}%`} />
-              <Text as='small'><Text as='span'>{currentStep + 1}</Text>/{totalSteps}</Text>
-            </div>
+      <div className="step-top-bar">
+              <Button variant="step-back" onClick={prevStep}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 31" fill="none">
+            <path d="M16.375 2.75L3.625 15.5M3.625 15.5L16.375 28.25M3.625 15.5L33.375 15.5" stroke="black" strokeWidth="4" strokeLinecap="round" />
+          </svg>
+        </Button>
+        {/* <ProgressBar now={progress} label={`${Math.round(progress)}%`} /> */}
+        <ProgressBar now={progress} />
+        <Text as='small'><Text as='span'>{currentStep + 1}</Text>/{totalSteps}</Text>
+      </div>
 
-            <Text as='h6' className='form-head'>Investment Suitability Questionaire</Text>
+      <Text as='h6' className='form-head'>Investment Suitability Questionaire</Text>
 
-            <div className="step-form-area">
-                  {currentStep === 0 && <Step1 formData={formData.step1} handleInputChange={(data) => handleInputChange('step1', data)} />}
-                  {currentStep === 1 && <Step2 formData={formData.step2} handleInputChange={(data) => handleInputChange('step2', data)} />}
-                  {currentStep === 2 && <Step3 formData={formData.step3} handleInputChange={(data) => handleInputChange('step3', data)} />}
-                  {currentStep === 3 && <Step4 formData={formData.step4} handleInputChange={(data) => handleInputChange('step4', data)} />}
-                  {currentStep === 4 && <Step5 formData={formData.step5} handleInputChange={(data) => handleInputChange('step5', data)} />}
-                  {currentStep === 5 && <Step6 formData={formData.step6} handleInputChange={(data) => handleInputChange('step6', data)} />}
-                </div>
+      <div className="step-form-area">
+        {currentStep === 0 && <Step1 formData={formData.step1} handleInputChange={(data) => handleInputChange('step1', data)} />}
+        {currentStep === 1 && <Step2 formData={formData.step2} handleInputChange={(data) => handleInputChange('step2', data)} />}
+        {currentStep === 2 && <Step3 formData={formData.step3} handleInputChange={(data) => handleInputChange('step3', data)} />}
+        {currentStep === 3 && <Step4 formData={formData.step4} handleInputChange={(data) => handleInputChange('step4', data)} />}
+        {currentStep === 4 && <Step5 formData={formData.step5} handleInputChange={(data) => handleInputChange('step5', data)} />}
+        {currentStep === 5 && <Step6 formData={formData.step6} handleInputChange={(data) => handleInputChange('step6', data)} />}
+      </div>
 
-                <div className="step-btm-nav">
-                {currentStep < totalSteps - 1 && <Button variant="" onClick={nextStep}>Next</Button>}
-                {currentStep < totalSteps - 1 && <Button variant="" onClick={skipStep}>Skip</Button>}
-                {currentStep === totalSteps - 1 && <Button variant="" onClick={() => alert('Form Submitted')}>Submit</Button>}
-                </div>
-          </Card>
+      <div className="step-btm-nav">
+        {currentStep < totalSteps - 1 && <Button variant="next" onClick={nextStep}>save & continue</Button>}
+        {currentStep < totalSteps - 1 && <Button variant="skip" onClick={skipStep}>skip</Button>}
+        {currentStep === totalSteps - 1 && <Button variant="send" onClick={handleShowModal}>Submit</Button>}
+        {/* <Button variant="info" onClick={viewFormData}>View Form Data</Button> */}
+      </div>
+    </Card>
+    <OTPModal showModal={showModal} handleCloseModal={handleCloseModal}/>
+    </>
   );
 };
 
-// Example Step Components with Checkboxes
 const Step1 = ({ formData, handleInputChange }) => {
   const options = [
     {
@@ -115,8 +145,10 @@ const Step1 = ({ formData, handleInputChange }) => {
     handleInputChange(updatedData);
   };
 
+  useAOS();
+
   return (
-    <Form>
+    <Form data-aos="fade-in">
       <Text as='h5'>1. Investment Objective</Text>
       <Text as='h6'>What best describes your investment objective? </Text>
       {options.map(option => (
@@ -160,8 +192,10 @@ const Step2 = ({ formData, handleInputChange }) => {
     handleInputChange(updatedData);
   };
 
+  useAOS();
+
   return (
-    <Form>
+    <Form data-aos="fade-in">
       <Text as='h5'>2. Risk Tolerance</Text>
       {options.map(option => (
         <Form.Check
@@ -205,8 +239,10 @@ const Step3 = ({ formData, handleInputChange }) => {
     handleInputChange(updatedData);
   };
 
+  useAOS();
+
   return (
-    <Form>
+    <Form data-aos="fade-in">
       <Text as='h5'>3. How likely would you be able to tolerate the value of your account changing +/- 20% over three years.</Text>
       {options.map(option => (
         <Form.Check
@@ -252,8 +288,10 @@ const Step4 = ({ formData, handleInputChange }) => {
     handleInputChange(updatedData);
   };
 
+  useAOS();
+
   return (
-    <Form>
+    <Form data-aos="fade-in">
       <Text as='h5'> 4. What would you do If the value of your investment dropped by 20%? </Text>
       {options.map(option => (
         <Form.Check
@@ -302,8 +340,10 @@ const Step5 = ({ formData, handleInputChange }) => {
     handleInputChange(updatedData);
   };
 
+  useAOS();
+
   return (
-    <Form>
+    <Form data-aos="fade-in">
       <Text as='h5'>5. Investment Horizon</Text>
       <Text as='h6'>How long do you plan to invest this money to achieve your financial goal(s)? </Text>
       {options.map(option => (
@@ -345,8 +385,10 @@ const Step6 = ({ formData, handleInputChange }) => {
     handleInputChange(updatedData);
   };
 
+  useAOS();
+
   return (
-    <Form>
+    <Form data-aos="fade-in">
       <Text as='h5'>6. Liquidity Needs</Text>
       <Text as='h6'>When will you need to take withdrawals from this account exceeding 10%?</Text>
       {options.map(option => (

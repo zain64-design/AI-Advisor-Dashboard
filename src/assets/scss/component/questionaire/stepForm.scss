@@ -1,18 +1,25 @@
 @use '../../utils' as *;
 
 .step-form-main {
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
     .step-top-bar {
         @include flex (center,center,row,wrap,20px);
         margin-bottom: 64px;
         .btn-step-back {
             padding: 0;
+            margin-right: 20px;
+            &:focus {
+                border: none;
+            }
             &>svg {
-                width: 25px;
+                width: 32px;
             }
         }
         .progress {
-            max-width: 100%;
-            width: 970px;
+            width: 100%;
+            max-width: 1150px;
             height: 15px;
             border-radius: 50px;
             background-color: $grey-bg-5;
@@ -55,6 +62,7 @@
                 border-radius: 50%;
                 margin-top: -0.2em;
                 margin-left: -3.5em;
+                background-color: $prim-clr-2;
                 &:checked {
                     background-color: $prim-clr-2;
                     background-size: 22px;
@@ -68,10 +76,83 @@
                 display: flex;
                 flex-direction: column;
                 .sm-txt {
-                    @include ctHead(400,18px,$grey-clr-3,unset);
+                    @include ctHead(400,18px,$grey-clr-3,none);
                     line-height: 24px;
                     margin-top: 8px;
                 }
+            }
+        }
+    }
+    .step-btm-nav {
+        .btn-next {
+            @include gradBtn($font-2,700,18px,72px,100%,8px)
+        }
+        .btn-send {
+            @include gradBtn($font-2,700,18px,72px,100%,8px)
+        }
+        .btn-skip {
+            font-family: $font-2;
+            font-weight: 500;
+            font-size: 18px;
+            width: 100%;
+            border-radius: 8px;
+            text-transform: capitalize;
+            color: $black-clr;
+            padding: 0;
+            margin: 24px 0 0 0;
+            &:focus {
+                border: none;
+            }
+        }
+    }
+}
+
+@include respond-to('xl') {
+    .step-form-main {
+        .step-top-bar {
+            .progress {
+                max-width: 980px;
+            }
+        }
+    }
+}
+
+@include respond-to('lg') {
+    .step-form-main {
+        .step-top-bar {
+            .progress {
+                max-width: 800px;
+            }
+        }
+    }
+}
+
+@include respond-to('md') {
+    .step-form-main {
+        .step-top-bar {
+            .progress {
+                max-width: 550px;
+            }
+        }
+    }
+}
+
+@include respond-to('sm') {
+    .step-form-main {
+        .step-top-bar {
+            .progress {
+                max-width: 380px;
+            }
+        }
+    }
+}
+
+@include respond-to('tiny') {
+    .step-form-main {
+        .step-top-bar {
+            margin-bottom: 30px;
+            .progress {
+                max-width: 350px;
             }
         }
     }

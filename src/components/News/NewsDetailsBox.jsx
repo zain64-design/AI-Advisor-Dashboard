@@ -15,7 +15,7 @@ const NewsDetailsBox = (newsData) => {
                 <figure>
                     <Link to='/news' className='back-btn'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="22" viewBox="0 0 25 22" fill="none">
-                            <path d="M11.5 2L2.5 11M2.5 11L11.5 20M2.5 11L23.5 11" stroke="white" stroke-width="3" stroke-linecap="round" />
+                            <path d="M11.5 2L2.5 11M2.5 11L11.5 20M2.5 11L23.5 11" stroke="white" stroke-width="3" strokeLinecap="round" />
                         </svg>
                     </Link>
                     <Image src={thumbnail} />

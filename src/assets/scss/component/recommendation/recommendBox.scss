@@ -53,9 +53,9 @@
 }
 
 @include respond-to('tiny') {
-    .invest-recommend-details {
+    .recommend-details {
         .invest-box {
-            padding: 11px 0 0 0;
+            padding: 5px;
             gap: 5px;
             figure {
                 .logo {
@@ -64,8 +64,9 @@
                 }
             }
             .desc {
-                h6 {
+                a {
                     font-size: 14px;
+                    margin-bottom: 0;
                 }
                 small {
                     font-size: 12px;

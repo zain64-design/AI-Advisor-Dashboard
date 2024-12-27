@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const useFetchAPI = async (url,params) => {
   
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 10000));
     try {
       const response = await axios.get(url, { params });
       return response.data;

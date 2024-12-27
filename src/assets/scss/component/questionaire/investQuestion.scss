@@ -1,8 +1,21 @@
 @use '../../utils' as *;
 
 .questionnaire-area {
-    height: 100vh;
+    // height: 100vh;
+    padding: 117px 0 50px 0;
     .ct-height {
         height: 100%;
+    }
+}
+
+@include respond-to('tiny') {
+    .questionnaire-area {
+        padding: 50px 0 50px 0; 
+    }
+}
+
+@include respond-to('sm') {
+    .questionnaire-area {
+        padding: 80px 0 50px 0; 
     }
 }
