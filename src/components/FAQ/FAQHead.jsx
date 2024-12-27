@@ -1,6 +1,6 @@
 import React from 'react'
 import Text from '../UI/Text'
-import '../../assets/scss/component/faq/faqHead.scss'
+import '../../assets/scss/component/FAQ/faqHead.scss'
 
 const FAQHead = ({subHeading,para}) => {
   return (
