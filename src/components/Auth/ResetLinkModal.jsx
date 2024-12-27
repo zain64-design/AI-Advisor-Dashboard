@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import Text from '../UI/Text'
 import Image from '../UI/Image'
 import lockIcon from '/images/icons/lock-icon.svg'
-import '../../assets/scss/component/modal/resetLinkModal.scss'
+import '../../assets/scss/component/Modal/resetLinkModal.scss'
 
 const ResetLinkModal = ({ showResetModal, handleCloseResetModal }) => {
     return (
