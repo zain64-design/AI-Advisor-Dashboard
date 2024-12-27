@@ -4,7 +4,7 @@ import { Button,Form } from 'react-bootstrap';
 import Text from '../UI/Text'
 import Image from '../UI/Image'
 import messageIcon from '/images/icons/message-icon.svg'
-import '../../assets/scss/component/modal/otpModal.scss'
+import '../../assets/scss/component/Modal/otpModal.scss'
 import { InputOtp } from 'primereact/inputotp';
 
 const OTPModal = ({showOTPModal,handleCloseOTPModal}) => {
