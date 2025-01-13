@@ -1,4 +1,4 @@
-import React, { useId, useState } from 'react'
+import React, { useState } from 'react'
 import Accordion from 'react-bootstrap/Accordion';
 import Text from '../UI/Text';
 import '../../assets/scss/component/FAQ/faqAccordion.scss'
