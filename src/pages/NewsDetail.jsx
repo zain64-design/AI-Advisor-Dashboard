@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import NewsDetailsBox from '../components/News/NewsDetailsBox'
 import useAOS from '../utils/hooks/useAOS'
@@ -13,6 +13,10 @@ import SkNewsDetailLoader from '../components/Loader/SkNewsDetailLoader'
 const NewsDetail = () => {
 
   useAOS();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const {id} =  useParams();
 
